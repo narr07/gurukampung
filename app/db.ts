@@ -2,12 +2,13 @@ import Dexie, { type EntityTable } from 'dexie'
 import { BACKUP_APP, BACKUP_VERSION, type BackupFile, type ClassRecord, type SettingRecord, type ToolDataRecord } from '~/utils/backup'
 
 // Semua data guru disimpan di IndexedDB perangkat ini, tidak dikirim ke server (ADR 001)
-class PeraguDB extends Dexie {
+class GuruKampungDB extends Dexie {
   classes!: EntityTable<ClassRecord, 'id'>
   settings!: EntityTable<SettingRecord, 'key'>
   toolData!: EntityTable<ToolDataRecord, 'key'>
 
   constructor() {
+    // Nama database sengaja tetap 'peragu' (nama lama aplikasi): menggantinya membuat data kelas guru yang sudah ada tidak terbaca
     super('peragu')
     this.version(1).stores({
       classes: 'id, name, updatedAt',
@@ -19,12 +20,12 @@ class PeraguDB extends Dexie {
   }
 }
 
-let instance: PeraguDB | undefined
+let instance: GuruKampungDB | undefined
 
 // Hanya dipanggil di peramban; saat prerender di server IndexedDB tidak ada
 export function useDb() {
   if (import.meta.server) throw new Error('IndexedDB hanya tersedia di peramban')
-  instance ??= new PeraguDB()
+  instance ??= new GuruKampungDB()
   return instance
 }
 

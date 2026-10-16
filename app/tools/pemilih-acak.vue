@@ -5,11 +5,11 @@ import { beep } from '~/utils/sound'
 const rng = mulberry32(newSeed())
 const { classId, students } = useActiveClass()
 
-const source = useLocalStorage<'kelas' | 'manual'>('peragu:pemilih:sumber', 'kelas', { initOnMounted: true })
-const manualText = useLocalStorage('peragu:pemilih:manual', '', { initOnMounted: true })
-const mode = useLocalStorage<'roda' | 'kartu'>('peragu:pemilih:mode', 'roda', { initOnMounted: true })
-const noRepeat = useLocalStorage('peragu:pemilih:tanpa-ulang', true, { initOnMounted: true })
-const withSound = useLocalStorage('peragu:pemilih:suara', true, { initOnMounted: true })
+const source = useLocalStorage<'kelas' | 'manual'>('gurukampung:pemilih:sumber', 'kelas', { initOnMounted: true })
+const manualText = useLocalStorage('gurukampung:pemilih:manual', '', { initOnMounted: true })
+const mode = useLocalStorage<'roda' | 'kartu'>('gurukampung:pemilih:mode', 'roda', { initOnMounted: true })
+const noRepeat = useLocalStorage('gurukampung:pemilih:tanpa-ulang', true, { initOnMounted: true })
+const withSound = useLocalStorage('gurukampung:pemilih:suara', true, { initOnMounted: true })
 
 const names = computed(() =>
   source.value === 'kelas'

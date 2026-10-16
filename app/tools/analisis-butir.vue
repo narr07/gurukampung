@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { analyzeMultipleChoice, type StudentAnswerRow } from '~/utils/fase4'
 
-const title = useLocalStorage('peragu:analisis:judul', 'Analisis Butir Soal Sumatif', { initOnMounted: true })
-const kktp = useLocalStorage('peragu:analisis:kktp', 75, { initOnMounted: true })
-const keyInput = useLocalStorage('peragu:analisis:kunci', 'A, B, C, D, A, B, C, D, A, B', { initOnMounted: true })
+const title = useLocalStorage('gurukampung:analisis:judul', 'Analisis Butir Soal Sumatif', { initOnMounted: true })
+const kktp = useLocalStorage('gurukampung:analisis:kktp', 75, { initOnMounted: true })
+const keyInput = useLocalStorage('gurukampung:analisis:kunci', 'A, B, C, D, A, B, C, D, A, B', { initOnMounted: true })
 const rawResponses = useLocalStorage(
-  'peragu:analisis:jawaban',
+  'gurukampung:analisis:jawaban',
   'Ahmad\tA, B, C, D, A, B, C, D, A, B\nBudi\tA, B, C, D, A, B, C, A, A, B\nCitra\tA, B, C, D, A, B, A, A, B, B\nDedi\tA, B, C, A, B, B, C, D, A, C\nEka\tA, A, C, D, A, C, C, D, B, B\nFajar\tB, B, A, A, C, C, D, A, B, C',
   { initOnMounted: true }
 )

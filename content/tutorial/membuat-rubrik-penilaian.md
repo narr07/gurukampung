@@ -68,7 +68,7 @@ Jumlahkan skor semua kriteria, lalu bagi dengan skor maksimal dan kalikan 100.
 >
 > Nilai = 10 ÷ 12 × 100 = 83
 
-Kalau sekolah memakai predikat (A, B, C, D atau sebutan lain), Konversi Nilai ke Predikat di Peragu bisa mengubah angka itu dengan rentang yang Anda atur sendiri. Nilai akhirnya bisa dimasukkan ke Kalkulator Nilai Rapor bersama nilai sumatif lainnya.
+Kalau sekolah memakai predikat (A, B, C, D atau sebutan lain), Konversi Nilai ke Predikat di Guru Kampung bisa mengubah angka itu dengan rentang yang Anda atur sendiri. Nilai akhirnya bisa dimasukkan ke Kalkulator Nilai Rapor bersama nilai sumatif lainnya.
 
 ## Kesalahan yang sering terjadi
 

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { compareFractions, equivalentFractions, simplifyFraction } from '~/utils/fase3'
 
-const shape = useLocalStorage<'lingkaran' | 'batang'>('peragu:pecahan:bentuk', 'lingkaran', { initOnMounted: true })
-const num1 = useLocalStorage('peragu:pecahan:n1', 1, { initOnMounted: true })
-const den1 = useLocalStorage('peragu:pecahan:d1', 2, { initOnMounted: true })
-const num2 = useLocalStorage('peragu:pecahan:n2', 2, { initOnMounted: true })
-const den2 = useLocalStorage('peragu:pecahan:d2', 4, { initOnMounted: true })
+const shape = useLocalStorage<'lingkaran' | 'batang'>('gurukampung:pecahan:bentuk', 'lingkaran', { initOnMounted: true })
+const num1 = useLocalStorage('gurukampung:pecahan:n1', 1, { initOnMounted: true })
+const den1 = useLocalStorage('gurukampung:pecahan:d1', 2, { initOnMounted: true })
+const num2 = useLocalStorage('gurukampung:pecahan:n2', 2, { initOnMounted: true })
+const den2 = useLocalStorage('gurukampung:pecahan:d2', 4, { initOnMounted: true })
 
 watch(den1, (d) => {
   if (num1.value > d) num1.value = d

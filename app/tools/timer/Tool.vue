@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { beep } from '~/utils/sound'
 
-const tab = useLocalStorage('peragu:timer:tab', 'timer', { initOnMounted: true })
+const tab = useLocalStorage('gurukampung:timer:tab', 'timer', { initOnMounted: true })
 const tabs = [
   { label: 'Timer', value: 'timer', icon: 'i-lucide-timer', slot: 'timer' as const },
   { label: 'Stopwatch', value: 'stopwatch', icon: 'i-lucide-watch', slot: 'stopwatch' as const }
@@ -19,8 +19,8 @@ const now = ref(Date.now())
 useIntervalFn(() => (now.value = Date.now()), 200)
 
 // ---------- Timer
-const minutes = useLocalStorage('peragu:timer:menit', 5, { initOnMounted: true })
-const seconds = useLocalStorage('peragu:timer:detik', 0, { initOnMounted: true })
+const minutes = useLocalStorage('gurukampung:timer:menit', 5, { initOnMounted: true })
+const seconds = useLocalStorage('gurukampung:timer:detik', 0, { initOnMounted: true })
 const duration = computed(() => (Math.max(0, minutes.value) * 60 + Math.max(0, Math.min(59, seconds.value))) * 1000)
 const endsAt = ref<number | null>(null)
 const pausedLeft = ref<number | null>(null)

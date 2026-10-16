@@ -5,9 +5,9 @@ import { finalScore, DEFAULT_COMPONENTS, type GradeComponent, type ScoreRow } fr
 
 const { classId, activeClass, students } = useActiveClass()
 
-const mode = useLocalStorage<GroupMode>('peragu:kelompok:mode', 'acak', { initOnMounted: true })
-const by = useLocalStorage<'kelompok' | 'anggota'>('peragu:kelompok:dasar', 'kelompok', { initOnMounted: true })
-const value = useLocalStorage('peragu:kelompok:nilai', 5, { initOnMounted: true })
+const mode = useLocalStorage<GroupMode>('gurukampung:kelompok:mode', 'acak', { initOnMounted: true })
+const by = useLocalStorage<'kelompok' | 'anggota'>('gurukampung:kelompok:dasar', 'kelompok', { initOnMounted: true })
+const value = useLocalStorage('gurukampung:kelompok:nilai', 5, { initOnMounted: true })
 const { seed, reroll } = useSeed()
 const seedInput = ref('')
 

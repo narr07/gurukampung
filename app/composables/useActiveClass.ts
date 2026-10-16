@@ -1,6 +1,6 @@
 // Kelas yang terakhir dipilih diingat di semua alat, supaya guru tidak memilih ulang tiap membuka alat
 export function useActiveClass() {
-  const classId = useLocalStorage<string | undefined>('peragu:kelas-aktif', undefined, { initOnMounted: true })
+  const classId = useLocalStorage<string | undefined>('gurukampung:kelas-aktif', undefined, { initOnMounted: true })
   const { classes, status } = useClasses()
 
   const activeClass = computed(() => classes.value.find(c => c.id === classId.value))

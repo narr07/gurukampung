@@ -3,7 +3,7 @@ const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
 const toolMode = ref<'pena' | 'penghapus'>('pena')
 const strokeColor = ref('#0f172a')
 const strokeWidth = ref(4)
-const bgPattern = useLocalStorage<'polos' | 'garis' | 'kotak'>('peragu:papantulis:latar', 'kotak', { initOnMounted: true })
+const bgPattern = useLocalStorage<'polos' | 'garis' | 'kotak'>('gurukampung:papantulis:latar', 'kotak', { initOnMounted: true })
 
 const COLORS = [
   { hex: '#0f172a', label: 'Tinta Hitam' },

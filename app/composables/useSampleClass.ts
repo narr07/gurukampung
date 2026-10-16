@@ -8,7 +8,7 @@ import { SAMPLE_CLASS_NAME, sampleAttendance, sampleGradeBook, sampleMasteryBook
 export function useSampleClass() {
   const toast = useToast()
   const { classes } = useClasses()
-  const classId = useLocalStorage<string | undefined>('peragu:kelas-aktif', undefined, { initOnMounted: true })
+  const classId = useLocalStorage<string | undefined>('gurukampung:kelas-aktif', undefined, { initOnMounted: true })
   const hasSample = computed(() => classes.value.some(c => c.name === SAMPLE_CLASS_NAME))
   const creating = ref(false)
 

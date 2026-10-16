@@ -1,17 +1,17 @@
 ---
 title: Kenapa data kelas Anda tidak pernah dikirim ke server
-description: Nama murid, nilai, dan absensi di Peragu tersimpan di peramban perangkat Anda sendiri. Ini alasannya, dan cara menjaga data itu supaya tidak hilang.
+description: Nama murid, nilai, dan absensi di Guru Kampung tersimpan di peramban perangkat Anda sendiri. Ini alasannya, dan cara menjaga data itu supaya tidak hilang.
 date: 2026-10-16
 tags:
   - privasi
   - data kelas
 ---
 
-Daftar nama murid, nilai rapor, dan catatan kehadiran adalah data anak-anak. Data seperti ini tidak seharusnya tersebar ke tempat yang tidak bisa dikendalikan guru. Karena itu, sejak awal Peragu dirancang supaya **tidak ada server yang menerima data kelas**.
+Daftar nama murid, nilai rapor, dan catatan kehadiran adalah data anak-anak. Data seperti ini tidak seharusnya tersebar ke tempat yang tidak bisa dikendalikan guru. Karena itu, sejak awal Guru Kampung dirancang supaya **tidak ada server yang menerima data kelas**.
 
 ## Di mana datanya disimpan
 
-Semua data kelas tersimpan di **IndexedDB**, tempat penyimpanan bawaan peramban (Chrome, Edge, Firefox, Safari) di perangkat yang sedang Anda pakai. Peragu tidak punya basis data pusat, tidak meminta akun, dan tidak mengirim nama murid ke mana pun.
+Semua data kelas tersimpan di **IndexedDB**, tempat penyimpanan bawaan peramban (Chrome, Edge, Firefox, Safari) di perangkat yang sedang Anda pakai. Guru Kampung tidak punya basis data pusat, tidak meminta akun, dan tidak mengirim nama murid ke mana pun.
 
 Dampaknya ada dua, dan keduanya perlu Anda ketahui.
 
@@ -35,7 +35,7 @@ File yang sama bisa dipulihkan:
 - di perangkat yang sama setelah data peramban terhapus,
 - di perangkat lain, misalnya saat pindah dari laptop sekolah ke laptop rumah.
 
-Peragu mencatat kapan terakhir kali Anda mengunduh cadangan, dan menampilkan pengingat kalau sudah lebih dari 30 hari.
+Guru Kampung mencatat kapan terakhir kali Anda mengunduh cadangan, dan menampilkan pengingat kalau sudah lebih dari 30 hari.
 
 ## Satu kebiasaan kecil
 

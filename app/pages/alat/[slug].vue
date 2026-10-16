@@ -83,7 +83,7 @@ useSeoMeta({
       <UEmpty
         icon="i-lucide-hammer"
         title="Alat ini belum tersedia"
-        :description="`${tool.name} dijadwalkan di fase ${tool.phase} pengerjaan Peragu. Untuk sementara, coba alat lain yang sudah siap.`"
+        :description="`${tool.name} dijadwalkan di fase ${tool.phase} pengerjaan Guru Kampung. Untuk sementara, coba alat lain yang sudah siap.`"
         :actions="[{ label: 'Kembali ke daftar alat', to: '/alat', icon: 'i-lucide-arrow-left', color: 'primary', variant: 'solid' }]"
       />
     </div>

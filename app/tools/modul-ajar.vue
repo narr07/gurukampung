@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { profile } = useSchoolProfile()
 
-const form = useLocalStorage('peragu:modulajar:isi', {
+const form = useLocalStorage('gurukampung:modulajar:isi', {
   teacherName: '',
   teacherNip: '',
   subject: ' Ilmu Pengetahuan Alam dan Sosial (IPAS)',

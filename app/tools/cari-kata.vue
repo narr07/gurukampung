@@ -2,14 +2,14 @@
 import { mulberry32 } from '~/utils/random'
 import { cleanWords, generateWordSearch, type WordDirection } from '~/utils/wordsearch'
 
-const title = useLocalStorage('peragu:carikata:judul', 'Cari Kata Kosakata', { initOnMounted: true })
+const title = useLocalStorage('gurukampung:carikata:judul', 'Cari Kata Kosakata', { initOnMounted: true })
 const rawWords = useLocalStorage(
-  'peragu:carikata:kata',
+  'gurukampung:carikata:kata',
   'PANCASILA\nMUSYAWARAH\nTOLERANSI\nGOTONGROYONG\nPERSATUAN\nKEADILAN\nKERUKUNAN\nAMANAH',
   { initOnMounted: true }
 )
-const dirs = useLocalStorage<WordDirection[]>('peragu:carikata:arah', ['mendatar', 'menurun'], { initOnMounted: true })
-const withKey = useLocalStorage('peragu:carikata:kunci', true, { initOnMounted: true })
+const dirs = useLocalStorage<WordDirection[]>('gurukampung:carikata:arah', ['mendatar', 'menurun'], { initOnMounted: true })
+const withKey = useLocalStorage('gurukampung:carikata:kunci', true, { initOnMounted: true })
 const { seed, reroll } = useSeed()
 
 const words = computed(() => cleanWords(rawWords.value))

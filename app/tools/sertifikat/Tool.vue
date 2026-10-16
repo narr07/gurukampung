@@ -2,9 +2,9 @@
 const { classId, students } = useActiveClass()
 const { profile } = useSchoolProfile()
 
-const source = useLocalStorage<'kelas' | 'manual'>('peragu:sertifikat:sumber', 'kelas', { initOnMounted: true })
-const manualText = useLocalStorage('peragu:sertifikat:manual', '', { initOnMounted: true })
-const form = useLocalStorage('peragu:sertifikat:isi', {
+const source = useLocalStorage<'kelas' | 'manual'>('gurukampung:sertifikat:sumber', 'kelas', { initOnMounted: true })
+const manualText = useLocalStorage('gurukampung:sertifikat:manual', '', { initOnMounted: true })
+const form = useLocalStorage('gurukampung:sertifikat:isi', {
   heading: 'PIAGAM PENGHARGAAN',
   intro: 'Diberikan kepada',
   body: 'atas partisipasinya dalam kegiatan belajar dengan penuh semangat.',
@@ -12,7 +12,7 @@ const form = useLocalStorage('peragu:sertifikat:isi', {
   date: '',
   signerRole: 'Kepala Sekolah'
 }, { initOnMounted: true, mergeDefaults: true })
-const style = useLocalStorage<'garis-ganda' | 'garis-tebal' | 'sudut'>('peragu:sertifikat:gaya', 'garis-ganda', { initOnMounted: true })
+const style = useLocalStorage<'garis-ganda' | 'garis-tebal' | 'sudut'>('gurukampung:sertifikat:gaya', 'garis-ganda', { initOnMounted: true })
 
 const names = computed(() =>
   source.value === 'kelas'

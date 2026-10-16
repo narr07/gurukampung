@@ -83,7 +83,7 @@ const illustration = computed(() => {
           v-if="tool.priority === 1 && illustration"
           class="w-14 shrink-0"
         >
-          <PeraguIlustrasi :name="illustration" />
+          <GambarIlustrasi :name="illustration" />
         </div>
       </div>
     </NuxtLink>

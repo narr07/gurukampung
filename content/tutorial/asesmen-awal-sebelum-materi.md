@@ -40,7 +40,7 @@ Satu soal yang sedikit melampaui prasyarat menunjukkan siapa yang mungkin sudah 
 ::
 
 ::tip
-Soal pilihan ganda paling cepat dinilai. Pembuat Kuis Pilihan Ganda di Peragu bisa mengacak urutan soal dan pilihan jawaban, lalu mencetak Paket A, Paket B, dan kuncinya.
+Soal pilihan ganda paling cepat dinilai. Pembuat Kuis Pilihan Ganda di Guru Kampung bisa mengacak urutan soal dan pilihan jawaban, lalu mencetak Paket A, Paket B, dan kuncinya.
 ::
 
 ## Pilihan jawaban yang membantu diagnosis
@@ -75,7 +75,7 @@ Ada dua cara yang sama-sama berguna, tergantung kegiatannya:
 - **Kelompok setara.** Murid dengan hasil serupa dikelompokkan bersama, supaya guru bisa mendampingi kelompok "belum siap" secara khusus.
 - **Kelompok campuran.** Setiap kelompok berisi murid dari ketiga kategori, supaya murid yang sudah bisa membantu temannya.
 
-Pembagi Kelompok di Peragu punya mode **seimbang nilai** untuk kelompok campuran. Nilainya diambil dari Kalkulator Nilai Rapor untuk kelas yang sama.
+Pembagi Kelompok di Guru Kampung punya mode **seimbang nilai** untuk kelompok campuran. Nilainya diambil dari Kalkulator Nilai Rapor untuk kelas yang sama.
 
 ## Setelah materi selesai
 

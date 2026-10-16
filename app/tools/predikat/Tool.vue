@@ -5,7 +5,7 @@ import { parseScoreColumn } from '~/utils/grades'
 const toast = useToast()
 
 const ranges = useLocalStorage<PredicateRange[]>(
-  'peragu:predikat:rentang',
+  'gurukampung:predikat:rentang',
   DEFAULT_PREDICATES.map(r => ({ ...r })),
   { initOnMounted: true }
 )
@@ -13,7 +13,7 @@ const ranges = useLocalStorage<PredicateRange[]>(
 const singleScore = ref<number>(84)
 const singleResult = computed(() => toPredicate(singleScore.value, ranges.value))
 
-const rawList = useLocalStorage('peragu:predikat:daftar', '92\n85\n76\n64', { initOnMounted: true })
+const rawList = useLocalStorage('gurukampung:predikat:daftar', '92\n85\n76\n64', { initOnMounted: true })
 const parsedScores = computed(() =>
   parseScoreColumn(rawList.value)
     .filter((v): v is number => typeof v === 'number')

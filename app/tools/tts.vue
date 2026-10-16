@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { generateCrossword, parseCrosswordLines } from '~/utils/fase3'
 
-const title = useLocalStorage('peragu:tts:judul', 'Teka-Teki Silang Pengetahuan Alam', { initOnMounted: true })
+const title = useLocalStorage('gurukampung:tts:judul', 'Teka-Teki Silang Pengetahuan Alam', { initOnMounted: true })
 const rawInput = useLocalStorage(
-  'peragu:tts:daftar',
+  'gurukampung:tts:daftar',
   'FOTOSINTESIS: Proses tumbuhan hijau memasak makanan dengan bantuan cahaya matahari\nKLOROFIL: Zat hijau daun pada tumbuhan\nAKAR: Bagian tumbuhan yang menyerap air dan mineral dari dalam tanah\nSTOMATA: Mulut daun tempat pertukaran udara\nOKSIGEN: Gas yang dihasilkan tumbuhan dan dihirup manusia\nBATANG: Bagian tumbuhan yang menopang dahan dan menyalurkan air',
   { initOnMounted: true }
 )
-const withKey = useLocalStorage('peragu:tts:kunci', true, { initOnMounted: true })
+const withKey = useLocalStorage('gurukampung:tts:kunci', true, { initOnMounted: true })
 
 const entries = computed(() => parseCrosswordLines(rawInput.value))
 const puzzle = computed(() => generateCrossword(entries.value))

@@ -11,7 +11,7 @@ const { fontSize } = useFontSize()
 const { profile, status, save } = useSchoolProfile()
 
 // Catat kapan terakhir guru mengunduh cadangan untuk pengingat 30 hari (ADR 001)
-const lastBackupAt = useLocalStorage<string | null>('peragu:cadangan-terakhir', null, { initOnMounted: true })
+const lastBackupAt = useLocalStorage<string | null>('gurukampung:cadangan-terakhir', null, { initOnMounted: true })
 const daysSinceBackup = computed(() => {
   if (!lastBackupAt.value) return null
   const ms = Date.now() - new Date(lastBackupAt.value).getTime()
@@ -71,7 +71,7 @@ async function onFileChosen(event: Event) {
     }
     pendingRestore.value = result.data
   } catch {
-    toast.add({ title: 'File tidak bisa dibaca', description: 'Pilih file cadangan .json dari Peragu.', color: 'error', icon: 'i-lucide-circle-alert' })
+    toast.add({ title: 'File tidak bisa dibaca', description: 'Pilih file cadangan .json dari Guru Kampung.', color: 'error', icon: 'i-lucide-circle-alert' })
   } finally {
     if (fileInput.value) fileInput.value.value = ''
   }

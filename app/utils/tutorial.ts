@@ -1,9 +1,9 @@
-export type TutorialCategory = 'perangkat-ajar' | 'asesmen' | 'peragu'
+export type TutorialCategory = 'perangkat-ajar' | 'asesmen' | 'cara-pakai'
 
 export const TUTORIAL_CATEGORIES: { id: TutorialCategory, name: string, summary: string, icon: string }[] = [
   { id: 'perangkat-ajar', name: 'Perangkat ajar', summary: 'Menyusun tujuan pembelajaran, RPP, dan modul ajar.', icon: 'i-lucide-notebook-pen' },
   { id: 'asesmen', name: 'Asesmen', summary: 'Mengetahui kemampuan awal murid, membuat rubrik, dan mengolah nilai.', icon: 'i-lucide-clipboard-check' },
-  { id: 'peragu', name: 'Memakai Peragu', summary: 'Langkah demi langkah memakai alat Peragu di kelas.', icon: 'i-lucide-mouse-pointer-click' }
+  { id: 'cara-pakai', name: 'Memakai Guru Kampung', summary: 'Langkah demi langkah memakai alat Guru Kampung di kelas.', icon: 'i-lucide-mouse-pointer-click' }
 ]
 
 export function tutorialCategory(id: string) {

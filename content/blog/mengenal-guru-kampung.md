@@ -1,14 +1,14 @@
 ---
-title: Mengenal Peragu, meja kerja digital untuk guru SD
-description: Peragu mengumpulkan 31 alat yang sering dibutuhkan guru SD dalam satu tempat, dari pemilih siswa acak sampai kalkulator nilai rapor. Gratis dan tanpa akun.
+title: Mengenal Guru Kampung, meja kerja digital untuk guru SD
+description: Guru Kampung mengumpulkan 31 alat yang sering dibutuhkan guru SD dalam satu tempat, dari pemilih siswa acak sampai kalkulator nilai rapor. Gratis dan tanpa akun.
 date: 2026-10-16
 tags:
-  - peragu
+  - guru kampung
 ---
 
 Pagi hari, sebelum bel masuk, banyak guru SD sudah membuka lima aplikasi berbeda: satu untuk mengacak nama, satu untuk timer, satu spreadsheet untuk nilai, dan satu lagi untuk membuat lembar kerja. Sebagian aplikasinya meminta akun, sebagian penuh iklan, dan sebagian menyimpan nama murid di server yang tidak jelas di mana.
 
-Peragu dibuat untuk meringkas semua itu. Namanya gabungan dari *peraga* dan *guru*.
+Guru Kampung dibuat untuk meringkas semua itu. Namanya untuk guru yang mengajar di mana saja, termasuk di sekolah kampung dengan sarana seadanya: dekat dengan muridnya, terbiasa memakai yang ada, dan tetap ingin memberi yang terbaik. Karena itu setiap alatnya dibuat supaya jalan di laptop sekolah biasa, tanpa pasang aplikasi apa pun.
 
 ## Apa saja isinya
 
@@ -35,6 +35,6 @@ Dua tempat paling sering alat guru dipakai adalah layar proyektor dan kertas cet
 
 ## Bukan hanya alat
 
-Selain alat, Peragu kini punya [tutorial](/tutorial) tentang hal-hal yang dikerjakan guru setiap minggu, seperti menulis tujuan pembelajaran, menyusun RPP, dan membuat rubrik. Blog ini akan berisi kabar pembaruan Peragu dan catatan tentang cara alat-alatnya dibuat.
+Selain alat, Guru Kampung kini punya [tutorial](/tutorial) tentang hal-hal yang dikerjakan guru setiap minggu, seperti menulis tujuan pembelajaran, menyusun RPP, dan membuat rubrik. Blog ini akan berisi kabar pembaruan Guru Kampung dan catatan tentang cara alat-alatnya dibuat.
 
 Ada alat yang Anda butuhkan tapi belum ada? Atau ada yang kurang pas saat dipakai di kelas? Masukan dari guru yang memakainya setiap hari adalah bahan terbaik untuk pembaruan berikutnya.

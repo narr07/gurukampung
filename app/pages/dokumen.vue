@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Dokumen',
-  description: 'Dokumen untuk guru SD di Peragu sedang disiapkan.'
+  description: 'Dokumen untuk guru SD di Guru Kampung sedang disiapkan.'
 })
 </script>
 
@@ -19,7 +19,7 @@ useSeoMeta({
         Sedang disiapkan
       </p>
       <p class="mx-auto max-w-lg text-toned">
-        Halaman ini akan berisi dokumen untuk guru. Sementara itu, dokumen yang bisa langsung dibuat dan dicetak ada di alat Peragu.
+        Halaman ini akan berisi dokumen untuk guru. Sementara itu, dokumen yang bisa langsung dibuat dan dicetak ada di alat Guru Kampung.
       </p>
       <div class="flex flex-wrap justify-center gap-3 pt-2">
         <UButton

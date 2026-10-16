@@ -2,9 +2,9 @@
 import { mulberry32, randomInt, shuffle } from '~/utils/random'
 import { beep } from '~/utils/sound'
 
-const totalMinutes = useLocalStorage('peragu:jam:menit-total', 7 * 60 + 30, { initOnMounted: true })
-const showDigital = useLocalStorage('peragu:jam:digital', true, { initOnMounted: true })
-const quizMode = useLocalStorage('peragu:jam:kuis', false, { initOnMounted: true })
+const totalMinutes = useLocalStorage('gurukampung:jam:menit-total', 7 * 60 + 30, { initOnMounted: true })
+const showDigital = useLocalStorage('gurukampung:jam:digital', true, { initOnMounted: true })
+const quizMode = useLocalStorage('gurukampung:jam:kuis', false, { initOnMounted: true })
 const { seed, reroll } = useSeed()
 
 const hours24 = computed(() => Math.floor(((totalMinutes.value % 1440) + 1440) % 1440 / 60))

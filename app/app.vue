@@ -17,7 +17,7 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: title => (title ? `${title} · Peragu` : 'Peragu: alat kerja guru SD'),
+  titleTemplate: title => (title ? `${title} · Guru Kampung` : 'Guru Kampung: alat kerja guru SD'),
   description: 'Alat kerja guru SD di peramban: pemilih siswa acak, pembagi kelompok, timer, lembar kerja, dan lainnya. Data kelas tersimpan di perangkat guru, tidak dikirim ke server.'
 })
 </script>

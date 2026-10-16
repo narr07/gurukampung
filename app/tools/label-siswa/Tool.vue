@@ -2,10 +2,10 @@
 const { classId, activeClass, students } = useActiveClass()
 const { profile } = useSchoolProfile()
 
-const source = useLocalStorage<'kelas' | 'manual'>('peragu:label:sumber', 'kelas', { initOnMounted: true })
-const manualText = useLocalStorage('peragu:label:manual', '', { initOnMounted: true })
-const kind = useLocalStorage<'buku' | 'meja'>('peragu:label:jenis', 'buku', { initOnMounted: true })
-const subject = useLocalStorage('peragu:label:mapel', '', { initOnMounted: true })
+const source = useLocalStorage<'kelas' | 'manual'>('gurukampung:label:sumber', 'kelas', { initOnMounted: true })
+const manualText = useLocalStorage('gurukampung:label:manual', '', { initOnMounted: true })
+const kind = useLocalStorage<'buku' | 'meja'>('gurukampung:label:jenis', 'buku', { initOnMounted: true })
+const subject = useLocalStorage('gurukampung:label:mapel', '', { initOnMounted: true })
 
 const list = computed(() => {
   if (source.value === 'kelas') {

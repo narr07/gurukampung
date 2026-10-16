@@ -13,7 +13,7 @@ const { data: book, status, saved } = useToolData<GradeBook>(
   () => ({ components: DEFAULT_COMPONENTS.map(c => ({ ...c })), scores: {} })
 )
 
-const decimals = useLocalStorage('peragu:nilai:desimal', 0, { initOnMounted: true })
+const decimals = useLocalStorage('gurukampung:nilai:desimal', 0, { initOnMounted: true })
 const weightSum = computed(() => totalWeight(book.value.components))
 
 function row(id: string) {

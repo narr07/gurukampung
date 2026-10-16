@@ -13,10 +13,10 @@ const DEFAULT_CARDS: FlashcardItem[] = [
   { id: 'c4', front: 'Karnivora', back: 'Kelompok hewan pemakan daging (contoh: harimau, elang)' }
 ]
 
-const title = useLocalStorage('peragu:flashcard:judul', 'Kartu Kosakata IPA', { initOnMounted: true })
-const perPage = useLocalStorage<4 | 6 | 8>('peragu:flashcard:perhalaman', 6, { initOnMounted: true })
+const title = useLocalStorage('gurukampung:flashcard:judul', 'Kartu Kosakata IPA', { initOnMounted: true })
+const perPage = useLocalStorage<4 | 6 | 8>('gurukampung:flashcard:perhalaman', 6, { initOnMounted: true })
 const cards = useLocalStorage<FlashcardItem[]>(
-  'peragu:flashcard:daftar',
+  'gurukampung:flashcard:daftar',
   DEFAULT_CARDS.map(c => ({ ...c })),
   { initOnMounted: true }
 )

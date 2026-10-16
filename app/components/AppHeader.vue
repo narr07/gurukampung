@@ -7,8 +7,8 @@ const { favorites } = useFavorites()
 
 const items = [
   { label: 'Alat', to: '/alat', description: 'Semua alat yang siap dipakai' },
-  { label: 'Tutorial', to: '/tutorial', description: 'Perangkat ajar, asesmen, dan cara memakai Peragu' },
-  { label: 'Blog', to: '/blog', description: 'Kabar dan catatan dari Peragu' },
+  { label: 'Tutorial', to: '/tutorial', description: 'Perangkat ajar, asesmen, dan cara memakai Guru Kampung' },
+  { label: 'Blog', to: '/blog', description: 'Kabar dan catatan dari Guru Kampung' },
   { label: 'Dokumen', to: '/dokumen', description: 'Dokumen untuk guru' },
   { label: 'Data Kelas', to: '/kelas', description: 'Daftar siswa untuk semua alat' },
   { label: 'Pengaturan', to: '/pengaturan', description: 'Profil sekolah, ukuran huruf, cadangan data' }
@@ -46,7 +46,7 @@ const quickTools = computed(() => {
   }
 })
 
-// Pencarian seluruh Peragu ada di CariPeragu.vue (PRD F-01)
+// Pencarian seluruh Guru Kampung ada di CariSitus.vue (PRD F-01)
 const searchOpen = ref(false)
 defineShortcuts({
   meta_k: () => {
@@ -82,7 +82,7 @@ function openSearch() {
           to="/"
           class="stiker-pulau inline-flex min-h-11 items-center bg-white px-5 py-1.5 font-display text-xl font-extrabold tracking-tight text-highlighted dark:bg-slate-900"
         >
-          Peragu
+          Guru Kampung
         </NuxtLink>
       </UContainer>
     </header>
@@ -92,7 +92,7 @@ function openSearch() {
       fullscreen
       :transition="false"
       :overlay="false"
-      title="Menu Peragu"
+      title="Menu Guru Kampung"
       description="Pindah halaman, buka alat, cari alat, atau ganti tema."
       :ui="{ content: 'menu-panel ring-0 divide-y-0 bg-(--color-pensil) text-slate-900 dark:bg-blue-950 dark:text-yellow-100' }"
     >
@@ -122,7 +122,7 @@ function openSearch() {
               class="stiker-pulau inline-flex min-h-11 items-center bg-white px-5 py-1.5 font-display text-xl font-extrabold tracking-tight text-slate-900 dark:bg-slate-900 dark:text-yellow-100"
               @click="close"
             >
-              Peragu
+              Guru Kampung
             </NuxtLink>
           </UContainer>
 
@@ -186,7 +186,7 @@ function openSearch() {
                 aria-hidden="true"
                 class="menu-pesawat hidden w-36 sm:block lg:w-44"
               >
-                <PeraguIlustrasi name="pesawat" />
+                <GambarIlustrasi name="pesawat" />
               </div>
 
               <section
@@ -252,6 +252,6 @@ function openSearch() {
       </template>
     </UModal>
 
-    <CariPeragu v-model:open="searchOpen" />
+    <CariSitus v-model:open="searchOpen" />
   </div>
 </template>

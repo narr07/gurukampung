@@ -2,12 +2,12 @@
 import { mulberry32 } from '~/utils/random'
 import { generateBingoSet } from '~/utils/fase4'
 
-const title = useLocalStorage('peragu:bingo:judul', 'Bingo Kosakata & Berhitung', { initOnMounted: true })
-const gridSize = useLocalStorage<3 | 4 | 5>('peragu:bingo:ukuran', 4, { initOnMounted: true })
-const cardCount = useLocalStorage('peragu:bingo:jumlah-kartu', 4, { initOnMounted: true })
-const freeCenter = useLocalStorage('peragu:bingo:tengah-bebas', true, { initOnMounted: true })
+const title = useLocalStorage('gurukampung:bingo:judul', 'Bingo Kosakata & Berhitung', { initOnMounted: true })
+const gridSize = useLocalStorage<3 | 4 | 5>('gurukampung:bingo:ukuran', 4, { initOnMounted: true })
+const cardCount = useLocalStorage('gurukampung:bingo:jumlah-kartu', 4, { initOnMounted: true })
+const freeCenter = useLocalStorage('gurukampung:bingo:tengah-bebas', true, { initOnMounted: true })
 const rawPool = useLocalStorage(
-  'peragu:bingo:isi',
+  'gurukampung:bingo:isi',
   'MERDEKA\nPANCASILA\nBHINNEKA\nNUSANTARA\nGARUDA\nKHATULISTIWA\nSUMPAH PEMUDA\nPAHLAWAN\nPROKLAMASI\nGOTONG ROYONG\nMUSYAWARAH\nPERSATUAN\nKEADILAN\nAMANAH\nTOLERANSI\nBUDAYA\nBAHASA\nTANAH AIR',
   { initOnMounted: true }
 )

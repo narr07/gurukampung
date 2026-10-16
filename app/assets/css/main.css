@@ -537,7 +537,7 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   animation: cari-latar-tutup 160ms ease-in both;
 }
 
-/* Daftar hasil: scrollbar tipis supaya tidak terjepit di sudut membulat. Tingginya diatur CariPeragu.vue
+/* Daftar hasil: scrollbar tipis supaya tidak terjepit di sudut membulat. Tingginya diatur CariSitus.vue
    agar berhenti tepat di bawah item yang muat utuh */
 .cari-daftar {
   scrollbar-width: thin;

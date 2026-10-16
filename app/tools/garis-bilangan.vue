@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { buildNumberLineTicks } from '~/utils/fase3'
 
-const minVal = useLocalStorage('peragu:garis:min', -10, { initOnMounted: true })
-const maxVal = useLocalStorage('peragu:garis:max', 10, { initOnMounted: true })
-const startPos = useLocalStorage('peragu:garis:awal', -2, { initOnMounted: true })
-const jumpDelta = useLocalStorage('peragu:garis:lompat', 5, { initOnMounted: true })
-const showAnswer = useLocalStorage('peragu:garis:tampil', true, { initOnMounted: true })
+const minVal = useLocalStorage('gurukampung:garis:min', -10, { initOnMounted: true })
+const maxVal = useLocalStorage('gurukampung:garis:max', 10, { initOnMounted: true })
+const startPos = useLocalStorage('gurukampung:garis:awal', -2, { initOnMounted: true })
+const jumpDelta = useLocalStorage('gurukampung:garis:lompat', 5, { initOnMounted: true })
+const showAnswer = useLocalStorage('gurukampung:garis:tampil', true, { initOnMounted: true })
 
 const ticks = computed(() => {
   const lo = Math.max(-25, Math.min(minVal.value, maxVal.value - 2))

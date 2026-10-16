@@ -1,12 +1,12 @@
-# Peragu
+# Guru Kampung
 
-**Peragu** (*peraga* + *guru*) adalah kumpulan alat kerja harian guru SD berbasis peramban: mengelola kelas, menilai, membuat lembar kerja cetak (A4 dan F4/folio), serta menampilkan alat peraga interaktif di proyektor.
+**Guru Kampung** adalah kumpulan alat kerja harian guru SD berbasis peramban: mengelola kelas, menilai, membuat lembar kerja cetak (A4 dan F4/folio), serta menampilkan alat peraga interaktif di proyektor. Dilengkapi tutorial perangkat ajar dan blog.
 
-Semua data kelas, siswa, nilai, dan absensi disimpan di perangkat guru (IndexedDB) dan tidak dikirim ke server.
+Sebelumnya bernama Peragu. Untuk saat ini semua data kelas, siswa, nilai, dan absensi disimpan di perangkat guru (IndexedDB) dan tidak dikirim ke server.
 
 ## Dokumen Proyek
 
-- [Arah Desain (`design.md`)](./design.md)
+- [Arah Desain (`DESIGN.md`)](./DESIGN.md)
 - [Kebutuhan Produk (`okf/prd.md`)](./okf/prd.md)
 - [Katalog 31 Alat (`okf/katalog-tools.md`)](./okf/katalog-tools.md)
 - [Rencana Kerja (`okf/rencana.md`)](./okf/rencana.md)

@@ -55,7 +55,7 @@ Pendekatan pembelajaran mendalam membagi pengalaman belajar menjadi tiga: **mema
 **Mengaplikasi.** Murid bekerja dalam kelompok berempat. Setiap kelompok mendapat kartu pecahan dan mencari pasangan yang senilai. Kelompok yang selesai lebih dulu menjelaskan caranya kepada kelompok lain.
 
 ::tip
-Kelompok yang seimbang membuat diskusi lebih hidup. Pembagi Kelompok di Peragu bisa membagi kelas secara acak atau seimbang nilai. Visualisasi Pecahan membantu menunjukkan model batang di proyektor.
+Kelompok yang seimbang membuat diskusi lebih hidup. Pembagi Kelompok di Guru Kampung bisa membagi kelas secara acak atau seimbang nilai. Visualisasi Pecahan membantu menunjukkan model batang di proyektor.
 ::
 
 ### Penutup (15 menit)

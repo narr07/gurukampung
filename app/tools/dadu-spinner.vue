@@ -13,10 +13,10 @@ const tabs = [
   { label: 'Spinner', value: 'spinner', icon: 'i-lucide-loader-pinwheel', slot: 'spinner' as const },
   { label: 'Cetak jaring-jaring', value: 'cetak', icon: 'i-lucide-printer', slot: 'cetak' as const }
 ]
-const tab = useLocalStorage('peragu:dadu:tab', 'dadu', { initOnMounted: true })
+const tab = useLocalStorage('gurukampung:dadu:tab', 'dadu', { initOnMounted: true })
 
 // ---------- Dadu
-const diceCount = useLocalStorage('peragu:dadu:jumlah', 1, { initOnMounted: true })
+const diceCount = useLocalStorage('gurukampung:dadu:jumlah', 1, { initOnMounted: true })
 const diceItems = [1, 2, 3, 4, 5, 6].map(n => ({ value: n, label: `${n} dadu` }))
 const faces = ref<number[]>([1])
 const rolling = ref(false)
@@ -41,7 +41,7 @@ async function roll() {
 }
 
 // ---------- Spinner
-const optionsText = useLocalStorage('peragu:spinner:isi', 'Merah\nKuning\nHijau\nBiru', { initOnMounted: true })
+const optionsText = useLocalStorage('gurukampung:spinner:isi', 'Merah\nKuning\nHijau\nBiru', { initOnMounted: true })
 const options = computed(() => optionsText.value.split('\n').map(o => o.trim()).filter(Boolean).slice(0, 24))
 const wheel = useTemplateRef<{ spinTo: (i: number) => void, spinning: boolean }>('wheel')
 const picked = ref<number | null>(null)
@@ -55,15 +55,15 @@ function spinWheel() {
 }
 
 // ---------- Cetak jaring-jaring
-const faceSize = useLocalStorage('peragu:dadu:ukuran', 35, { initOnMounted: true })
+const faceSize = useLocalStorage('gurukampung:dadu:ukuran', 35, { initOnMounted: true })
 const netWidthMm = computed(() => faceSize.value * 4 + 2 * (faceSize.value * 0.28 + 1) + 12)
 const sizeItems = [30, 35, 40, 45].map(mm => ({ value: mm, label: `${mm} mm per sisi` }))
-const printMode = useLocalStorage<'titik' | 'tulisan'>('peragu:dadu:cetak-isi', 'titik', { initOnMounted: true })
+const printMode = useLocalStorage<'titik' | 'tulisan'>('gurukampung:dadu:cetak-isi', 'titik', { initOnMounted: true })
 const printModeItems = [
   { value: 'titik', label: 'Titik dadu 1 sampai 6' },
   { value: 'tulisan', label: 'Tulisan bebas di tiap sisi' }
 ]
-const faceLabels = useLocalStorage('peragu:dadu:cetak-tulisan', ['', '', '', '', '', ''], { initOnMounted: true })
+const faceLabels = useLocalStorage('gurukampung:dadu:cetak-tulisan', ['', '', '', '', '', ''], { initOnMounted: true })
 </script>
 
 <template>

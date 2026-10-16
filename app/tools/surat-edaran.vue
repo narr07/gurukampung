@@ -30,7 +30,7 @@ const TEMPLATES = {
 }
 
 const preset = ref<'rapat' | 'kegiatan' | 'ujian'>('rapat')
-const form = useLocalStorage('peragu:surat:isi', {
+const form = useLocalStorage('gurukampung:surat:isi', {
   number: '005 / SD / X / 2026',
   attachment: '-',
   subject: TEMPLATES.rapat.subject,

@@ -1,6 +1,8 @@
 import type { Student } from './roster'
 
-export const BACKUP_APP = 'peragu'
+export const BACKUP_APP = 'gurukampung'
+// Cadangan yang dibuat saat aplikasi masih bernama Peragu tetap bisa dipulihkan
+const LEGACY_BACKUP_APPS = ['peragu']
 export const BACKUP_VERSION = 2
 
 export interface ClassRecord {
@@ -46,11 +48,11 @@ export type BackupCheck = { ok: true, data: BackupFile } | { ok: false, reason: 
 
 // Isi file cadangan berasal dari luar aplikasi, jadi diperiksa bentuknya sebelum menimpa data
 export function checkBackup(raw: unknown): BackupCheck {
-  if (!raw || typeof raw !== 'object') return { ok: false, reason: 'File ini bukan cadangan Peragu.' }
+  if (!raw || typeof raw !== 'object') return { ok: false, reason: 'File ini bukan cadangan Guru Kampung.' }
   const b = raw as Partial<BackupFile>
-  if (b.app !== BACKUP_APP) return { ok: false, reason: 'File ini bukan cadangan Peragu.' }
+  if (b.app !== BACKUP_APP && !LEGACY_BACKUP_APPS.includes(String(b.app))) return { ok: false, reason: 'File ini bukan cadangan Guru Kampung.' }
   if (typeof b.version !== 'number' || b.version > BACKUP_VERSION) {
-    return { ok: false, reason: 'Cadangan ini dibuat oleh versi Peragu yang lebih baru. Perbarui aplikasi dulu.' }
+    return { ok: false, reason: 'Cadangan ini dibuat oleh versi Guru Kampung yang lebih baru. Perbarui aplikasi dulu.' }
   }
   if (!Array.isArray(b.classes) || !Array.isArray(b.settings) || (b.toolData !== undefined && !Array.isArray(b.toolData))) {
     return { ok: false, reason: 'Isi cadangan tidak lengkap.' }
@@ -62,5 +64,5 @@ export function checkBackup(raw: unknown): BackupCheck {
 
 export function backupFileName(date = new Date()) {
   const pad = (n: number) => String(n).padStart(2, '0')
-  return `peragu-cadangan-${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}.json`
+  return `gurukampung-cadangan-${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}.json`
 }

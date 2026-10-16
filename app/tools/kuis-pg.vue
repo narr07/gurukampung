@@ -23,15 +23,15 @@ const DEFAULT_QUESTIONS: QuizQuestion[] = [
   }
 ]
 
-const title = useLocalStorage('peragu:kuis:judul', 'Latihan Sumatif', { initOnMounted: true })
+const title = useLocalStorage('gurukampung:kuis:judul', 'Latihan Sumatif', { initOnMounted: true })
 const questions = useLocalStorage<QuizQuestion[]>(
-  'peragu:kuis:soal',
+  'gurukampung:kuis:soal',
   DEFAULT_QUESTIONS.map(q => ({ ...q, options: [...q.options] as [string, string, string, string] })),
   { initOnMounted: true }
 )
-const shuffleQuestions = useLocalStorage('peragu:kuis:acak-soal', true, { initOnMounted: true })
-const shuffleOptions = useLocalStorage('peragu:kuis:acak-opsi', true, { initOnMounted: true })
-const includePackageB = useLocalStorage('peragu:kuis:paket-b', true, { initOnMounted: true })
+const shuffleQuestions = useLocalStorage('gurukampung:kuis:acak-soal', true, { initOnMounted: true })
+const shuffleOptions = useLocalStorage('gurukampung:kuis:acak-opsi', true, { initOnMounted: true })
+const includePackageB = useLocalStorage('gurukampung:kuis:paket-b', true, { initOnMounted: true })
 const { seed, reroll } = useSeed()
 
 const packageA = computed(() => buildQuizPackage(mulberry32(seed.value), questions.value, shuffleQuestions.value, shuffleOptions.value))

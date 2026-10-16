@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const calmMax = useLocalStorage('peragu:suara:tenang', 35, { initOnMounted: true })
-const loudMin = useLocalStorage('peragu:suara:ramai', 68, { initOnMounted: true })
+const calmMax = useLocalStorage('gurukampung:suara:tenang', 35, { initOnMounted: true })
+const loudMin = useLocalStorage('gurukampung:suara:ramai', 68, { initOnMounted: true })
 
 const listening = ref(false)
 const level = ref(0)

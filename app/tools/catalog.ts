@@ -1,4 +1,4 @@
-// Daftar lengkap alat Peragu, sumbernya okf/katalog-tools.md.
+// Daftar lengkap alat Guru Kampung, sumbernya okf/katalog-tools.md.
 // Alat dianggap tersedia kalau folder app/tools/<slug>/ punya Tool.vue (lihat registry.ts)
 
 export type ToolCategory = 'kelas' | 'penilaian' | 'bahan-ajar' | 'peraga' | 'dokumen'

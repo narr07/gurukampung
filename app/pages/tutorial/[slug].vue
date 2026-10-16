@@ -15,7 +15,7 @@ const { data: surround } = await useAsyncData(`tutorial-${route.path}-sekitar`, 
   queryCollectionItemSurroundings('tutorial', route.path, { fields: ['description'] }).order('urutan', 'ASC')
 )
 
-// Alat Peragu yang dipakai di tutorial ini, ditampilkan sebagai tautan di akhir halaman
+// Alat Guru Kampung yang dipakai di tutorial ini, ditampilkan sebagai tautan di akhir halaman
 const tools = computed(() => (page.value?.alat ?? []).map(slug => findTool(slug)).filter(t => t !== undefined))
 
 useSeoMeta({
@@ -48,7 +48,7 @@ useSeoMeta({
           id="alat-terkait"
           class="font-display text-xl font-bold text-highlighted"
         >
-          Alat Peragu untuk tutorial ini
+          Alat Guru Kampung untuk tutorial ini
         </h2>
         <ul class="flex flex-wrap gap-2.5">
           <li

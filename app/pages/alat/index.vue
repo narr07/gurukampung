@@ -4,7 +4,7 @@ import { isToolAvailable } from '~/tools/registry'
 
 useSeoMeta({
   title: 'Semua alat',
-  description: 'Daftar lengkap alat kerja guru SD di Peragu: manajemen kelas, penilaian, pembuat bahan ajar, alat peraga digital, dan dokumen.'
+  description: 'Daftar lengkap alat kerja guru SD di Guru Kampung: manajemen kelas, penilaian, pembuat bahan ajar, alat peraga digital, dan dokumen.'
 })
 
 const { favorites, isFavorite } = useFavorites()

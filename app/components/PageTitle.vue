@@ -68,7 +68,7 @@ defineProps<{
         v-if="illustration"
         class="ilustrasi-judul hidden w-28 shrink-0 -rotate-2 sm:block lg:w-36"
       >
-        <PeraguIlustrasi :name="illustration" />
+        <GambarIlustrasi :name="illustration" />
       </div>
     </div>
   </header>

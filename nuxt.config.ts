@@ -108,7 +108,7 @@ export default defineNuxtConfig({
     repository: {
       provider: 'github',
       owner: 'narr07',
-      repo: 'peragu',
+      repo: 'gurukampung',
       branch: 'main'
     }
   }

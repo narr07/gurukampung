@@ -9,8 +9,8 @@ const PAPERS: Record<Paper, { w: number, h: number, label: string }> = {
   F4: { w: 215, h: 330, label: 'F4 / Folio (215 × 330 mm)' }
 }
 
-const paper = useLocalStorage<Paper>('peragu:cetak:kertas', 'A4', { initOnMounted: true })
-const orientation = useLocalStorage<Orientation>('peragu:cetak:orientasi', 'portrait', { initOnMounted: true })
+const paper = useLocalStorage<Paper>('gurukampung:cetak:kertas', 'A4', { initOnMounted: true })
+const orientation = useLocalStorage<Orientation>('gurukampung:cetak:orientasi', 'portrait', { initOnMounted: true })
 
 const size = computed(() => {
   const p = PAPERS[paper.value] ?? PAPERS.A4
@@ -19,7 +19,7 @@ const size = computed(() => {
 
 // @page tidak bisa diatur lewat class, jadi ditulis sebagai style di <head>
 useHead(() => ({
-  style: [{ key: 'peragu-page-size', textContent: `@page { size: ${size.value.w}mm ${size.value.h}mm; }` }]
+  style: [{ key: 'gurukampung-page-size', textContent: `@page { size: ${size.value.w}mm ${size.value.h}mm; }` }]
 }))
 
 const paperItems = Object.entries(PAPERS).map(([value, p]) => ({ value, label: p.label }))

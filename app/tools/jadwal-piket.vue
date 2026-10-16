@@ -4,10 +4,10 @@ import { makePiketSchedule } from '~/utils/fase3'
 const { classId, activeClass, students } = useActiveClass()
 const { profile } = useSchoolProfile()
 
-const daysCount = useLocalStorage<5 | 6>('peragu:piket:hari', 5, { initOnMounted: true })
-const weekNumber = useLocalStorage('peragu:piket:minggu', 1, { initOnMounted: true })
+const daysCount = useLocalStorage<5 | 6>('gurukampung:piket:hari', 5, { initOnMounted: true })
+const weekNumber = useLocalStorage('gurukampung:piket:minggu', 1, { initOnMounted: true })
 const tasksNote = useLocalStorage(
-  'peragu:piket:tugas',
+  'gurukampung:piket:tugas',
   '1. Menyapu lantai dan merapikan meja kursi sebelum bel masuk.\n2. Menghapus papan tulis setiap pergantian jam pelajaran.\n3. Membuang sampah pada tempatnya sebelum pulang sekolah.',
   { initOnMounted: true }
 )

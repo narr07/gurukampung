@@ -1,15 +1,19 @@
 import { describe, expect, it } from 'vitest'
 import { backupFileName, checkBackup } from '~/utils/backup'
 
-const valid = { app: 'peragu', version: 1, exportedAt: '2026-10-14T00:00:00Z', classes: [{ id: 'k1', name: '4A', students: [], createdAt: 1, updatedAt: 1 }], settings: [] }
+const valid = { app: 'gurukampung', version: 1, exportedAt: '2026-10-14T00:00:00Z', classes: [{ id: 'k1', name: '4A', students: [], createdAt: 1, updatedAt: 1 }], settings: [] }
 
 describe('checkBackup', () => {
   it('menerima cadangan yang benar', () => {
     expect(checkBackup(valid).ok).toBe(true)
   })
 
+  it('menerima cadangan lama dari saat aplikasi masih bernama Peragu', () => {
+    expect(checkBackup({ ...valid, app: 'peragu' }).ok).toBe(true)
+  })
+
   it('menolak file lain', () => {
-    expect(checkBackup({ foo: 1 })).toEqual({ ok: false, reason: 'File ini bukan cadangan Peragu.' })
+    expect(checkBackup({ foo: 1 })).toEqual({ ok: false, reason: 'File ini bukan cadangan Guru Kampung.' })
     expect(checkBackup(null).ok).toBe(false)
   })
 
@@ -30,6 +34,6 @@ describe('checkBackup', () => {
   })
 
   it('nama file memakai tanggal', () => {
-    expect(backupFileName(new Date(2026, 9, 4))).toBe('peragu-cadangan-2026-10-04.json')
+    expect(backupFileName(new Date(2026, 9, 4))).toBe('gurukampung-cadangan-2026-10-04.json')
   })
 })

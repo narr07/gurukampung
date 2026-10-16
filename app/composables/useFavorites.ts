@@ -1,6 +1,6 @@
 // Daftar slug alat favorit disimpan di localStorage perangkat guru (PRD F-01)
 export function useFavorites() {
-  const favorites = useLocalStorage<string[]>('peragu:favorit', [], { initOnMounted: true })
+  const favorites = useLocalStorage<string[]>('gurukampung:favorit', [], { initOnMounted: true })
 
   function isFavorite(slug: string) {
     return favorites.value.includes(slug)

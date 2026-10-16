@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const maxNum = useLocalStorage('peragu:perkalian:ukuran', 10, { initOnMounted: true })
-const practiceMode = useLocalStorage('peragu:perkalian:latihan', false, { initOnMounted: true })
+const maxNum = useLocalStorage('gurukampung:perkalian:ukuran', 10, { initOnMounted: true })
+const practiceMode = useLocalStorage('gurukampung:perkalian:latihan', false, { initOnMounted: true })
 const selectedRow = ref<number | null>(null)
 const selectedCol = ref<number | null>(null)
 const revealed = ref<Set<string>>(new Set())

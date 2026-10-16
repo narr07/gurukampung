@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const title = useLocalStorage('peragu:menulis:judul', 'Latihan Menulis Halus', { initOnMounted: true })
-const lineType = useLocalStorage<'tiga' | 'empat'>('peragu:menulis:garis', 'empat', { initOnMounted: true })
-const letterStyle = useLocalStorage<'cetak' | 'sambung'>('peragu:menulis:gaya', 'cetak', { initOnMounted: true })
-const rowMode = useLocalStorage<'penuh' | 'mandiri'>('peragu:menulis:baris', 'penuh', { initOnMounted: true })
+const title = useLocalStorage('gurukampung:menulis:judul', 'Latihan Menulis Halus', { initOnMounted: true })
+const lineType = useLocalStorage<'tiga' | 'empat'>('gurukampung:menulis:garis', 'empat', { initOnMounted: true })
+const letterStyle = useLocalStorage<'cetak' | 'sambung'>('gurukampung:menulis:gaya', 'cetak', { initOnMounted: true })
+const rowMode = useLocalStorage<'penuh' | 'mandiri'>('gurukampung:menulis:baris', 'penuh', { initOnMounted: true })
 const rawLines = useLocalStorage(
-  'peragu:menulis:teks',
+  'gurukampung:menulis:teks',
   'Aa Bb Cc Dd Ee\nFf Gg Hh Ii Jj\nsaya suka membaca buku\nibu pergi ke pasar pagi',
   { initOnMounted: true }
 )

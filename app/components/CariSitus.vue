@@ -3,7 +3,7 @@ import type { CommandPaletteGroup, CommandPaletteItem } from '@nuxt/ui'
 import { CATEGORIES, TOOLS } from '~/tools/catalog'
 import { isToolAvailable } from '~/tools/registry'
 
-// Pencarian seluruh Peragu: halaman, alat, tutorial, dan blog (PRD F-01). Dibuka dari menu atau Ctrl K
+// Pencarian seluruh Guru Kampung: halaman, alat, tutorial, dan blog (PRD F-01). Dibuka dari menu atau Ctrl K
 const open = defineModel<boolean>('open', { default: false })
 
 const { favorites } = useFavorites()
@@ -17,8 +17,8 @@ interface Hasil extends CommandPaletteItem {
 
 const pages: Hasil[] = [
   { id: 'hal-alat', label: 'Semua alat', description: 'Daftar lengkap alat dengan pencarian dan favorit', icon: 'i-lucide-layout-grid', to: '/alat' },
-  { id: 'hal-tutorial', label: 'Tutorial', description: 'Perangkat ajar, asesmen, dan cara memakai Peragu', icon: 'i-lucide-book-open', to: '/tutorial' },
-  { id: 'hal-blog', label: 'Blog', description: 'Kabar dan catatan dari Peragu', icon: 'i-lucide-newspaper', to: '/blog' },
+  { id: 'hal-tutorial', label: 'Tutorial', description: 'Perangkat ajar, asesmen, dan cara memakai Guru Kampung', icon: 'i-lucide-book-open', to: '/tutorial' },
+  { id: 'hal-blog', label: 'Blog', description: 'Kabar dan catatan dari Guru Kampung', icon: 'i-lucide-newspaper', to: '/blog' },
   { id: 'hal-dokumen', label: 'Dokumen', description: 'Dokumen untuk guru', icon: 'i-lucide-files', to: '/dokumen' },
   { id: 'hal-kelas', label: 'Data Kelas', description: 'Daftar siswa untuk semua alat', icon: 'i-lucide-users', to: '/kelas', kata: 'siswa murid excel' },
   { id: 'hal-pengaturan', label: 'Pengaturan', description: 'Profil sekolah, ukuran huruf, cadangan data', icon: 'i-lucide-settings', to: '/pengaturan', kata: 'cadangan backup pulihkan' }
@@ -122,7 +122,7 @@ const fuse = {
   <UModal
     v-model:open="open"
     :transition="false"
-    title="Cari di Peragu"
+    title="Cari di Guru Kampung"
     description="Ketik nama alat, tutorial, atau halaman, lalu tekan Enter untuk membuka."
     :ui="{
       overlay: 'cari-latar bg-slate-950/45',

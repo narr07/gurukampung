@@ -8,7 +8,7 @@ useSeoMeta({ title: '' })
 
 const { classes, status: classStatus } = useClasses()
 const reducedMotion = usePreferredReducedMotion()
-const lastBackupAt = useLocalStorage<string | null>('peragu:cadangan-terakhir', null, { initOnMounted: true })
+const lastBackupAt = useLocalStorage<string | null>('gurukampung:cadangan-terakhir', null, { initOnMounted: true })
 
 const studentCount = computed(() => classes.value.reduce((n, c) => n + c.students.length, 0))
 const daysSinceBackup = computed(() => {
@@ -407,10 +407,10 @@ onBeforeUnmount(() => {
           <!-- Pensil dan penggaris di kiri-kanan -->
           <div class="mb-6 flex w-full max-w-5xl items-center justify-between gap-4 px-2 sm:mb-8">
             <div class="pembuka-pensil w-36 sm:w-52 lg:w-64 -rotate-6">
-              <PeraguIlustrasi name="pensil" />
+              <GambarIlustrasi name="pensil" />
             </div>
             <div class="pembuka-penggaris w-36 sm:w-52 lg:w-64 rotate-6">
-              <PeraguIlustrasi name="penggaris" />
+              <GambarIlustrasi name="penggaris" />
             </div>
           </div>
 
@@ -502,7 +502,7 @@ onBeforeUnmount(() => {
             <!-- Pesawat kertas dan tumpukan kartu nama siswa -->
             <div class="relative pt-2">
               <div class="pesawat-terbang mb-4 w-28 sm:w-36">
-                <PeraguIlustrasi name="pesawat" />
+                <GambarIlustrasi name="pesawat" />
               </div>
 
               <div class="grid gap-3 sm:grid-cols-3">
@@ -546,7 +546,7 @@ onBeforeUnmount(() => {
                   </h3>
                 </div>
                 <div class="w-24 shrink-0">
-                  <PeraguIlustrasi name="kartu-nama" />
+                  <GambarIlustrasi name="kartu-nama" />
                 </div>
               </div>
 
@@ -595,7 +595,7 @@ onBeforeUnmount(() => {
             :key="`p1-${n}`"
             class="w-64 sm:w-80 shrink-0"
           >
-            <PeraguIlustrasi name="pensil" />
+            <GambarIlustrasi name="pensil" />
           </div>
         </div>
         <div class="sapuan-pensil-baris-2 flex items-center gap-6 whitespace-nowrap">
@@ -604,7 +604,7 @@ onBeforeUnmount(() => {
             :key="`p2-${n}`"
             class="w-64 sm:w-80 shrink-0"
           >
-            <PeraguIlustrasi name="penggaris" />
+            <GambarIlustrasi name="penggaris" />
           </div>
         </div>
       </div>
@@ -662,7 +662,7 @@ onBeforeUnmount(() => {
         <div class="kartu-privasi stiker-kartu rounded-3xl border-2 border-(--color-tinta) bg-white dark:bg-slate-900 p-6 sm:p-10 lg:p-12">
           <div class="grid items-center gap-8 lg:grid-cols-[9rem_1fr_auto]">
             <div class="mx-auto w-28 sm:w-36">
-              <PeraguIlustrasi
+              <GambarIlustrasi
                 name="gembok-tas"
                 :locked="lockClosed"
               />
@@ -676,7 +676,7 @@ onBeforeUnmount(() => {
                 Data tetap di perangkat guru
               </h2>
               <p class="text-base text-toned max-w-2xl">
-                Nama siswa, nilai rapor, dan rekap absensi disimpan di peramban perangkat ini saja (IndexedDB). Tidak ada server Peragu yang menerima data kelas Anda. Unduh file cadangan kapan saja untuk disimpan di flashdisk atau Google Drive pribadi.
+                Nama siswa, nilai rapor, dan rekap absensi disimpan di peramban perangkat ini saja (IndexedDB). Tidak ada server Guru Kampung yang menerima data kelas Anda. Unduh file cadangan kapan saja untuk disimpan di flashdisk atau Google Drive pribadi.
               </p>
               <p
                 v-if="daysSinceBackup !== null && daysSinceBackup >= 30"
@@ -716,7 +716,7 @@ onBeforeUnmount(() => {
             Bekal mengajar
           </h2>
           <p class="text-(--color-tinta)">
-            Tutorial menyusun perangkat ajar dan asesmen, ditambah kabar terbaru dari Peragu.
+            Tutorial menyusun perangkat ajar dan asesmen, ditambah kabar terbaru dari Guru Kampung.
           </p>
         </div>
 

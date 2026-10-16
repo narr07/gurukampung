@@ -2,7 +2,7 @@
 import { breakdownRupiah, formatRupiah, RUPIAH_DENOMINATIONS, type RupiahDenomination } from '~/utils/fase4'
 import { beep } from '~/utils/sound'
 
-const tab = useLocalStorage('peragu:rupiah:tab', 'susun', { initOnMounted: true })
+const tab = useLocalStorage('gurukampung:rupiah:tab', 'susun', { initOnMounted: true })
 const tabs = [
   { label: 'Susun Uang di Meja', value: 'susun', icon: 'i-lucide-banknote', slot: 'susun' as const },
   { label: 'Latihan Belanja & Kembalian', value: 'belanja', icon: 'i-lucide-shopping-basket', slot: 'belanja' as const }
@@ -26,9 +26,9 @@ function clearTray() {
 }
 
 // ---------- Mode 2: Latihan Belanja & Kembalian
-const itemPrice = useLocalStorage('peragu:rupiah:harga', 13500, { initOnMounted: true })
-const paidAmount = useLocalStorage('peragu:rupiah:bayar', 20000, { initOnMounted: true })
-const showChange = useLocalStorage('peragu:rupiah:tampil-kembali', true, { initOnMounted: true })
+const itemPrice = useLocalStorage('gurukampung:rupiah:harga', 13500, { initOnMounted: true })
+const paidAmount = useLocalStorage('gurukampung:rupiah:bayar', 20000, { initOnMounted: true })
+const showChange = useLocalStorage('gurukampung:rupiah:tampil-kembali', true, { initOnMounted: true })
 
 const changeAmount = computed(() => Math.max(0, paidAmount.value - itemPrice.value))
 const changeBreakdown = computed(() => breakdownRupiah(changeAmount.value))

@@ -1,23 +1,23 @@
-# DESIGN.md — Peragu
+# DESIGN.md — Guru Kampung
 
-Arah visual Peragu. Isinya diambil dari jawaban pemilik proyek (14 Oktober 2026, diperbarui 16 Oktober 2026). Angka kontras dihitung dengan rumus WCAG 2.x.
+Arah visual Guru Kampung. Isinya diambil dari jawaban pemilik proyek (14 Oktober 2026, diperbarui 16 Oktober 2026). Angka kontras dihitung dengan rumus WCAG 2.x.
 
-Inspirasi gerak dan gaya ilustrasi: [sowieso.wero-wallet.eu](https://sowieso.wero-wallet.eu/nl-en/consumer). Yang diambil hanya cara bercerita lewat gulir, garis tinta tebal, dan bayangan padat. Warna, ilustrasi, dan isinya milik Peragu sendiri.
+Inspirasi gerak dan gaya ilustrasi: [sowieso.wero-wallet.eu](https://sowieso.wero-wallet.eu/nl-en/consumer). Yang diambil hanya cara bercerita lewat gulir, garis tinta tebal, dan bayangan padat. Warna, ilustrasi, dan isinya milik Guru Kampung sendiri.
 
 ## Kesatuan suasana: Beranda dan Alat
 
-Peragu memakai bahasa visual yang sama di seluruh halaman: baik di Beranda (`/`), halaman Alat (`/alat/*`), Data Kelas (`/kelas`), maupun Pengaturan (`/pengaturan`).
+Guru Kampung memakai bahasa visual yang sama di seluruh halaman: baik di Beranda (`/`), halaman Alat (`/alat/*`), Data Kelas (`/kelas`), maupun Pengaturan (`/pengaturan`).
 
 | Tempat | Halaman | Dial | Tugasnya |
 |---|---|---|---|
-| **Panggung** | Beranda (`/`) | ENERGY 3 / RHYTHM 3 / MOTION 3 | Memperkenalkan Peragu dengan cerita bergulir, lalu mengantar guru ke alatnya |
+| **Panggung** | Beranda (`/`) | ENERGY 3 / RHYTHM 3 / MOTION 3 | Memperkenalkan Guru Kampung dengan cerita bergulir, lalu mengantar guru ke alatnya |
 | **Meja kerja bergaya stiker** | Daftar alat (`/alat`), halaman alat (`/alat/*`), Tutorial, Blog, Dokumen, Data Kelas, Pengaturan | ENERGY 3 / RHYTHM 2 / MOTION 2 | Menerapkan warna gradien, kartu kertas bergaris tinta 2px, tombol stiker, coretan merah, dan ilustrasi yang sama dengan beranda. Isi halaman masuk bertahap saat dibuka, tapi tanpa pin, scrub, dan Lenis supaya tetap nyaman dipakai mengajar |
 
 > **Perubahan 16 Oktober 2026 (disetujui pemilik):** setiap halaman alat menerapkan desain yang sama seperti di beranda (latar gradien langit-kertas-pensil, panel kertas putih/slate-900 dengan garis tinta 2px, tombol stiker berbayangan padat, coretan tinta merah pada judul, dan ilustrasi SVG pendamping). Saat masuk **Mode Proyektor** atau **Cetak**, latar otomatis menjadi polos dan bayangan/gradien dimatikan agar tetap terbaca dari belakang kelas dan hemat tinta.
 
 ## Identitas
 
-Peragu adalah alat kerja guru SD. Bahannya diambil dari meja guru: pensil kuning, penggaris, dadu, jam dinding, pesawat kertas, stiker bintang, dan tinta merah untuk mengoreksi. Warna sekolah (biru tua dan merah) tetap menjadi warna utama, ditambah kuning pensil supaya lebih ceria.
+Guru Kampung adalah alat kerja guru SD. Bahannya diambil dari meja guru: pensil kuning, penggaris, dadu, jam dinding, pesawat kertas, stiker bintang, dan tinta merah untuk mengoreksi. Warna sekolah (biru tua dan merah) tetap menjadi warna utama, ditambah kuning pensil supaya lebih ceria.
 
 ## Warna
 
@@ -85,7 +85,7 @@ Alasan bayangan padat (R-12): bayangan ini menandai **bisa ditekan**. Teks, judu
 
 Tidak ada navbar. Navigasi berupa satu tombol **Menu** yang tetap di pojok kanan atas (`fixed`), dipakai di semua halaman (disetujui pemilik, 16 Oktober 2026).
 
-- Logo "Peragu" (Funnel Display tebal, pil stiker) ada di kiri atas dan ikut tergulir. Ikon atau logo grafis baru dibuat setelah ada keputusan dari pemilik.
+- Logo "Guru Kampung" (Funnel Display tebal, pil stiker) ada di kiri atas dan ikut tergulir. Ikon atau logo grafis baru dibuat setelah ada keputusan dari pemilik.
 - Tombol menu dan logo berlatar putih (gelap: slate-900) dengan garis tinta dan bayangan padat, tanpa blur.
 - Saat ditekan, panel kuning pensil (gelap: blue-950) terbuka sebagai lingkaran dari posisi tombol. Isinya:
   - tautan besar Alat, Data Kelas, dan Pengaturan, bernomor 01 sampai 03; halaman yang sedang dibuka bergaris bawah tinta merah;
@@ -109,13 +109,13 @@ Beranda disusun sebagai cerita, bukan template landing page. Urutannya mengikuti
 5. **Data tetap di perangkat.** Penjelasan bahwa data kelas tidak dikirim ke server, dengan tautan ke Pengaturan untuk mencadangkan.
 6. **Bekal mengajar.** Tiga tutorial dan dua tulisan blog terbaru (kartu blog berlatar kuning pensil supaya beda dari tutorial).
 
-> **Perubahan 16 Oktober 2026 (disetujui pemilik):** Peragu tidak lagi hanya berisi alat. Beranda menjadi landing page, daftar lengkap alat beserta pencarian, saringan kategori, dan favorit pindah ke `/alat`, dan situs mendapat halaman Tutorial, Blog, dan Dokumen.
+> **Perubahan 16 Oktober 2026 (disetujui pemilik):** Guru Kampung tidak lagi hanya berisi alat. Beranda menjadi landing page, daftar lengkap alat beserta pencarian, saringan kategori, dan favorit pindah ke `/alat`, dan situs mendapat halaman Tutorial, Blog, dan Dokumen.
 
 ### Halaman bacaan (tutorial dan blog)
 
 - Konten ditulis sebagai Markdown di `content/tutorial/` dan `content/blog/` (Nuxt Content), dan bisa disunting lewat Nuxt Studio.
 - Artikel berada di panel kertas, judul Funnel Display, isi Funnel Sans. Daftar isi menempel di kanan pada layar lebar.
-- Tutorial diakhiri tautan stiker ke alat Peragu yang dipakai di dalamnya (frontmatter `alat`).
+- Tutorial diakhiri tautan stiker ke alat Guru Kampung yang dipakai di dalamnya (frontmatter `alat`).
 - Halaman Dokumen sementara hanya berisi keterangan "sedang disiapkan" dan tautan ke alat pembuat dokumen. Tidak ada isi contoh palsu.
 
 Jarak antarbagian sengaja berbeda-beda (RHYTHM 3): bagian yang disematkan setinggi layar, daftar alat rapat, dan bagian privasi lapang.
@@ -140,7 +140,7 @@ Jarak antarbagian sengaja berbeda-beda (RHYTHM 3): bagian yang disematkan seting
 Ilustrasi digambar sendiri sebagai SVG di dalam kode, bukan gambar stok atau pustaka ilustrasi.
 
 - Gaya: garis tinta 3px, sudut membulat, isi gradien dari palet di atas, sedikit kesan tiga dimensi (sisi bawah lebih gelap).
-- Setiap ilustrasi harus terhubung dengan sesuatu yang nyata di Peragu (R-22):
+- Setiap ilustrasi harus terhubung dengan sesuatu yang nyata di Guru Kampung (R-22):
 
   | Ilustrasi | Terhubung dengan |
   |---|---|

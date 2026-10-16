@@ -7,7 +7,7 @@ const { data: book, status, saved } = useToolData<AttendanceBook>(
   () => ({})
 )
 
-const tab = useLocalStorage('peragu:absensi:tab', 'harian', { initOnMounted: true })
+const tab = useLocalStorage('gurukampung:absensi:tab', 'harian', { initOnMounted: true })
 const tabs = [
   { label: 'Isi harian', value: 'harian', icon: 'i-lucide-calendar-check', slot: 'harian' as const },
   { label: 'Rekap bulanan', value: 'rekap', icon: 'i-lucide-table', slot: 'rekap' as const }

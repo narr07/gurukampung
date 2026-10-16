@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Blog',
-  description: 'Kabar pembaruan Peragu dan catatan tentang cara alat-alatnya dibuat untuk guru SD.'
+  description: 'Kabar pembaruan Guru Kampung dan catatan tentang cara alat-alatnya dibuat untuk guru SD.'
 })
 
 const { data: posts } = await useAsyncData('blog-daftar', () =>
@@ -13,7 +13,7 @@ const { data: posts } = await useAsyncData('blog-daftar', () =>
   <div class="space-y-8">
     <PageTitle
       title="Blog"
-      description="Kabar pembaruan Peragu dan catatan tentang cara alat-alatnya dibuat."
+      description="Kabar pembaruan Guru Kampung dan catatan tentang cara alat-alatnya dibuat."
       illustration="pesawat"
     />
 

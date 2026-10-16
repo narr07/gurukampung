@@ -2,7 +2,7 @@
 import { mulberry32 } from '~/utils/random'
 import { answerText, makeWorksheet, type Operation, type WorksheetOptions } from '~/utils/worksheet'
 
-const opts = useLocalStorage<WorksheetOptions>('peragu:lk:opsi', {
+const opts = useLocalStorage<WorksheetOptions>('gurukampung:lk:opsi', {
   operations: ['+', '-'],
   min: 1,
   max: 20,
@@ -10,9 +10,9 @@ const opts = useLocalStorage<WorksheetOptions>('peragu:lk:opsi', {
   noNegative: true,
   noRemainder: true
 }, { initOnMounted: true, mergeDefaults: true })
-const title = useLocalStorage('peragu:lk:judul', 'Latihan Berhitung', { initOnMounted: true })
-const columns = useLocalStorage('peragu:lk:kolom', 2, { initOnMounted: true })
-const withKey = useLocalStorage('peragu:lk:kunci', true, { initOnMounted: true })
+const title = useLocalStorage('gurukampung:lk:judul', 'Latihan Berhitung', { initOnMounted: true })
+const columns = useLocalStorage('gurukampung:lk:kolom', 2, { initOnMounted: true })
+const withKey = useLocalStorage('gurukampung:lk:kunci', true, { initOnMounted: true })
 const { seed, reroll } = useSeed()
 
 const problems = computed(() => makeWorksheet(mulberry32(seed.value), { ...opts.value, count: Math.max(1, Math.min(100, opts.value.count)) }))

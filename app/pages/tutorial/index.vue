@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Tutorial',
-  description: 'Tutorial untuk guru SD: menulis tujuan pembelajaran, menyusun RPP, asesmen awal, membuat rubrik, dan memakai alat Peragu.'
+  description: 'Tutorial untuk guru SD: menulis tujuan pembelajaran, menyusun RPP, asesmen awal, membuat rubrik, dan memakai alat Guru Kampung.'
 })
 
 const { data: tutorials } = await useAsyncData('tutorial-daftar', () =>
@@ -17,7 +17,7 @@ const groups = computed(() => TUTORIAL_CATEGORIES
   <div class="space-y-10">
     <PageTitle
       title="Tutorial"
-      description="Panduan langkah demi langkah untuk pekerjaan guru setiap minggu: menyusun perangkat ajar, menilai, dan memakai alat Peragu."
+      description="Panduan langkah demi langkah untuk pekerjaan guru setiap minggu: menyusun perangkat ajar, menilai, dan memakai alat Guru Kampung."
       illustration="pensil"
     />
 
