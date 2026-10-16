@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  /* Lexend untuk kemudahan membaca di proyektor dan kertas; Bricolage Grotesque untuk judul (DESIGN.md) */
+  --font-sans: 'Lexend', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+}
+
+:root {
+  --ui-radius: 0.75rem;
+  --color-pensil: var(--color-yellow-300);
+  --color-tinta: var(--color-slate-900);
+}
+
+/* Shade bawaan Nuxt UI (500 terang, 400 gelap) terlalu pucat untuk biru dan merah.
+   Terang: blue-800 8,82:1 dan red-700 6,42:1 di atas putih.
+   Gelap: blue-300 9,83:1 dan red-400 6,17:1 di atas slate-900. */
+:root:not(.dark) {
+  --ui-primary: var(--ui-color-primary-800);
+  --ui-secondary: var(--ui-color-secondary-700);
+  --ui-error: var(--ui-color-error-700);
+  --color-tinta: var(--color-slate-900);
+}
+
+.dark {
+  --ui-primary: var(--ui-color-primary-300);
+  --ui-secondary: var(--ui-color-secondary-400);
+  --ui-error: var(--ui-color-error-400);
+  --color-tinta: var(--color-yellow-100);
+}
+
+html[data-font-size="besar"]:not(.projector-mode) {
+  font-size: 112.5%;
+}
+
+html[data-font-size="sangat-besar"]:not(.projector-mode) {
+  font-size: 125%;
+}
+
+/* Cincin fokus: garis 3px warna tinta dengan jarak 2px, terlihat di atas gradien maupun putih (DESIGN.md) */
+*:focus-visible {
+  outline: 3px solid var(--color-tinta) !important;
+  outline-offset: 2px !important;
+}
+
+/* Tipografi judul panggung dan judul halaman (DESIGN.md) */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.judul-panggung {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 11vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--color-tinta);
+}
+
+/* Gradien panggung: dipakai di beranda dan halaman alat untuk kesatuan identitas visual, dimatikan di mode proyektor dan cetak (R-01, DESIGN.md) */
+.latar-panggung {
+  background-image: linear-gradient(135deg, var(--color-sky-300) 0%, var(--color-yellow-100) 55%, var(--color-yellow-300) 100%);
+  background-attachment: fixed;
+  color: var(--color-tinta);
+}
+
+.dark .latar-panggung {
+  background-image: linear-gradient(135deg, var(--color-blue-950) 0%, var(--color-slate-900) 100%);
+  background-attachment: fixed;
+  color: var(--color-tinta);
+}
+
+/* Panel kertas dan lencana pensil untuk membungkus ruang kerja alat dengan garis tinta 2px seperti di beranda */
+.panel-kertas {
+  border: 2px solid var(--color-tinta);
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+}
+
+.dark .panel-kertas {
+  background-color: var(--color-slate-900);
+}
+
+.lencana-pensil {
+  border: 2px solid var(--color-tinta);
+  background-color: var(--color-pensil);
+  color: var(--color-slate-900);
+  font-weight: 700;
+}
+
+/* Gaya stiker: garis tinta 2px dan bayangan padat 0 4px 0 hanya pada elemen yang bisa ditekan (R-12, DESIGN.md) */
+.stiker-pulau {
+  border: 2px solid var(--color-tinta);
+  box-shadow: 0 4px 0 var(--color-tinta);
+  border-radius: 9999px;
+}
+
+.stiker-tombol {
+  border: 2px solid var(--color-tinta) !important;
+  box-shadow: 0 4px 0 var(--color-tinta);
+  border-radius: 9999px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.stiker-tombol:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--color-tinta);
+}
+
+.stiker-kartu {
+  border: 2px solid var(--color-tinta) !important;
+  box-shadow: 0 4px 0 var(--color-tinta);
+  border-radius: 1.5rem;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.stiker-kartu:hover {
+  transform: translateY(-2px) rotate(0deg) !important;
+  box-shadow: 0 6px 0 var(--color-tinta);
+}
+
+.stiker-kartu:active {
+  transform: translateY(3px) rotate(0deg) !important;
+  box-shadow: 0 1px 0 var(--color-tinta);
+}
+
+/* Fallback 2,5 detik kalau animasi JS tidak kunjung jalan (DESIGN.md) */
+@keyframes panggung-tampil-paksa {
+  to {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.panggung-pra-animasi {
+  animation: panggung-tampil-paksa 0.01s ease 2.5s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stiker-tombol,
+  .stiker-kartu {
+    transition: none;
+  }
+
+  .stiker-kartu:hover {
+    transform: none !important;
+  }
+}
+
+html.projector-mode .stiker-kartu,
+html.projector-mode .stiker-tombol,
+html.projector-mode .stiker-pulau {
+  transform: none !important;
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .latar-panggung {
+    background: #fff !important;
+  }
+
+  .stiker-pulau,
+  .stiker-tombol,
+  .stiker-kartu {
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}
