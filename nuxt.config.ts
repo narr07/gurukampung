@@ -24,8 +24,10 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2026-06-30',
 
-  // Situs statis (ADR 001): semua halaman dibuat saat build, termasuk halaman setiap alat
+  // Situs statis (ADR 001): semua halaman dibuat saat build, termasuk halaman setiap alat.
+  // Preset ditulis eksplisit: kalau dibiarkan, Cloudflare Pages terdeteksi dan Nuxt Content beralih ke database D1
   nitro: {
+    preset: 'static',
     prerender: {
       crawlLinks: true,
       routes: ['/', '/alat', '/tutorial', '/blog', '/dokumen', '/kelas', '/pengaturan', ...TOOLS.map(t => `/alat/${t.slug}`)]

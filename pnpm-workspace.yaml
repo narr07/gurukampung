@@ -2,6 +2,8 @@ allowBuilds:
   '@parcel/watcher': false
   '@tailwindcss/oxide': false
   esbuild: false
+  # Dibawa nuxt-studio untuk memproses gambar di editor; tidak dipakai di situs statis
+  sharp: false
   unrs-resolver: false
   vue-demi: false
 minimumReleaseAgeExclude:
