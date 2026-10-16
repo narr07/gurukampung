@@ -2,9 +2,9 @@
 @import "@nuxt/ui";
 
 @theme static {
-  /* Lexend untuk kemudahan membaca di proyektor dan kertas; Bricolage Grotesque untuk judul (DESIGN.md) */
-  --font-sans: 'Lexend', sans-serif;
-  --font-display: 'Bricolage Grotesque', sans-serif;
+  /* Funnel Sans untuk teks dan Funnel Display untuk judul, satu keluarga supaya serasi (DESIGN.md) */
+  --font-sans: 'Funnel Sans', sans-serif;
+  --font-display: 'Funnel Display', sans-serif;
 }
 
 :root {
@@ -113,16 +113,21 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   border: 2px solid var(--color-tinta) !important;
   box-shadow: 0 4px 0 var(--color-tinta);
   border-radius: 1.5rem;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  /* Kemiringan diatur lewat --miring (kelas [--miring:-1deg]); saat disentuh, kartu miring ke arah sebaliknya */
+  rotate: var(--miring, 0deg);
+  transition: transform 150ms ease, rotate 250ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 150ms ease;
 }
 
-.stiker-kartu:hover {
-  transform: translateY(-2px) rotate(0deg) !important;
+.stiker-kartu:hover,
+.stiker-kartu:focus-visible {
+  rotate: calc(var(--miring, 0deg) * -1);
+  transform: translateY(-2px) !important;
   box-shadow: 0 6px 0 var(--color-tinta);
 }
 
 .stiker-kartu:active {
-  transform: translateY(3px) rotate(0deg) !important;
+  rotate: calc(var(--miring, 0deg) * -1);
+  transform: translateY(3px) !important;
   box-shadow: 0 1px 0 var(--color-tinta);
 }
 
@@ -138,6 +143,489 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   animation: panggung-tampil-paksa 0.01s ease 2.5s forwards;
 }
 
+/* Tombol menu: dua garis yang bergeser saat disentuh */
+.ikon-menu > span,
+.ikon-tutup > span {
+  display: block;
+  width: 0.875rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-slate-900);
+  transition: transform 200ms ease;
+}
+
+.tombol-menu:hover .ikon-menu > span:first-child {
+  transform: translateX(2px);
+}
+
+.tombol-menu:hover .ikon-menu > span:last-child {
+  transform: translateX(-2px);
+}
+
+.tombol-menu:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--color-tinta);
+}
+
+.ikon-tutup > span {
+  position: absolute;
+}
+
+.ikon-tutup > span:first-child {
+  transform: rotate(45deg);
+}
+
+.ikon-tutup > span:last-child {
+  transform: rotate(-45deg);
+}
+
+/* Panel menu terbuka sebagai lingkaran dari posisi tombol menu, lalu isinya naik satu per satu (DESIGN.md) */
+.menu-panel {
+  --menu-x: calc(100% - 4.5rem);
+  --menu-y: 2.5rem;
+}
+
+.menu-panel[data-state='open'] {
+  animation: menu-buka 600ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.menu-panel[data-state='closed'] {
+  animation: menu-tutup 420ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+@keyframes menu-buka {
+  from {
+    clip-path: circle(0 at var(--menu-x) var(--menu-y));
+  }
+
+  to {
+    clip-path: circle(150vmax at var(--menu-x) var(--menu-y));
+  }
+}
+
+@keyframes menu-tutup {
+  from {
+    clip-path: circle(150vmax at var(--menu-x) var(--menu-y));
+  }
+
+  to {
+    clip-path: circle(0 at var(--menu-x) var(--menu-y));
+  }
+}
+
+.menu-label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  /* Motif tinta merah: garis bawah tergambar saat disentuh, tetap ada di halaman yang aktif */
+  background-image: linear-gradient(var(--ui-secondary), var(--ui-secondary));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 0.12em;
+  transition: background-size 200ms ease;
+}
+
+.menu-tautan:hover .menu-label,
+.menu-tautan:focus-visible .menu-label,
+.menu-tautan[aria-current='page'] .menu-label {
+  background-size: 100% 0.12em;
+}
+
+.menu-panel[data-state='open'] .menu-baris {
+  animation: menu-baris-naik 750ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(200ms + var(--i, 0) * 80ms);
+}
+
+.menu-panel[data-state='open'] .menu-muncul {
+  animation: menu-muncul 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(360ms + var(--i, 0) * 60ms);
+}
+
+.menu-panel[data-state='open'] .menu-pesawat {
+  animation: menu-pesawat 1000ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+}
+
+.menu-panel[data-state='open'] .ikon-tutup {
+  animation: menu-ikon-putar 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 200ms both;
+}
+
+@keyframes menu-baris-naik {
+  from {
+    transform: translateY(110%) rotate(4deg);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes menu-muncul {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes menu-pesawat {
+  from {
+    opacity: 0;
+    transform: translate(-50vw, 30vh) rotate(-25deg) scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes menu-ikon-putar {
+  from {
+    transform: rotate(-90deg) scale(0.6);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+/* Kartu alat: miring dan gerak hover dipasang di pembungkus (.kartu-bergerak) supaya tombol bintang ikut bergerak */
+.kartu-bergerak {
+  rotate: var(--miring, 0deg);
+  transition: rotate 250ms cubic-bezier(0.34, 1.56, 0.64, 1), translate 150ms ease;
+}
+
+.kartu-bergerak:hover,
+.kartu-bergerak:focus-within {
+  rotate: calc(var(--miring, 0deg) * -1);
+  translate: 0 -2px;
+}
+
+.kartu-bergerak:has(.stiker-kartu:active) {
+  translate: 0 3px;
+}
+
+.kartu-bergerak .stiker-kartu,
+.kartu-bergerak .stiker-kartu:hover,
+.kartu-bergerak .stiker-kartu:focus-visible,
+.kartu-bergerak .stiker-kartu:active {
+  rotate: none;
+  transform: none !important;
+}
+
+.kartu-bergerak:hover .stiker-kartu,
+.kartu-bergerak:focus-within .stiker-kartu {
+  box-shadow: 0 6px 0 var(--color-tinta);
+}
+
+.kartu-bergerak .stiker-kartu:active {
+  box-shadow: 0 1px 0 var(--color-tinta);
+}
+
+/* Tombol bintang favorit: bergoyang saat kartu disentuh, memantul dan memercik saat ditandai */
+.bintang-ikon {
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.kartu-bergerak:hover .bintang-ikon {
+  transform: rotate(-12deg);
+}
+
+.tombol-bintang:hover .bintang-ikon,
+.tombol-bintang:focus-visible .bintang-ikon {
+  transform: rotate(18deg) scale(1.2);
+}
+
+.tombol-bintang:active .bintang-ikon {
+  transform: scale(0.85);
+}
+
+.bintang-masuk .bintang-ikon {
+  animation: bintang-masuk 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bintang-keluar .bintang-ikon {
+  animation: bintang-keluar 350ms ease;
+}
+
+.bintang-percik {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bintang-percik > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px;
+  border: 1.5px solid var(--color-tinta);
+  border-radius: 9999px;
+  background: var(--color-pensil);
+  opacity: 0;
+}
+
+.bintang-percik > span:nth-child(even) {
+  background: var(--ui-secondary);
+}
+
+.bintang-masuk .bintang-percik > span {
+  animation: bintang-percik 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes bintang-masuk {
+  0% {
+    transform: scale(0.4) rotate(-45deg);
+  }
+
+  55% {
+    transform: scale(1.45) rotate(20deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes bintang-keluar {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.7) rotate(-20deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bintang-percik {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--sudut)) translateY(-8px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(var(--sudut)) translateY(-28px) scale(0.5);
+  }
+}
+
+/* Meja kerja (MOTION 2): isi halaman masuk bertahap saat dibuka. CSS murni, jadi tidak berkedip di halaman
+   statis dan tidak perlu dilepas saat pindah halaman. Bagian dalam alat tidak dianimasikan (DESIGN.md) */
+@keyframes gerak-masuk {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.halaman-masuk > div > :not(.grid),
+.halaman-masuk > div > .grid > * {
+  animation: gerak-masuk 650ms cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  animation-delay: calc(var(--urut, 0) * 90ms);
+}
+
+.halaman-masuk > div > :nth-child(2),
+.halaman-masuk > div > .grid > :nth-child(1) { --urut: 1; }
+.halaman-masuk > div > :nth-child(3),
+.halaman-masuk > div > .grid > :nth-child(2) { --urut: 2; }
+.halaman-masuk > div > :nth-child(4),
+.halaman-masuk > div > .grid > :nth-child(3) { --urut: 3; }
+.halaman-masuk > div > :nth-child(5),
+.halaman-masuk > div > .grid > :nth-child(4) { --urut: 4; }
+.halaman-masuk > div > :nth-child(n + 6),
+.halaman-masuk > div > .grid > :nth-child(n + 5) { --urut: 5; }
+
+/* Kartu di daftar panjang (alat, tutorial, blog) muncul saat digulir ke layar. Peramban tanpa dukungan
+   animation-timeline memakai gerak masuk biasa di atas */
+@keyframes gerak-muncul {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  /* Spesifisitas sama dengan aturan grid di atas, dan ditulis sesudahnya supaya menang */
+  .halaman-masuk > div .gerak-muncul {
+    animation: gerak-muncul linear both;
+    animation-delay: 0ms;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+  }
+}
+
+/* Judul halaman: coretan tinta merah tergambar, ilustrasi meletup masuk lalu bergoyang saat panel disentuh */
+@keyframes coretan-tergambar {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ilustrasi-masuk {
+  from {
+    opacity: 0;
+    transform: scale(0.3) rotate(-30deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.coretan-judul {
+  stroke-dasharray: 1;
+  animation: coretan-tergambar 700ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both;
+}
+
+.ilustrasi-judul {
+  animation: ilustrasi-masuk 800ms cubic-bezier(0.34, 1.56, 0.64, 1) 250ms both;
+  transition: rotate 300ms cubic-bezier(0.34, 1.56, 0.64, 1), scale 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.panel-judul:hover .ilustrasi-judul {
+  rotate: 8deg;
+  scale: 1.08;
+}
+
+/* Pencarian: panel stiker yang memantul turun, latar meredup. Garis fokus global tidak dipakai di kotak ketik,
+   karena kotak itu satu-satunya isian di panel dan kursornya sudah terlihat */
+.cari-panel {
+  box-shadow: 0 6px 0 var(--color-tinta);
+}
+
+.cari-panel[data-state='open'] {
+  animation: cari-buka 380ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.cari-panel[data-state='closed'] {
+  animation: cari-tutup 160ms ease-in both;
+}
+
+.cari-latar[data-state='open'] {
+  animation: cari-latar-buka 200ms ease-out both;
+}
+
+.cari-latar[data-state='closed'] {
+  animation: cari-latar-tutup 160ms ease-in both;
+}
+
+/* Daftar hasil: scrollbar tipis supaya tidak terjepit di sudut membulat. Tingginya diatur CariPeragu.vue
+   agar berhenti tepat di bawah item yang muat utuh */
+.cari-daftar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-border-accented) transparent;
+}
+
+.cari-input input:focus-visible {
+  outline: none !important;
+}
+
+@keyframes cari-buka {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96) rotate(-0.5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cari-tutup {
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@keyframes cari-latar-buka {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes cari-latar-tutup {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Halaman bacaan (tutorial dan blog): judul memakai Funnel Display seperti judul halaman (DESIGN.md) */
+.bacaan :is(h2, h3) {
+  font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cari-panel[data-state],
+  .cari-latar[data-state] {
+    animation: none;
+  }
+
+  .halaman-masuk > div > *,
+  .halaman-masuk > div > .grid > *,
+  .halaman-masuk > div .gerak-muncul,
+  .coretan-judul,
+  .ilustrasi-judul {
+    animation: none !important;
+  }
+
+  .ilustrasi-judul {
+    transition: none;
+  }
+
+  .kartu-bergerak,
+  .bintang-ikon {
+    transition: none;
+  }
+
+  .bintang-masuk .bintang-ikon,
+  .bintang-keluar .bintang-ikon,
+  .bintang-masuk .bintang-percik > span {
+    animation: none;
+  }
+
+  .menu-panel[data-state],
+  .menu-panel[data-state] .menu-baris,
+  .menu-panel[data-state] .menu-muncul,
+  .menu-panel[data-state] .menu-pesawat,
+  .menu-panel[data-state] .ikon-tutup {
+    animation: none;
+  }
+
+  .menu-label {
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .stiker-tombol,
   .stiker-kartu {
@@ -151,8 +639,10 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
 
 html.projector-mode .stiker-kartu,
 html.projector-mode .stiker-tombol,
-html.projector-mode .stiker-pulau {
+html.projector-mode .stiker-pulau,
+html.projector-mode .kartu-bergerak {
   transform: none !important;
+  rotate: none !important;
 }
 
 @media print {
@@ -175,5 +665,6 @@ html.projector-mode .stiker-pulau {
   .stiker-kartu {
     box-shadow: none !important;
     transform: none !important;
+    rotate: none !important;
   }
 }

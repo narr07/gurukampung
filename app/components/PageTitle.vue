@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <header class="panel-kertas p-5 sm:p-7">
+  <header class="panel-judul panel-kertas p-5 sm:p-7">
     <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
       <div class="space-y-3">
         <div
@@ -34,7 +34,7 @@ defineProps<{
         </div>
 
         <div>
-          <!-- Motif identitas: judul Bricolage Grotesque dengan coretan tinta merah guru seperti di beranda (DESIGN.md) -->
+          <!-- Motif identitas: judul Funnel Display dengan coretan tinta merah guru seperti di beranda (DESIGN.md) -->
           <h1 class="font-display relative inline-block pb-2 text-2xl sm:text-4xl font-extrabold text-highlighted">
             <span>{{ title }}</span>
             <svg
@@ -45,6 +45,8 @@ defineProps<{
               preserveAspectRatio="none"
             >
               <path
+                class="coretan-judul"
+                pathLength="1"
                 d="M4 12C82 4 218 4 316 11C224 17 98 18 18 15"
                 stroke="var(--ui-secondary)"
                 stroke-width="5"
@@ -64,7 +66,7 @@ defineProps<{
 
       <div
         v-if="illustration"
-        class="hidden sm:block w-28 lg:w-36 shrink-0 -rotate-2"
+        class="ilustrasi-judul hidden w-28 shrink-0 -rotate-2 sm:block lg:w-36"
       >
         <PeraguIlustrasi :name="illustration" />
       </div>

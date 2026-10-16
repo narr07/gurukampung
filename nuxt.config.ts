@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
+    '@nuxt/content',
+    'nuxt-studio',
     '@vueuse/nuxt/module',
     '@pinia/nuxt'
   ],
@@ -15,25 +17,50 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  // Node 22.5+ punya SQLite bawaan, jadi tidak perlu memasang better-sqlite3
+  content: {
+    experimental: { sqliteConnector: 'native' }
+  },
+
   compatibilityDate: '2026-06-30',
 
   // Situs statis (ADR 001): semua halaman dibuat saat build, termasuk halaman setiap alat
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/kelas', '/pengaturan', ...TOOLS.map(t => `/alat/${t.slug}`)]
+      routes: ['/', '/alat', '/tutorial', '/blog', '/dokumen', '/kelas', '/pengaturan', ...TOOLS.map(t => `/alat/${t.slug}`)]
     }
   },
 
   vite: {
+    // Semua dependensi yang dimuat lambat harus dibundel di awal; kalau Vite baru menemukannya saat halaman berjalan,
+    // modul yang sudah dimuat gagal diambil ("Failed to fetch dynamically imported module")
     optimizeDeps: {
       include: [
+        'dexie',
         'gsap',
         'gsap/ScrollTrigger',
         'gsap/Flip',
         'lenis'
       ]
     }
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
+
+  // Font diunduh saat build dan disajikan dari situs sendiri. Bawaan @nuxt/fonts hanya 400-700, judul panggung butuh 800
+  fonts: {
+    families: [
+      { name: 'Funnel Display', provider: 'google', weights: ['500 800'] },
+      { name: 'Funnel Sans', provider: 'google', weights: ['400 700'], styles: ['normal', 'italic'] }
+    ]
   },
 
   // Bundel seluruh ikon Lucide secara lokal agar tidak timeout dan berjalan 100% luring
@@ -70,12 +97,14 @@ export default defineNuxtConfig({
     }
   },
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
+  // Editor konten di /_studio. Di dev langsung menulis ke content/; di produksi butuh deploy SSR (nuxt build)
+  // dan OAuth GitHub (STUDIO_GITHUB_CLIENT_ID dan STUDIO_GITHUB_CLIENT_SECRET di nuxt-studio 1.7), lalu menyimpan sebagai commit
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'narr07',
+      repo: 'peragu',
+      branch: 'main'
     }
   }
 })

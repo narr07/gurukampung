@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { parseRoster, type Gender, type Student } from '~/utils/roster'
-import { SAMPLE_CLASS_NAME, sampleStudents } from '~/utils/sample'
 
 useSeoMeta({ title: 'Data Kelas' })
 
@@ -26,13 +25,8 @@ async function addClass() {
   selectedId.value = record.id
 }
 
-// Kelas berisi siswa dummy untuk mencoba alat
-const hasSample = computed(() => classes.value.some(c => c.name === SAMPLE_CLASS_NAME))
-async function addSampleClass() {
-  const record = await createClass(SAMPLE_CLASS_NAME)
-  await saveStudents(record.id, sampleStudents(newStudentId))
-  toast.add({ title: 'Kelas contoh dibuat', description: '24 siswa dummy, boleh dihapus kapan saja.', color: 'success', icon: 'i-lucide-check' })
-}
+// Kelas berisi siswa dummy beserta nilai dan absensi untuk mencoba alat
+const { addSampleClass, hasSample } = useSampleClass()
 
 // ---------- Ubah daftar siswa (salinan lokal, disimpan saat tombol Simpan ditekan)
 const draftName = ref('')

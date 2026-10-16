@@ -39,7 +39,7 @@ useSeoMeta({
     <div class="space-y-4 print:hidden [.projector-mode_&]:hidden">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <UButton
-          to="/"
+          to="/alat"
           color="neutral"
           variant="outline"
           size="sm"
@@ -84,7 +84,7 @@ useSeoMeta({
         icon="i-lucide-hammer"
         title="Alat ini belum tersedia"
         :description="`${tool.name} dijadwalkan di fase ${tool.phase} pengerjaan Peragu. Untuk sementara, coba alat lain yang sudah siap.`"
-        :actions="[{ label: 'Kembali ke daftar alat', to: '/', icon: 'i-lucide-arrow-left', color: 'primary', variant: 'solid' }]"
+        :actions="[{ label: 'Kembali ke daftar alat', to: '/alat', icon: 'i-lucide-arrow-left', color: 'primary', variant: 'solid' }]"
       />
     </div>
   </div>

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const route = useRoute()
-const isHome = computed(() => route.path === '/')
-
 // Sinkronisasi pengaturan ukuran huruf dari localStorage ke <html> (PRD F-08)
 useFontSize()
 
@@ -10,13 +7,9 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' },
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Lexend:wght@400;500;600;700&display=swap'
-    }
+    // Funnel Display dan Funnel Sans diunduh saat build oleh @nuxt/fonts (bawaan Nuxt UI) dari --font-display dan
+    // --font-sans di main.css, lalu disajikan dari situs ini sendiri tanpa permintaan ke Google
+    { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' }
   ],
   htmlAttrs: {
     lang: 'id'
@@ -35,13 +28,10 @@ useSeoMeta({
       <AppHeader class="print:hidden [.projector-mode_&]:hidden" />
 
       <UMain>
-        <NuxtPage v-if="isHome" />
-        <UContainer
-          v-else
-          class="py-8 sm:py-10"
-        >
+        <!-- Satu NuxtPage saja: dua NuxtPage bergantian (v-if/v-else) membuat beranda terpasang dua kali saat kembali -->
+        <NuxtLayout>
           <NuxtPage />
-        </UContainer>
+        </NuxtLayout>
       </UMain>
 
       <footer class="print:hidden [.projector-mode_&]:hidden pb-8 pt-4">

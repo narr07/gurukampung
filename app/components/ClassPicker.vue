@@ -2,6 +2,12 @@
 // Pilih kelas dari Data Kelas; alat tetap bisa dipakai dengan mengetik nama manual (PRD 5.2)
 const model = defineModel<string | undefined>()
 const { classes, status } = useClasses()
+const { addSampleClass, creating } = useSampleClass()
+
+async function trySample() {
+  const record = await addSampleClass()
+  if (record) model.value = record.id
+}
 
 const items = computed(() => classes.value.map(c => ({ value: c.id, label: `${c.name} (${c.students.length} siswa)` })))
 </script>
@@ -19,16 +25,28 @@ const items = computed(() => classes.value.map(c => ({ value: c.id, label: `${c.
       icon="i-lucide-circle-alert"
       title="Data kelas tidak bisa dibaca dari perangkat ini."
     />
+    <!-- Belum ada kelas: guru bisa langsung mencoba alat dengan kelas contoh tanpa pindah ke Data Kelas -->
     <div
       v-else-if="items.length === 0"
-      class="text-sm text-muted"
+      class="flex flex-wrap items-center gap-x-4 gap-y-2"
     >
-      Belum ada kelas.
-      <ULink
-        to="/kelas"
-        class="text-primary underline"
-      >Isi Data Kelas</ULink>
-      supaya nama siswa bisa dipakai di alat ini.
+      <UButton
+        icon="i-lucide-flask-conical"
+        color="neutral"
+        :loading="creating"
+        class="stiker-tombol bg-white text-slate-900 hover:bg-yellow-100 dark:bg-slate-900 dark:text-yellow-100"
+        @click="trySample"
+      >
+        Isi kelas contoh
+      </UButton>
+      <p class="text-sm text-muted">
+        24 siswa dummy beserta nilai dan absensi. Atau
+        <ULink
+          to="/kelas"
+          class="text-primary underline"
+        >isi Data Kelas</ULink>
+        dengan siswa Anda sendiri.
+      </p>
     </div>
     <USelect
       v-else

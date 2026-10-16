@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { CATEGORIES, TOOLS, type ToolCategory, type ToolInfo } from '~/tools/catalog'
+import { TOOLS } from '~/tools/catalog'
 import { isToolAvailable } from '~/tools/registry'
+
+definePageMeta({ layout: 'panggung' })
 
 useSeoMeta({ title: '' })
 
 const { classes, status: classStatus } = useClasses()
-const { favorites, isFavorite, toggleFavorite } = useFavorites()
 const reducedMotion = usePreferredReducedMotion()
 const lastBackupAt = useLocalStorage<string | null>('peragu:cadangan-terakhir', null, { initOnMounted: true })
 
@@ -16,44 +17,21 @@ const daysSinceBackup = computed(() => {
   return Number.isFinite(ms) ? Math.floor(ms / 86_400_000) : null
 })
 
-// Saring alat yang sudah siap berdasarkan kata kunci atau kategori (PRD F-01)
-const searchQuery = ref('')
-const activeCategory = ref<'semua' | 'favorit' | ToolCategory>('semua')
-
-const available = computed(() => TOOLS.filter(t => isToolAvailable(t.slug)))
-const filteredAvailable = computed(() => {
-  const q = searchQuery.value.trim().toLowerCase()
-  return available.value.filter((t) => {
-    if (activeCategory.value === 'favorit' && !isFavorite(t.slug)) return false
-    if (activeCategory.value !== 'semua' && activeCategory.value !== 'favorit' && t.category !== activeCategory.value) return false
-    if (!q) return true
-    return t.name.toLowerCase().includes(q) || t.summary.toLowerCase().includes(q)
-  })
-})
-
-const planned = computed(() => CATEGORIES.map(cat => ({
-  ...cat,
-  tools: TOOLS.filter(t => t.category === cat.id && !isToolAvailable(t.slug))
-})).filter(cat => cat.tools.length > 0))
-
-const categoryName = (id: ToolCategory) => CATEGORIES.find(c => c.id === id)?.name ?? ''
-
-// Ukuran kartu mengikuti prioritas (DESIGN.md): alat harian P1 memakai 2×1 (6 kolom), alat lain 1×1 (3 kolom)
-const span = (priority: number) => (priority === 1 ? 'sm:col-span-6 lg:col-span-6' : 'sm:col-span-3 lg:col-span-3')
+// Beranda hanya menyorot alat harian (P1); daftar lengkap dengan pencarian ada di /alat
+const available = TOOLS.filter(t => isToolAvailable(t.slug))
+const dailyTools = available.filter(t => t.priority === 1)
 
 // Kemiringan halus untuk kartu di beranda (-1.5° sampai 1.5°), tegak saat hover/fokus (DESIGN.md)
-const tilts = ['-rotate-1', 'rotate-1', '-rotate-[1.5deg]', 'rotate-[1.5deg]', 'rotate-[0.75deg]', '-rotate-[0.75deg]']
+const tilts = ['[--miring:-1deg]', '[--miring:1deg]', '[--miring:-1.5deg]', '[--miring:1.5deg]', '[--miring:0.75deg]', '[--miring:-0.75deg]']
 const cardTilt = (index: number) => tilts[index % tilts.length]
 
-// Hubungan ilustrasi dengan alat nyata (R-22, DESIGN.md)
-function toolIllustration(tool: ToolInfo): 'dadu' | 'jam' | 'pensil' | 'penggaris' | 'bintang' | undefined {
-  if (tool.slug === 'dadu-spinner' || tool.slug === 'pemilih-acak') return 'dadu'
-  if (tool.slug === 'timer' || tool.slug === 'jam-analog') return 'jam'
-  if (tool.slug === 'lk-matematika' || tool.slug === 'latihan-menulis') return 'pensil'
-  if (tool.slug === 'nilai-rapor' || tool.slug === 'tabel-perkalian') return 'penggaris'
-  if (tool.slug === 'sertifikat' || tool.slug === 'papan-poin') return 'bintang'
-  return undefined
-}
+const { data: latest } = await useAsyncData('beranda-bacaan', async () => {
+  const [tutorials, posts] = await Promise.all([
+    queryCollection('tutorial').order('date', 'DESC').order('urutan', 'ASC').select('path', 'title', 'description', 'kategori', 'durasi').limit(3).all(),
+    queryCollection('blog').order('date', 'DESC').select('path', 'title', 'description', 'date').limit(2).all()
+  ])
+  return { tutorials, posts }
+})
 
 const sampleCards = [
   { no: '01', name: 'Alya Putri', note: 'Kelompok 1 · Tuntas' },
@@ -67,26 +45,8 @@ const lockClosed = ref(true)
 const stagePreAnim = ref(false)
 
 let cleanupStage: (() => void) | undefined
-let rebuildCardBatch: ((fromFilter?: boolean) => void) | undefined
-
-function setCategory(cat: 'semua' | 'favorit' | ToolCategory, ev?: MouseEvent) {
-  activeCategory.value = cat
-  if (reducedMotion.value === 'reduce' || !import.meta.client) return
-  const target = ev?.currentTarget as HTMLElement | null
-  if (target) {
-    const { gsap } = useGSAP()
-    gsap.fromTo(
-      target,
-      { scale: 0.9 },
-      { scale: 1, duration: 0.35, ease: 'back.out(2.2)', overwrite: true, clearProps: 'transform' }
-    )
-  }
-}
-
-watch([activeCategory, searchQuery], async () => {
-  await nextTick()
-  rebuildCardBatch?.(true)
-})
+// Halaman bisa dilepas sebelum Lenis selesai dimuat; tanpa penanda ini GSAP tetap dipasang dengan selektor global
+let disposed = false
 
 onMounted(async () => {
   // Kalau prefers-reduced-motion aktif, Lenis dan animasi gulir tidak dipasang (DESIGN.md)
@@ -101,6 +61,8 @@ onMounted(async () => {
   try {
     const { gsap, ScrollTrigger } = useGSAP()
     const { default: Lenis } = await import('lenis')
+    const root = stageRoot.value
+    if (disposed || !root) return
 
     const lenis = new Lenis({
       autoRaf: false
@@ -119,8 +81,6 @@ onMounted(async () => {
       cardBatchTriggers.forEach(t => t.kill())
       cardBatchTriggers = []
 
-      const root = stageRoot.value
-      if (!root) return
       const cards = Array.from(root.querySelectorAll<HTMLElement>('.kartu-alat-stiker'))
       if (cards.length === 0) {
         ScrollTrigger.refresh()
@@ -212,8 +172,6 @@ onMounted(async () => {
       ScrollTrigger.refresh()
     }
 
-    rebuildCardBatch = setupCardScrollBatch
-
     const ctx = gsap.context(() => {
       // 1. Pembuka: judul muncul per baris dengan pantulan back.out(1.7), 700ms, jeda 120ms
       const tl = gsap.timeline({
@@ -222,22 +180,31 @@ onMounted(async () => {
         }
       })
 
-      tl.from('.pembuka-baris', {
+      tl.fromTo('.pembuka-baris', {
         y: 48,
-        autoAlpha: 0,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
         duration: 0.7,
         stagger: 0.12,
         ease: 'back.out(1.7)'
       })
-        .from('.pembuka-pensil', {
+        .fromTo('.pembuka-pensil', {
           x: -80,
-          autoAlpha: 0,
+          autoAlpha: 0
+        }, {
+          x: 0,
+          autoAlpha: 1,
           duration: 0.55,
           ease: 'back.out(1.5)'
         }, '-=0.45')
-        .from('.pembuka-penggaris', {
+        .fromTo('.pembuka-penggaris', {
           x: 80,
-          autoAlpha: 0,
+          autoAlpha: 0
+        }, {
+          x: 0,
+          autoAlpha: 1,
           duration: 0.55,
           ease: 'back.out(1.5)'
         }, '<')
@@ -378,22 +345,7 @@ onMounted(async () => {
         }
       })
 
-      // 4. Daftar alat: tombol filter muncul bertahap, lalu setiap baris kartu alat beranimasi saat digulir (ScrollTrigger.batch)
-      gsap.from('.tombol-filter-kategori', {
-        y: 20,
-        autoAlpha: 0,
-        scale: 0.92,
-        duration: 0.45,
-        stagger: 0.05,
-        ease: 'back.out(1.7)',
-        clearProps: 'transform',
-        scrollTrigger: {
-          trigger: '#daftar-alat',
-          start: 'top 84%',
-          once: true
-        }
-      })
-
+      // 4. Alat harian serta 6. tutorial dan blog: kartu beranimasi saat digulir (ScrollTrigger.batch)
       setupCardScrollBatch(false)
 
       // 5. Data tetap di perangkat: kartu privasi memantul masuk dan gembok menutup saat bagian terlihat
@@ -418,13 +370,13 @@ onMounted(async () => {
           lockClosed.value = true
         }
       })
-    }, stageRoot.value ?? undefined)
+    }, root)
 
     cleanupStage = () => {
       cardBatchTriggers.forEach(t => t.kill())
-      rebuildCardBatch = undefined
       ctx.revert()
       gsap.ticker.remove(onTick)
+      gsap.ticker.lagSmoothing(500, 33)
       lenis.destroy()
     }
   } catch {
@@ -434,6 +386,7 @@ onMounted(async () => {
 })
 
 onBeforeUnmount(() => {
+  disposed = true
   cleanupStage?.()
 })
 </script>
@@ -496,13 +449,13 @@ onBeforeUnmount(() => {
 
           <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
             <UButton
-              to="#daftar-alat"
+              to="/alat"
               size="xl"
               color="primary"
               icon="i-lucide-layout-grid"
               class="px-6"
             >
-              Pilih alat ({{ available.length }} siap pakai)
+              Lihat {{ available.length }} alat
             </UButton>
             <UButton
               to="/kelas"
@@ -577,7 +530,7 @@ onBeforeUnmount(() => {
           <div class="lg:col-span-6">
             <NuxtLink
               to="/kelas"
-              class="kartu-data-kelas stiker-kartu block bg-white dark:bg-slate-900 p-6 sm:p-8 -rotate-1"
+              class="kartu-data-kelas stiker-kartu block bg-white dark:bg-slate-900 p-6 sm:p-8 [--miring:-1deg]"
             >
               <div class="flex items-start justify-between gap-4">
                 <div class="space-y-2">
@@ -657,7 +610,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <!-- 4. DAFTAR ALAT: Bento kartu stiker dengan pencarian dan favorit (DESIGN.md & PRD F-01) -->
+    <!-- 4. ALAT HARIAN: kartu stiker alat P1; daftar lengkap dengan pencarian ada di /alat (DESIGN.md) -->
     <section
       id="daftar-alat"
       aria-labelledby="judul-daftar-alat"
@@ -668,162 +621,33 @@ onBeforeUnmount(() => {
           <div class="space-y-2">
             <h2
               id="judul-daftar-alat"
-              class="font-display text-3xl sm:text-4xl font-bold text-(--color-tinta) underline decoration-secondary decoration-4 underline-offset-8"
+              class="font-display text-3xl font-bold text-(--color-tinta) underline decoration-secondary decoration-4 underline-offset-8 sm:text-4xl"
             >
-              Alat siap pakai
+              Alat harian
             </h2>
             <p class="text-(--color-tinta)">
-              Kartu besar adalah alat harian utama (P1). Tandai bintang pada alat yang paling sering Anda buka.
+              Yang paling sering dibuka guru setiap minggu. Tandai bintang supaya alat pilihan Anda muncul di menu.
             </p>
           </div>
-
-          <!-- Pencarian langsung di halaman (PRD F-01) -->
-          <div class="w-full sm:w-80">
-            <UInput
-              v-model="searchQuery"
-              icon="i-lucide-search"
-              placeholder="Cari nama atau kegunaan alat..."
-              aria-label="Cari alat"
-              class="w-full"
-            />
-          </div>
-        </div>
-
-        <!-- Saring kategori dan favorit -->
-        <div
-          role="toolbar"
-          aria-label="Saring kategori alat"
-          class="flex flex-wrap gap-2"
-        >
           <UButton
-            :color="activeCategory === 'semua' ? 'secondary' : 'neutral'"
-            :variant="activeCategory === 'semua' ? 'solid' : 'outline'"
-            size="sm"
-            class="tombol-filter-kategori stiker-tombol bg-white dark:bg-slate-900"
-            @click="setCategory('semua', $event)"
-          >
-            Semua ({{ available.length }})
-          </UButton>
-          <UButton
-            :color="activeCategory === 'favorit' ? 'secondary' : 'neutral'"
-            :variant="activeCategory === 'favorit' ? 'solid' : 'outline'"
-            size="sm"
-            icon="i-lucide-star"
-            class="tombol-filter-kategori stiker-tombol bg-white dark:bg-slate-900"
-            @click="setCategory('favorit', $event)"
-          >
-            Favorit ({{ favorites.length }})
-          </UButton>
-          <UButton
-            v-for="cat in CATEGORIES"
-            :key="cat.id"
-            :color="activeCategory === cat.id ? 'secondary' : 'neutral'"
-            :variant="activeCategory === cat.id ? 'solid' : 'outline'"
-            size="sm"
-            class="tombol-filter-kategori stiker-tombol bg-white dark:bg-slate-900"
-            @click="setCategory(cat.id, $event)"
-          >
-            {{ cat.name }}
-          </UButton>
-        </div>
-
-        <div
-          v-if="filteredAvailable.length === 0"
-          class="rounded-3xl border-2 border-(--color-tinta) bg-white dark:bg-slate-900 p-8 text-center space-y-3"
-        >
-          <p class="font-display text-xl font-bold text-highlighted">
-            {{ activeCategory === 'favorit' ? 'Belum ada alat favorit' : 'Alat tidak ditemukan' }}
-          </p>
-          <p class="text-sm text-muted max-w-md mx-auto">
-            {{ activeCategory === 'favorit'
-              ? 'Tekan tombol bintang di pojok kartu alat supaya mudah ditemukan di sini.'
-              : 'Coba kata kunci lain atau tampilkan semua kategori alat.' }}
-          </p>
-          <UButton
+            to="/alat"
+            size="lg"
             color="neutral"
-            variant="outline"
-            class="stiker-tombol"
-            @click="setCategory('semua', $event); searchQuery = ''"
+            trailing-icon="i-lucide-arrow-right"
+            class="stiker-tombol self-start bg-white text-slate-900 hover:bg-yellow-100 lg:self-auto dark:bg-slate-900 dark:text-yellow-100"
           >
-            Tampilkan semua alat
+            Semua {{ available.length }} alat
           </UButton>
         </div>
 
-        <UPageGrid v-else>
-          <div
-            v-for="(tool, idx) in filteredAvailable"
+        <UPageGrid>
+          <KartuAlat
+            v-for="(tool, idx) in dailyTools"
             :key="tool.slug"
-            :class="[span(tool.priority), 'kartu-alat-stiker relative']"
-          >
-            <NuxtLink
-              :to="`/alat/${tool.slug}`"
-              :class="[
-                'stiker-kartu flex h-full flex-col justify-between bg-white dark:bg-slate-900 p-5 sm:p-6 pr-14',
-                cardTilt(idx)
-              ]"
-            >
-              <div class="space-y-3">
-                <div class="flex items-center gap-2.5">
-                  <span class="inline-flex size-10 items-center justify-center rounded-2xl border-2 border-(--color-tinta) bg-(--color-pensil) text-slate-900">
-                    <UIcon
-                      :name="tool.icon"
-                      class="size-5"
-                    />
-                  </span>
-                  <span class="text-xs font-semibold text-muted">
-                    {{ categoryName(tool.category) }}
-                  </span>
-                </div>
-
-                <h3 class="font-display text-xl font-bold text-highlighted">
-                  {{ tool.name }}
-                </h3>
-
-                <p class="text-sm text-toned">
-                  {{ tool.summary }}
-                </p>
-              </div>
-
-              <div class="mt-4 flex items-end justify-between gap-2 pt-2">
-                <div class="flex flex-wrap gap-1.5 text-xs font-medium text-muted">
-                  <span
-                    v-if="tool.needs.includes('kelas')"
-                    class="rounded-md border border-default px-2 py-0.5"
-                  >Data Kelas</span>
-                  <span
-                    v-if="tool.needs.includes('proyektor')"
-                    class="rounded-md border border-default px-2 py-0.5"
-                  >Proyektor</span>
-                  <span
-                    v-if="tool.needs.includes('cetak')"
-                    class="rounded-md border border-default px-2 py-0.5"
-                  >Siap Cetak</span>
-                </div>
-
-                <div
-                  v-if="tool.priority === 1 && toolIllustration(tool)"
-                  class="w-14 shrink-0"
-                >
-                  <PeraguIlustrasi :name="toolIllustration(tool)!" />
-                </div>
-              </div>
-            </NuxtLink>
-
-            <!-- Tombol penanda favorit (PRD F-01), minimal 44x44px -->
-            <button
-              type="button"
-              :aria-label="isFavorite(tool.slug) ? `Hapus ${tool.name} dari favorit` : `Tandai ${tool.name} sebagai favorit`"
-              :aria-pressed="isFavorite(tool.slug)"
-              class="absolute top-3 right-3 z-10 inline-flex size-11 items-center justify-center rounded-full text-toned hover:text-secondary"
-              @click.stop.prevent="toggleFavorite(tool.slug)"
-            >
-              <UIcon
-                :name="isFavorite(tool.slug) ? 'i-lucide-star' : 'i-lucide-star'"
-                class="size-5"
-                :class="isFavorite(tool.slug) ? 'text-secondary fill-current' : 'text-muted'"
-              />
-            </button>
-          </div>
+            :tool="tool"
+            :tilt="cardTilt(idx)"
+            class="kartu-alat-stiker sm:col-span-3 lg:col-span-3"
+          />
         </UPageGrid>
       </UContainer>
     </section>
@@ -877,51 +701,80 @@ onBeforeUnmount(() => {
       </UContainer>
     </section>
 
-    <!-- 6. SEGERA HADIR: Daftar alat yang sedang dibuat per kategori, rata tanpa bayangan stiker (DESIGN.md) -->
+    <!-- 6. BELAJAR BARENG: tutorial perangkat ajar dan kabar dari blog (konten Nuxt Content) -->
     <section
-      v-if="planned.length > 0"
-      aria-labelledby="segera-hadir"
-      class="pb-14 pt-4 sm:pb-20"
+      v-if="latest && (latest.tutorials.length || latest.posts.length)"
+      aria-labelledby="judul-bacaan"
+      class="pt-4 pb-14 sm:pb-20"
     >
       <UContainer class="space-y-6">
         <div class="space-y-2">
           <h2
-            id="segera-hadir"
-            class="font-display text-2xl sm:text-3xl font-bold text-(--color-tinta) underline decoration-secondary decoration-4 underline-offset-8"
+            id="judul-bacaan"
+            class="font-display text-3xl font-bold text-(--color-tinta) underline decoration-secondary decoration-4 underline-offset-8 sm:text-4xl"
           >
-            Segera hadir
+            Bekal mengajar
           </h2>
-          <p class="text-sm sm:text-base text-(--color-tinta)">
-            Alat di bawah ini sedang disiapkan bertahap sesuai rencana fase. Kotak ini belum berupa tautan aktif.
+          <p class="text-(--color-tinta)">
+            Tutorial menyusun perangkat ajar dan asesmen, ditambah kabar terbaru dari Peragu.
           </p>
         </div>
 
-        <UPageGrid>
-          <div
-            v-for="cat in planned"
-            :key="cat.id"
-            class="sm:col-span-3 lg:col-span-4 rounded-3xl border-2 border-(--color-tinta) bg-white/90 dark:bg-slate-900/90 p-5"
-          >
-            <h3 class="font-display text-lg font-bold text-highlighted">
-              {{ cat.name }}
-            </h3>
-            <ul class="mt-3 space-y-2 text-sm text-toned">
-              <li
-                v-for="tool in cat.tools"
-                :key="tool.slug"
-                class="flex items-baseline justify-between gap-2"
-              >
-                <NuxtLink
-                  :to="`/alat/${tool.slug}`"
-                  class="hover:underline text-highlighted font-medium"
-                >
-                  {{ tool.name }}
-                </NuxtLink>
-                <span class="shrink-0 text-xs text-muted">Fase {{ tool.phase }}</span>
-              </li>
-            </ul>
+        <div class="grid gap-6 lg:grid-cols-12">
+          <div class="space-y-4 lg:col-span-7">
+            <NuxtLink
+              v-for="(t, idx) in latest.tutorials"
+              :key="t.path"
+              :to="t.path"
+              :class="['kartu-alat-stiker stiker-kartu block bg-white p-5 sm:p-6 dark:bg-slate-900', idx % 2 ? '[--miring:0.4deg]' : '[--miring:-0.4deg]']"
+            >
+              <span class="text-xs font-semibold text-muted">
+                Tutorial · {{ tutorialCategory(t.kategori)?.name }}<template v-if="t.durasi"> · {{ t.durasi }}</template>
+              </span>
+              <h3 class="mt-1.5 font-display text-xl font-bold text-highlighted">
+                {{ t.title }}
+              </h3>
+              <p class="mt-1.5 text-sm text-toned">
+                {{ t.description }}
+              </p>
+            </NuxtLink>
+            <UButton
+              to="/tutorial"
+              color="neutral"
+              trailing-icon="i-lucide-arrow-right"
+              class="stiker-tombol bg-white text-slate-900 hover:bg-yellow-100 dark:bg-slate-900 dark:text-yellow-100"
+            >
+              Semua tutorial
+            </UButton>
           </div>
-        </UPageGrid>
+
+          <div class="space-y-4 lg:col-span-5">
+            <NuxtLink
+              v-for="(p, idx) in latest.posts"
+              :key="p.path"
+              :to="p.path"
+              :class="['kartu-alat-stiker stiker-kartu block bg-(--color-pensil) p-5 text-slate-900 sm:p-6', cardTilt(idx + 2)]"
+            >
+              <span class="text-xs font-semibold">
+                Blog · {{ formatTanggal(p.date) }}
+              </span>
+              <h3 class="mt-1.5 font-display text-xl font-bold">
+                {{ p.title }}
+              </h3>
+              <p class="mt-1.5 text-sm">
+                {{ p.description }}
+              </p>
+            </NuxtLink>
+            <UButton
+              to="/blog"
+              color="neutral"
+              trailing-icon="i-lucide-arrow-right"
+              class="stiker-tombol bg-white text-slate-900 hover:bg-yellow-100 dark:bg-slate-900 dark:text-yellow-100"
+            >
+              Semua tulisan
+            </UButton>
+          </div>
+        </div>
       </UContainer>
     </section>
   </div>

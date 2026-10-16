@@ -11,7 +11,7 @@ Peragu memakai bahasa visual yang sama di seluruh halaman: baik di Beranda (`/`)
 | Tempat | Halaman | Dial | Tugasnya |
 |---|---|---|---|
 | **Panggung** | Beranda (`/`) | ENERGY 3 / RHYTHM 3 / MOTION 3 | Memperkenalkan Peragu dengan cerita bergulir, lalu mengantar guru ke alatnya |
-| **Meja kerja bergaya stiker** | Alat (`/alat/*`), Data Kelas, Pengaturan | ENERGY 3 / RHYTHM 2 / MOTION 1 | Menerapkan warna gradien, kartu kertas bergaris tinta 2px, tombol stiker, coretan merah, dan ilustrasi yang sama dengan beranda, namun tanpa animasi gulir supaya tetap nyaman dipakai mengajar |
+| **Meja kerja bergaya stiker** | Daftar alat (`/alat`), halaman alat (`/alat/*`), Tutorial, Blog, Dokumen, Data Kelas, Pengaturan | ENERGY 3 / RHYTHM 2 / MOTION 2 | Menerapkan warna gradien, kartu kertas bergaris tinta 2px, tombol stiker, coretan merah, dan ilustrasi yang sama dengan beranda. Isi halaman masuk bertahap saat dibuka, tapi tanpa pin, scrub, dan Lenis supaya tetap nyaman dipakai mengajar |
 
 > **Perubahan 16 Oktober 2026 (disetujui pemilik):** setiap halaman alat menerapkan desain yang sama seperti di beranda (latar gradien langit-kertas-pensil, panel kertas putih/slate-900 dengan garis tinta 2px, tombol stiker berbayangan padat, coretan tinta merah pada judul, dan ilustrasi SVG pendamping). Saat masuk **Mode Proyektor** atau **Cetak**, latar otomatis menjadi polos dan bayangan/gradien dimatikan agar tetap terbaca dari belakang kelas dan hemat tinta.
 
@@ -60,13 +60,12 @@ Merah tidak dipakai untuk dekorasi, latar kartu, atau ikon biasa. Di atas gradie
 
 | Peran | Font | Aturan |
 |---|---|---|
-| Judul panggung | **Bricolage Grotesque** 800, huruf kapital | Ukuran `clamp(3rem, 11vw, 9rem)`, jarak baris 0,9, jarak huruf -0,02em. Hanya di beranda |
-| Judul halaman | Bricolage Grotesque 700, huruf biasa | Judul setiap halaman alat, Data Kelas, dan Pengaturan |
-| Teks | **Lexend** 400 sampai 600 | Semua teks lain: isi, tombol, label, tabel, angka di alat |
+| Judul panggung | **Funnel Display** 800, huruf kapital | Ukuran `clamp(3rem, 11vw, 9rem)`, jarak baris 0,9, jarak huruf -0,02em. Hanya di beranda |
+| Judul halaman | Funnel Display 700, huruf biasa | Judul setiap halaman alat, Data Kelas, dan Pengaturan |
+| Teks | **Funnel Sans** 400 sampai 700 | Semua teks lain: isi, tombol, label, tabel, angka di alat |
 
-- Bricolage Grotesque dipilih karena bentuknya lebar, tebal, dan sedikit tidak rapi, seperti huruf yang ditulis di papan tulis. Rasanya ramah tanpa terlihat kekanak-kanakan.
-- Lexend tetap untuk teks karena dirancang untuk kemudahan membaca dan jelas di proyektor maupun di kertas.
-- Angka besar di alat (timer, hasil dadu) memakai Lexend, bukan Bricolage, supaya tetap terbaca dari bangku belakang.
+- Funnel Display dan Funnel Sans dipilih pemilik (16 Oktober 2026, menggantikan Bricolage Grotesque dan Lexend). Keduanya satu keluarga, jadi judul dan teks terasa serasi.
+- Angka besar di alat (timer, hasil dadu) memakai Funnel Sans, bukan Funnel Display, supaya tetap terbaca dari bangku belakang.
 - Mode proyektor menaikkan ukuran teks, bukan mengganti font.
 
 ## Bentuk: gaya stiker
@@ -78,17 +77,24 @@ Semua yang bisa ditekan terlihat seperti stiker yang ditempel: garis tinta tebal
 | Garis tinta | 2px warna tinta pada tombol utama, pulau navbar, dan kartu yang berupa tautan |
 | Bayangan padat | `0 4px 0` warna tinta, tanpa blur. Saat ditekan, bayangan menjadi `0 1px 0` dan elemen turun 3px |
 | Radius | Pil penuh hanya untuk tombol dan pulau navbar. Kartu memakai `1.5rem`. Isian formulir tetap `--ui-radius: 0.75rem` |
-| Miring | Kartu di beranda boleh miring -2° sampai 2°. Di meja kerja tidak ada yang miring |
+| Miring | Kartu di beranda boleh miring -2° sampai 2° (variabel `--miring`). Saat disentuh atau difokus, kartu berbalik miring ke arah sebaliknya (250 ms, sedikit memantul). Di meja kerja tidak ada yang miring |
 
 Alasan bayangan padat (R-12): bayangan ini menandai **bisa ditekan**. Teks, judul, dan kotak informasi yang tidak bisa diklik tetap rata tanpa bayangan.
 
-### Navbar pulau
+### Tombol menu
 
-Navbar terdiri dari pulau-pulau terpisah: logo, navigasi, dan aksi. Pulau-pulau itu mengambang di atas konten (`sticky top-3`).
+Tidak ada navbar. Navigasi berupa satu tombol **Menu** yang tetap di pojok kanan atas (`fixed`), dipakai di semua halaman (disetujui pemilik, 16 Oktober 2026).
 
-- Setiap pulau berlatar putih (gelap: slate-900) dengan garis tinta dan bayangan padat. Latarnya padat, jadi efek blur tidak dipakai lagi.
-- Logo berupa tulisan "Peragu" dalam Bricolage Grotesque tebal. Ikon atau logo grafis baru dibuat setelah ada keputusan dari pemilik.
+- Logo "Peragu" (Funnel Display tebal, pil stiker) ada di kiri atas dan ikut tergulir. Ikon atau logo grafis baru dibuat setelah ada keputusan dari pemilik.
+- Tombol menu dan logo berlatar putih (gelap: slate-900) dengan garis tinta dan bayangan padat, tanpa blur.
+- Saat ditekan, panel kuning pensil (gelap: blue-950) terbuka sebagai lingkaran dari posisi tombol. Isinya:
+  - tautan besar Alat, Data Kelas, dan Pengaturan, bernomor 01 sampai 03; halaman yang sedang dibuka bergaris bawah tinta merah;
+  - jalan pintas ke alat favorit, atau ke alat harian (P1) kalau belum ada favorit;
+  - tombol Cari alat (Ctrl K) dan pengganti tema.
+- Tombol Tutup muncul tepat di posisi tombol Menu. Escape juga menutup panel, dan fokus kembali ke tombol Menu.
 - Di beranda, garis tipis warna tinta di tepi atas layar menunjukkan seberapa jauh halaman sudah digulir.
+
+Gerak panel menu adalah satu-satunya gerak di atas 200 ms yang juga ada di meja kerja, karena hanya terjadi saat guru menekan tombol: lingkaran membuka 600 ms, tautan naik satu per satu (jeda 80 ms), pesawat kertas terbang masuk. Dengan `prefers-reduced-motion`, panel langsung tampil tanpa gerak.
 
 ## Tata letak
 
@@ -99,9 +105,18 @@ Beranda disusun sebagai cerita, bukan template landing page. Urutannya mengikuti
 1. **Pembuka.** Judul besar "Alat kerja guru SD" dengan pensil dan penggaris di kiri-kanan, lalu satu kalimat penjelasan.
 2. **Satu daftar siswa.** Data Kelas diisi sekali, lalu dipakai di semua alat. Bagian ini disematkan saat digulir, dan pesawat kertas terbang melintasinya.
 3. **Sapuan pensil.** Pensil-pensil panjang menyapu layar secara diagonal sebagai peralihan ke daftar alat.
-4. **Daftar alat.** Kartu stiker untuk setiap alat yang sudah siap. Ukurannya mengikuti prioritas (lihat bento di bawah).
+4. **Alat harian.** Kartu stiker untuk alat prioritas P1, dengan tombol ke daftar lengkap di `/alat`.
 5. **Data tetap di perangkat.** Penjelasan bahwa data kelas tidak dikirim ke server, dengan tautan ke Pengaturan untuk mencadangkan.
-6. **Segera hadir.** Daftar alat yang sedang dibuat, per kategori, dalam bentuk daftar yang tenang.
+6. **Bekal mengajar.** Tiga tutorial dan dua tulisan blog terbaru (kartu blog berlatar kuning pensil supaya beda dari tutorial).
+
+> **Perubahan 16 Oktober 2026 (disetujui pemilik):** Peragu tidak lagi hanya berisi alat. Beranda menjadi landing page, daftar lengkap alat beserta pencarian, saringan kategori, dan favorit pindah ke `/alat`, dan situs mendapat halaman Tutorial, Blog, dan Dokumen.
+
+### Halaman bacaan (tutorial dan blog)
+
+- Konten ditulis sebagai Markdown di `content/tutorial/` dan `content/blog/` (Nuxt Content), dan bisa disunting lewat Nuxt Studio.
+- Artikel berada di panel kertas, judul Funnel Display, isi Funnel Sans. Daftar isi menempel di kanan pada layar lebar.
+- Tutorial diakhiri tautan stiker ke alat Peragu yang dipakai di dalamnya (frontmatter `alat`).
+- Halaman Dokumen sementara hanya berisi keterangan "sedang disiapkan" dan tautan ke alat pembuat dokumen. Tidak ada isi contoh palsu.
 
 Jarak antarbagian sengaja berbeda-beda (RHYTHM 3): bagian yang disematkan setinggi layar, daftar alat rapat, dan bagian privasi lapang.
 
@@ -166,7 +181,7 @@ Batasan:
 
 - Hanya `transform` dan `opacity` yang dianimasikan.
 - Tidak ada animasi yang berulang terus-menerus. Semua gerak dipicu oleh gulir atau terjadi sekali.
-- Hover kartu: naik 2px dan bayangan bertambah, 150 ms.
+- Hover kartu: naik 2px, bayangan bertambah (150 ms), dan kartu yang miring berbalik arah (250 ms).
 - Di layar di bawah 640px, bagian tidak disematkan. Gerak masuknya saja yang tetap berjalan.
 
 ### Konten tanpa JavaScript
@@ -181,11 +196,24 @@ Kalau `prefers-reduced-motion: reduce` aktif:
 - Tidak ada `pin`, `scrub`, sapuan pensil, atau gerak masuk. Semua bagian langsung tampil di posisi akhirnya.
 - Yang tersisa hanya perubahan warna saat hover dan fokus.
 
-### Meja kerja (MOTION 1)
+### Meja kerja (MOTION 2)
 
-- Hanya status hover, fokus, dan transisi kecil (maksimal 200 ms).
-- Tidak ada animasi muncul bertahap, parallax, atau gerak dekoratif.
-- Alat yang memang butuh gerak (roda putar, dadu) bergerak hanya saat dipakai, dan menghormati `prefers-reduced-motion`.
+> **Perubahan 16 Oktober 2026 (disetujui pemilik):** halaman selain beranda tidak lagi datar. Dial naik dari MOTION 1 ke MOTION 2.
+
+Semua gerak meja kerja ditulis dalam CSS (`main.css`), tanpa GSAP. Karena itu tidak berkedip di halaman statis dan tidak perlu dilepas saat pindah halaman.
+
+| Gerak | Aturan |
+|---|---|
+| Masuk halaman | Anak langsung halaman (judul, panel, kartu grid) naik 28px dan muncul, 650 ms dengan sedikit pantulan, jeda 90 ms per urutan, paling lama 5 urutan. Dipasang lewat kelas `halaman-masuk` di layout `default` |
+| Judul halaman | Coretan tinta merah tergambar (700 ms, mulai 400 ms). Ilustrasi meletup masuk dari 30% dan miring -30°. Saat panel judul disentuh, ilustrasi miring 8° dan membesar 8% |
+| Muncul saat digulir | Kartu di `/alat`, Tutorial, dan Blog (kelas `gerak-muncul`) naik 48px dan muncul mengikuti gulir (`animation-timeline: view()`). Peramban yang belum mendukung memakai gerak masuk biasa |
+| Kartu dan tombol | Hover seperti di gaya stiker. Kartu miring berbalik arah. Bintang favorit memantul dan memercik saat ditandai |
+
+Batasan:
+
+- Bagian dalam alat (roda, timer, tabel, pratinjau cetak) tidak diberi animasi masuk atau gulir. Alat yang memang butuh gerak (roda putar, dadu) bergerak hanya saat dipakai.
+- Tidak ada animasi yang berulang terus-menerus.
+- Dengan `prefers-reduced-motion`, semua gerak masuk, gulir, coretan, dan ilustrasi dimatikan; isi langsung tampil di posisi akhirnya.
 
 ## Fokus dan aksesibilitas
 
