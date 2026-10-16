@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   // Preset ditulis eksplisit: kalau dibiarkan, Cloudflare Pages terdeteksi dan Nuxt Content beralih ke database D1
   nitro: {
     preset: 'static',
+    // Hasil build langsung ke dist/ (folder output Cloudflare Pages). Tanpa ini Nuxt membuat dist/ sebagai
+    // symlink ke .output/public, dan Cloudflare menolak folder output yang berisi tautan
+    output: { publicDir: '{{ rootDir }}/dist' },
     prerender: {
       crawlLinks: true,
       routes: ['/', '/alat', '/tutorial', '/blog', '/dokumen', '/kelas', '/pengaturan', ...TOOLS.map(t => `/alat/${t.slug}`)]
