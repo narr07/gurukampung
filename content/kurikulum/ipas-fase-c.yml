@@ -1,0 +1,332 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: ipas
+mapel: IPAS
+fase: C
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, VI Capaian Pembelajaran Ilmu Pengetahuan Alam dan Sosial (IPAS), Fase C
+elemen:
+  - id: pemahaman-ipas
+    nama: Pemahaman IPAS
+    capaian: Merefleksikan sistem organ tubuh manusia yang dikaitkan dengan cara menjaga kesehatan tubuhnya; menganalisis hubungan antar komponen biotik dan abiotik, serta pengaruhnya terhadap ekosistem; menjelaskan fenomena gelombang bunyi dan cahaya dalam kehidupan sehari-hari; menghasilkan upaya penghematan energi, serta pemanfaatan sumber energi alternatif dari sumber daya yang ada di sekitarnya sebagai upaya mitigasi perubahan iklim; menjelaskan sistem tata surya, serta kaitannya dengan rotasi dan revolusi bumi; menjelaskan letak dan kondisi geografis negara Indonesia dengan menggunakan peta konvensional/digital; meninjau sejarah perjuangan para pahlawan di lingkungan sekitar tempat tinggalnya; menemukan keragaman budaya nasional dalam konteks kebhinekaan berdasarkan pemahaman terhadap nilai-nilai kearifan lokal yang berlaku di wilayah tempat tinggal; serta menerapkan kegiatan ekonomi masyarakat di lingkungan sekitar.
+    materi:
+      - id: letak-geografis
+        nama: Letak dan kondisi geografis Indonesia
+        kelas:
+          - 5
+        tp:
+          - id: letak-geografis-1
+            teks: Murid kelas 5 dapat menjelaskan letak geografis Indonesia menggunakan peta konvensional atau digital, dengan batas wilayah dan posisi Indonesia yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan letak geografis Indonesia
+              condition: menggunakan peta konvensional atau digital
+              degree: dengan batas wilayah dan posisi Indonesia yang benar
+          - id: letak-geografis-2
+            teks: Murid kelas 5 dapat menganalisis pengaruh letak dan kondisi geografis Indonesia terhadap kehidupan masyarakat, misalnya sebagai negara maritim dan agraris, dari peta, gambar, dan sumber bacaan, sedikitnya dua pengaruh disertai alasan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menganalisis pengaruh letak dan kondisi geografis Indonesia terhadap kehidupan masyarakat, misalnya sebagai negara maritim dan agraris
+              condition: dari peta, gambar, dan sumber bacaan
+              degree: sedikitnya dua pengaruh disertai alasan
+      - id: kegiatan-ekonomi
+        nama: Kegiatan ekonomi masyarakat
+        kelas:
+          - 5
+        tp:
+          - id: kegiatan-ekonomi-1
+            teks: Murid kelas 5 dapat menjelaskan kegiatan produksi, distribusi, dan konsumsi dari contoh kegiatan ekonomi di lingkungan sekitar, sedikitnya satu contoh yang benar untuk setiap kegiatan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan kegiatan produksi, distribusi, dan konsumsi
+              condition: dari contoh kegiatan ekonomi di lingkungan sekitar
+              degree: sedikitnya satu contoh yang benar untuk setiap kegiatan
+          - id: kegiatan-ekonomi-2
+            teks: Murid kelas 5 dapat menerapkan kegiatan ekonomi sederhana dan mengusulkan solusi atas masalah yang muncul dalam kegiatan jual beli hasil karya kelas, sedikitnya satu solusi yang masuk akal.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menerapkan kegiatan ekonomi sederhana dan mengusulkan solusi atas masalah yang muncul
+              condition: dalam kegiatan jual beli hasil karya kelas
+              degree: sedikitnya satu solusi yang masuk akal
+      - id: ekosistem
+        nama: Ekosistem
+        kelas:
+          - 5
+        tp:
+          - id: ekosistem-1
+            teks: Murid kelas 5 dapat menganalisis hubungan komponen biotik dan abiotik dalam ekosistem, termasuk rantai dan jaring-jaring makanan dari pengamatan lingkungan sekitar atau gambar, sedikitnya tiga hubungan yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menganalisis hubungan komponen biotik dan abiotik dalam ekosistem, termasuk rantai dan jaring-jaring makanan
+              condition: dari pengamatan lingkungan sekitar atau gambar
+              degree: sedikitnya tiga hubungan yang benar
+          - id: ekosistem-2
+            teks: Murid kelas 5 dapat mengevaluasi dampak aktivitas manusia terhadap keseimbangan ekosistem dari kasus nyata di sekitarnya, sedikitnya dua dampak dan satu usulan perbaikan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: mengevaluasi dampak aktivitas manusia terhadap keseimbangan ekosistem
+              condition: dari kasus nyata di sekitarnya
+              degree: sedikitnya dua dampak dan satu usulan perbaikan
+          - id: ekosistem-3
+            teks: Murid kelas 5 dapat menjelaskan siklus air dan mengusulkan upaya menjaga ketersediaan air menggunakan diagram atau model sederhana, dengan urutan tahap yang benar dan sedikitnya dua upaya.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan siklus air dan mengusulkan upaya menjaga ketersediaan air
+              condition: menggunakan diagram atau model sederhana
+              degree: dengan urutan tahap yang benar dan sedikitnya dua upaya
+      - id: sejarah-daerah
+        nama: Sejarah daerah dan perjuangan pahlawan
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: sejarah-daerah-1
+            teks: Murid kelas 5 dapat menjelaskan sejarah daerahnya melalui peninggalan sejarah dan warisan budaya dari kunjungan, gambar, atau wawancara narasumber, sedikitnya dua peninggalan beserta ceritanya.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan sejarah daerahnya melalui peninggalan sejarah dan warisan budaya
+              condition: dari kunjungan, gambar, atau wawancara narasumber
+              degree: sedikitnya dua peninggalan beserta ceritanya
+          - id: sejarah-daerah-2
+            teks: Murid kelas 6 dapat meninjau sejarah perjuangan pahlawan di daerahnya dan dampaknya bagi perkembangan daerah dari sumber bacaan atau cerita narasumber, sedikitnya satu dampak disertai bukti.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: meninjau sejarah perjuangan pahlawan di daerahnya dan dampaknya bagi perkembangan daerah
+              condition: dari sumber bacaan atau cerita narasumber
+              degree: sedikitnya satu dampak disertai bukti
+      - id: organ-tubuh
+        nama: Sistem organ tubuh dan kesehatan
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: organ-tubuh-1
+            teks: Murid kelas 5 dapat menjelaskan perubahan tubuh pada masa pubertas dan cara menjaga kesehatan diri dari gambar dan bacaan, sedikitnya tiga perubahan dan dua cara menjaga kesehatan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan perubahan tubuh pada masa pubertas dan cara menjaga kesehatan diri
+              condition: dari gambar dan bacaan
+              degree: sedikitnya tiga perubahan dan dua cara menjaga kesehatan
+          - id: organ-tubuh-2
+            teks: Murid kelas 6 dapat menjelaskan organ dan fungsi sistem pencernaan serta cara menjaganya, termasuk memilih makanan bergizi menggunakan gambar atau model organ, dengan urutan organ dan fungsi yang benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menjelaskan organ dan fungsi sistem pencernaan serta cara menjaganya, termasuk memilih makanan bergizi
+              condition: menggunakan gambar atau model organ
+              degree: dengan urutan organ dan fungsi yang benar
+          - id: organ-tubuh-3
+            teks: Murid kelas 6 dapat menjelaskan organ dan fungsi sistem pernapasan serta cara menjaganya menggunakan gambar atau model organ, dengan urutan organ dan fungsi yang benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menjelaskan organ dan fungsi sistem pernapasan serta cara menjaganya
+              condition: menggunakan gambar atau model organ
+              degree: dengan urutan organ dan fungsi yang benar
+          - id: organ-tubuh-4
+            teks: Murid kelas 6 dapat merefleksikan kebiasaan sehari-hari dan menyusun cara menjaga kesehatan sistem organ tubuh berdasarkan catatan kebiasaan selama satu minggu, sedikitnya dua kebiasaan yang akan diperbaiki.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: merefleksikan kebiasaan sehari-hari dan menyusun cara menjaga kesehatan sistem organ tubuh
+              condition: berdasarkan catatan kebiasaan selama satu minggu
+              degree: sedikitnya dua kebiasaan yang akan diperbaiki
+      - id: cahaya
+        nama: Cahaya
+        kelas:
+          - 5
+        tp:
+          - id: cahaya-1
+            teks: Murid kelas 5 dapat menjelaskan sifat-sifat cahaya (merambat lurus, dapat dipantulkan, dapat dibiaskan, dan menembus benda bening) melalui percobaan sederhana, dengan penjelasan yang sesuai hasil percobaan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan sifat-sifat cahaya (merambat lurus, dapat dipantulkan, dapat dibiaskan, dan menembus benda bening)
+              condition: melalui percobaan sederhana
+              degree: dengan penjelasan yang sesuai hasil percobaan
+          - id: cahaya-2
+            teks: Murid kelas 5 dapat menjelaskan penerapan sifat cahaya dalam kehidupan sehari-hari, misalnya pada cermin dan kaca pembesar, dari benda di sekitarnya, sedikitnya dua contoh yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan penerapan sifat cahaya dalam kehidupan sehari-hari, misalnya pada cermin dan kaca pembesar
+              condition: dari benda di sekitarnya
+              degree: sedikitnya dua contoh yang benar
+      - id: bunyi
+        nama: Bunyi
+        kelas:
+          - 5
+        tp:
+          - id: bunyi-1
+            teks: Murid kelas 5 dapat menjelaskan bagaimana bunyi dihasilkan dan merambat melalui benda padat, cair, dan gas melalui percobaan sederhana, dengan penjelasan yang sesuai hasil percobaan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan bagaimana bunyi dihasilkan dan merambat melalui benda padat, cair, dan gas
+              condition: melalui percobaan sederhana
+              degree: dengan penjelasan yang sesuai hasil percobaan
+          - id: bunyi-2
+            teks: Murid kelas 5 dapat menjelaskan pemantulan bunyi dan pemanfaatan bunyi dalam kehidupan sehari-hari, sedikitnya dua contoh yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjelaskan pemantulan bunyi dan pemanfaatan bunyi dalam kehidupan sehari-hari
+              degree: sedikitnya dua contoh yang benar
+      - id: kearifan-lokal
+        nama: Keragaman budaya dan kearifan lokal
+        kelas:
+          - 6
+        tp:
+          - id: kearifan-lokal-1
+            teks: Murid kelas 6 dapat menemukan keragaman budaya nasional dan nilai-nilai kearifan lokal di daerah tempat tinggalnya dari sumber bacaan, tayangan, atau wawancara, sedikitnya tiga contoh budaya beserta nilainya.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menemukan keragaman budaya nasional dan nilai-nilai kearifan lokal di daerah tempat tinggalnya
+              condition: dari sumber bacaan, tayangan, atau wawancara
+              degree: sedikitnya tiga contoh budaya beserta nilainya
+          - id: kearifan-lokal-2
+            teks: Murid kelas 6 dapat merefleksikan makna kearifan lokal untuk memperkuat persatuan dalam kebinekaan dalam tulisan atau diskusi, dengan sedikitnya satu contoh sikap yang akan dilakukan.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: merefleksikan makna kearifan lokal untuk memperkuat persatuan dalam kebinekaan
+              condition: dalam tulisan atau diskusi
+              degree: dengan sedikitnya satu contoh sikap yang akan dilakukan
+      - id: energi-masa-depan
+        nama: Penghematan energi dan energi alternatif
+        kelas:
+          - 6
+        tp:
+          - id: energi-masa-depan-1
+            teks: Murid kelas 6 dapat menganalisis penggunaan energi fosil di lingkungannya beserta keunggulan dan keterbatasannya dari data penggunaan energi di rumah atau sekolah, sedikitnya dua keunggulan dan dua keterbatasan.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menganalisis penggunaan energi fosil di lingkungannya beserta keunggulan dan keterbatasannya
+              condition: dari data penggunaan energi di rumah atau sekolah
+              degree: sedikitnya dua keunggulan dan dua keterbatasan
+          - id: energi-masa-depan-2
+            teks: Murid kelas 6 dapat menghasilkan upaya penghematan energi di rumah atau di sekolah, sedikitnya tiga upaya yang dapat dilakukan sendiri.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menghasilkan upaya penghematan energi
+              condition: di rumah atau di sekolah
+              degree: sedikitnya tiga upaya yang dapat dilakukan sendiri
+          - id: energi-masa-depan-3
+            teks: Murid kelas 6 dapat menjelaskan pemanfaatan sumber energi alternatif sebagai upaya mitigasi perubahan iklim dari contoh di sekitarnya atau sumber bacaan, sedikitnya dua contoh yang benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menjelaskan pemanfaatan sumber energi alternatif sebagai upaya mitigasi perubahan iklim
+              condition: dari contoh di sekitarnya atau sumber bacaan
+              degree: sedikitnya dua contoh yang benar
+      - id: tata-surya
+        nama: Sistem tata surya
+        kelas:
+          - 6
+        tp:
+          - id: tata-surya-1
+            teks: Murid kelas 6 dapat menjelaskan anggota sistem tata surya dan ciri-cirinya menggunakan gambar atau model tata surya, sedikitnya satu ciri untuk setiap anggota.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menjelaskan anggota sistem tata surya dan ciri-cirinya
+              condition: menggunakan gambar atau model tata surya
+              degree: sedikitnya satu ciri untuk setiap anggota
+          - id: tata-surya-2
+            teks: Murid kelas 6 dapat menjelaskan hubungan rotasi dan revolusi bumi dengan peristiwa sehari-hari, seperti siang dan malam, perbedaan waktu, dan pergantian tahun, melalui peragaan memakai senter dan bola.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menjelaskan hubungan rotasi dan revolusi bumi dengan peristiwa sehari-hari, seperti siang dan malam, perbedaan waktu, dan pergantian tahun
+              condition: melalui peragaan memakai senter dan bola
+  - id: keterampilan-proses
+    nama: Keterampilan Proses
+    capaian: "Mampu menerapkan keterampilan proses yang meliputi: ● Mengamati Murid mengamati fenomena dan peristiwa secara sederhana, mencatat hasil pengamatannya, serta mencari persamaan dan perbedaannya. ● Mempertanyakan dan Memprediksi Dengan panduan pendidik, murid mengidentifikasi pertanyaan yang dapat diselidiki secara ilmiah dan membuat prediksinya. ● Merencanakan dan Melakukan Penyelidikan Secara mandiri, murid merencanakan dan melakukan langkah-langkah operasional untuk menjawab pertanyaan yang diajukan. Murid melakukan observasi menggunakan alat bantu pengukuran sederhana. ● Memproses serta Menganalisis Data dan Informasi Murid mengolah data dalam bentuk tabel dan grafik, serta menjelaskan hasil pengamatan dan pola atau hubungan pada data. Murid membandingkan data dengan prediksi dan memberikan alasan berdasarkan bukti. ● Mengevaluasi dan Refleksi Melakukan refleksi dan memberikan saran perbaikan terhadap penyelidikan yang sudah dilakukan. ● Mengomunikasikan Hasil Murid mengomunikasikan hasil penyelidikan secara utuh yang ditunjang dengan argumen dalam berbagai media."
+    materi:
+      - id: mengamati
+        nama: Mengamati
+        kelas:
+          - 5
+        tp:
+          - id: mengamati-c-1
+            teks: Murid kelas 5 dapat mengamati fenomena, mencatat hasilnya, serta mencari persamaan dan perbedaannya dengan lembar pengamatan, sedikitnya dua persamaan dan dua perbedaan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: mengamati fenomena, mencatat hasilnya, serta mencari persamaan dan perbedaannya
+              condition: dengan lembar pengamatan
+              degree: sedikitnya dua persamaan dan dua perbedaan
+      - id: mempertanyakan-memprediksi
+        nama: Mempertanyakan dan memprediksi
+        kelas:
+          - 5
+        tp:
+          - id: mempertanyakan-memprediksi-c-1
+            teks: Murid kelas 5 dapat mengidentifikasi pertanyaan yang dapat diselidiki secara ilmiah dan membuat prediksinya dengan panduan guru, sedikitnya satu pertanyaan yang dapat diuji.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: mengidentifikasi pertanyaan yang dapat diselidiki secara ilmiah dan membuat prediksinya
+              condition: dengan panduan guru
+              degree: sedikitnya satu pertanyaan yang dapat diuji
+      - id: menyelidiki
+        nama: Merencanakan dan melakukan penyelidikan
+        kelas:
+          - 6
+        tp:
+          - id: menyelidiki-c-1
+            teks: Murid kelas 6 dapat merencanakan dan melakukan langkah-langkah penyelidikan secara mandiri dengan alat ukur sederhana.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: merencanakan dan melakukan langkah-langkah penyelidikan
+              condition: secara mandiri dengan alat ukur sederhana
+      - id: mengolah-data
+        nama: Memproses dan menganalisis data
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: mengolah-data-c-1
+            teks: Murid kelas 5 dapat mengolah data dalam tabel dan grafik serta menjelaskan pola atau hubungan pada data dari data hasil penyelidikan, sedikitnya satu pola atau hubungan yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: mengolah data dalam tabel dan grafik serta menjelaskan pola atau hubungan pada data
+              condition: dari data hasil penyelidikan
+              degree: sedikitnya satu pola atau hubungan yang benar
+          - id: mengolah-data-c-2
+            teks: Murid kelas 6 dapat membandingkan data dengan prediksi dan memberikan alasan berdasarkan bukti hasil penyelidikan.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: membandingkan data dengan prediksi dan memberikan alasan
+              condition: berdasarkan bukti hasil penyelidikan
+      - id: refleksi-komunikasi
+        nama: Mengevaluasi dan mengomunikasikan hasil
+        kelas:
+          - 6
+        tp:
+          - id: refleksi-komunikasi-c-1
+            teks: Murid kelas 6 dapat memberikan saran perbaikan terhadap penyelidikan dan mengomunikasikan hasilnya secara utuh dalam berbagai media, dengan argumen yang didukung data.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: memberikan saran perbaikan terhadap penyelidikan dan mengomunikasikan hasilnya secara utuh
+              condition: dalam berbagai media
+              degree: dengan argumen yang didukung data

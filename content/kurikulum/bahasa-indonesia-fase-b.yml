@@ -1,0 +1,261 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: bahasa-indonesia
+mapel: Bahasa Indonesia
+fase: B
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, III.1 Capaian Pembelajaran Bahasa Indonesia, Fase B
+elemen:
+  - id: menyimak
+    nama: Menyimak
+    capaian: Memahami ide pokok suatu informasi dari teks nonsastra berbentuk teks aural (teks yang dibacakan dan/atau didengarkan); dan memahami isi teks sastra berbentuk teks aural.
+    materi:
+      - id: ide-pokok-simakan
+        nama: Ide pokok teks yang didengar
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: ide-pokok-simakan-1
+            teks: Murid kelas 3 dapat menemukan ide pokok informasi yang dibacakan, misalnya pengumuman atau berita sederhana.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menemukan ide pokok informasi yang dibacakan, misalnya pengumuman atau berita sederhana
+          - id: ide-pokok-simakan-2
+            teks: Murid kelas 4 dapat menyimpulkan ide pokok dan informasi penting dari teks nonsastra setelah mendengarkan teks yang dibacakan atau rekaman, sedikitnya satu ide pokok dan dua informasi penting yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menyimpulkan ide pokok dan informasi penting dari teks nonsastra
+              condition: setelah mendengarkan teks yang dibacakan atau rekaman
+              degree: sedikitnya satu ide pokok dan dua informasi penting yang benar
+      - id: sastra-simakan
+        nama: Isi cerita dan puisi yang didengar
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: sastra-simakan-1
+            teks: Murid kelas 3 dapat menyebutkan tokoh, latar, dan urutan peristiwa dari dongeng atau cerita rakyat setelah mendengarkan cerita yang dibacakan.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyebutkan tokoh, latar, dan urutan peristiwa dari dongeng atau cerita rakyat
+              condition: setelah mendengarkan cerita yang dibacakan
+          - id: sastra-simakan-2
+            teks: Murid kelas 4 dapat menjelaskan pesan dari cerita atau puisi setelah mendengarkan cerita atau puisi, dengan alasan dari isi teks.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan pesan dari cerita atau puisi
+              condition: setelah mendengarkan cerita atau puisi
+              degree: dengan alasan dari isi teks
+  - id: membaca-memirsa
+    nama: Membaca dan Memirsa
+    capaian: Membaca kata-kata baru dengan fasih dari bacaan dan/atau tayangan yang dipirsa; dan memahami ide pokok, ide pendukung, pesan, dan informasi dalam teks sastra dan nonsastra berbentuk cetak dan/atau elektronik.
+    materi:
+      - id: membaca-fasih
+        nama: Membaca fasih dan kosakata baru
+        kelas:
+          - 3
+        tp:
+          - id: membaca-fasih-1
+            teks: Murid kelas 3 dapat membaca nyaring teks dan menjelaskan arti kata baru berdasarkan konteks kalimat, dengan fasih dan arti kata yang tepat.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membaca nyaring teks dan menjelaskan arti kata baru
+              condition: berdasarkan konteks kalimat
+              degree: dengan fasih dan arti kata yang tepat
+      - id: ide-pokok-pendukung
+        nama: Ide pokok dan ide pendukung
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: ide-pokok-pendukung-1
+            teks: Murid kelas 3 dapat menemukan ide pokok setiap paragraf dalam teks informasi dengan menggarisbawahi kalimat utama, sedikitnya 3 dari 4 paragraf benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menemukan ide pokok setiap paragraf dalam teks informasi
+              condition: dengan menggarisbawahi kalimat utama
+              degree: sedikitnya 3 dari 4 paragraf benar
+          - id: ide-pokok-pendukung-2
+            teks: Murid kelas 4 dapat membedakan ide pokok dan ide pendukung dalam paragraf, lalu meringkas isi bacaan dari teks informasi, dengan ringkasan yang memuat semua ide pokok.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: membedakan ide pokok dan ide pendukung dalam paragraf, lalu meringkas isi bacaan
+              condition: dari teks informasi
+              degree: dengan ringkasan yang memuat semua ide pokok
+      - id: pesan-teks-sastra
+        nama: Tokoh, latar, dan pesan dalam teks sastra
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: pesan-teks-sastra-1
+            teks: Murid kelas 3 dapat menemukan tokoh, watak, dan latar dalam cerita, dengan menunjukkan bukti kalimat dari teks.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menemukan tokoh, watak, dan latar dalam cerita
+              degree: dengan menunjukkan bukti kalimat dari teks
+          - id: pesan-teks-sastra-2
+            teks: Murid kelas 4 dapat menjelaskan pesan dalam cerita, fabel, atau puisi, dengan menunjukkan buktinya di dalam teks.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan pesan dalam cerita, fabel, atau puisi
+              degree: dengan menunjukkan buktinya di dalam teks
+      - id: teks-cetak-elektronik
+        nama: Informasi dari teks cetak dan elektronik
+        kelas:
+          - 4
+        tp:
+          - id: teks-cetak-elektronik-1
+            teks: Murid kelas 4 dapat menemukan informasi penting dari teks cetak atau elektronik seperti poster, petunjuk, atau tayangan pendek, sedikitnya tiga informasi yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menemukan informasi penting dari teks cetak atau elektronik
+              condition: seperti poster, petunjuk, atau tayangan pendek
+              degree: sedikitnya tiga informasi yang benar
+  - id: berbicara-mempresentasikan
+    nama: Berbicara dan Mempresentasikan
+    capaian: Menyajikan pendapat dengan pilihan kata dan sikap tubuh/gestur yang sesuai, menggunakan volume dan intonasi yang tepat sesuai konteks; menanggapi diskusi sesuai tata cara; dan menceritakan kembali isi dan/atau informasi dari berbagai tipe teks yang dibaca, dipirsa, atau didengar.
+    materi:
+      - id: menyajikan-pendapat
+        nama: Menyajikan pendapat
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: menyajikan-pendapat-1
+            teks: Murid kelas 3 dapat menyampaikan pendapat tentang suatu hal dalam kegiatan tanya jawab di kelas, dengan pilihan kata yang tepat dan sedikitnya satu alasan.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyampaikan pendapat tentang suatu hal
+              condition: dalam kegiatan tanya jawab di kelas
+              degree: dengan pilihan kata yang tepat dan sedikitnya satu alasan
+          - id: menyajikan-pendapat-2
+            teks: Murid kelas 4 dapat menyajikan pendapat di depan kelas, dengan volume, intonasi, dan gestur yang sesuai.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menyajikan pendapat
+              condition: di depan kelas
+              degree: dengan volume, intonasi, dan gestur yang sesuai
+      - id: berdiskusi
+        nama: Berdiskusi
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: berdiskusi-1
+            teks: Murid kelas 3 dapat mengikuti diskusi kelompok dalam kelompok kecil, dengan menunggu giliran berbicara dan mendengarkan pendapat teman.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mengikuti diskusi kelompok
+              condition: dalam kelompok kecil
+              degree: dengan menunggu giliran berbicara dan mendengarkan pendapat teman
+          - id: berdiskusi-2
+            teks: Murid kelas 4 dapat menanggapi pendapat teman dalam diskusi sesuai tata cara diskusi, dengan bahasa yang santun dan alasan yang jelas.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menanggapi pendapat teman dalam diskusi
+              condition: sesuai tata cara diskusi
+              degree: dengan bahasa yang santun dan alasan yang jelas
+      - id: menceritakan-kembali-teks
+        nama: Menceritakan kembali isi teks
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: menceritakan-kembali-teks-1
+            teks: Murid kelas 3 dapat menceritakan kembali isi cerita yang dibaca atau didengar secara lisan, dengan urutan peristiwa yang tepat.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menceritakan kembali isi cerita yang dibaca atau didengar
+              condition: secara lisan
+              degree: dengan urutan peristiwa yang tepat
+          - id: menceritakan-kembali-teks-2
+            teks: Murid kelas 4 dapat menceritakan kembali informasi dari teks nonsastra yang dibaca atau dipirsa secara lisan atau tertulis, dengan kata-kata sendiri dan informasi yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menceritakan kembali informasi dari teks nonsastra yang dibaca atau dipirsa
+              condition: secara lisan atau tertulis
+              degree: dengan kata-kata sendiri dan informasi yang benar
+  - id: menulis
+    nama: Menulis
+    capaian: Menulis berbagai tipe teks sederhana dengan rangkaian kalimat yang beragam; dan menggunakan kaidah kebahasaan dan kosakata baru yang memiliki makna denotatif untuk menulis teks sesuai dengan konteks.
+    materi:
+      - id: tipe-teks-sederhana
+        nama: Menulis berbagai tipe teks sederhana
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: tipe-teks-sederhana-1
+            teks: Murid kelas 3 dapat menulis teks deskripsi sederhana tentang benda, hewan, atau tempat di sekitarnya berdasarkan pengamatan langsung, dalam sedikitnya satu paragraf yang memuat tiga ciri.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menulis teks deskripsi sederhana tentang benda, hewan, atau tempat di sekitarnya
+              condition: berdasarkan pengamatan langsung
+              degree: dalam sedikitnya satu paragraf yang memuat tiga ciri
+          - id: tipe-teks-sederhana-2
+            teks: Murid kelas 3 dapat menulis teks narasi tentang pengalaman pribadi berbantuan kerangka cerita, dengan urutan waktu yang jelas.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menulis teks narasi tentang pengalaman pribadi
+              condition: berbantuan kerangka cerita
+              degree: dengan urutan waktu yang jelas
+          - id: tipe-teks-sederhana-3
+            teks: Murid kelas 4 dapat menulis teks prosedur sederhana, misalnya cara membuat minuman atau merawat tanaman, berdasarkan kegiatan yang pernah dilakukan, dengan bahan dan langkah yang lengkap dan berurutan.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menulis teks prosedur sederhana, misalnya cara membuat minuman atau merawat tanaman
+              condition: berdasarkan kegiatan yang pernah dilakukan
+              degree: dengan bahan dan langkah yang lengkap dan berurutan
+          - id: tipe-teks-sederhana-4
+            teks: Murid kelas 4 dapat menulis surat atau pesan singkat berpedoman pada contoh surat, dengan bagian-bagian surat yang lengkap.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menulis surat atau pesan singkat
+              condition: berpedoman pada contoh surat
+              degree: dengan bagian-bagian surat yang lengkap
+      - id: ejaan-kosakata
+        nama: Ejaan dan kosakata
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: ejaan-kosakata-1
+            teks: Murid kelas 3 dapat menggunakan huruf kapital, tanda titik, tanda koma, dan tanda tanya dalam tulisan saat menulis atau menyunting kalimat, dengan tepat pada sedikitnya 8 dari 10 kalimat.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menggunakan huruf kapital, tanda titik, tanda koma, dan tanda tanya dalam tulisan
+              condition: saat menulis atau menyunting kalimat
+              degree: dengan tepat pada sedikitnya 8 dari 10 kalimat
+          - id: ejaan-kosakata-2
+            teks: Murid kelas 4 dapat menggunakan kosakata baru yang bermakna denotatif dan kalimat yang beragam dalam tulisan saat menulis teks sederhana, sedikitnya tiga kosakata baru yang tepat maknanya.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menggunakan kosakata baru yang bermakna denotatif dan kalimat yang beragam dalam tulisan
+              condition: saat menulis teks sederhana
+              degree: sedikitnya tiga kosakata baru yang tepat maknanya

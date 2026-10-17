@@ -1,0 +1,296 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: matematika
+mapel: Matematika
+fase: C
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, IV.1 Capaian Pembelajaran Matematika, Fase C
+elemen:
+  - id: bilangan
+    nama: Bilangan
+    capaian: Menunjukkan pemahaman dan intuisi bilangan (number sense) pada bilangan cacah sampai 1.000.000; membaca, menulis, menentukan nilai tempat, membandingkan, mengurutkan, melakukan komposisi dan dekomposisi bilangan; menyelesaikan masalah yang berkaitan dengan uang; melakukan operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah sampai 100.000; serta menyelesaikan masalah yang berkaitan dengan KPK dan FPB. Murid dapat membandingkan dan mengurutkan berbagai pecahan termasuk pecahan campuran, melakukan operasi penjumlahan dan pengurangan pecahan, serta melakukan operasi perkalian dan pembagian pecahan dengan bilangan asli; mengubah pecahan menjadi berbagai bentuk pecahan lain, serta membandingkan dan mengurutkan bilangan desimal (satu angka di belakang koma).
+    materi:
+      - id: bilangan-cacah
+        nama: Bilangan cacah sampai 1.000.000
+        kelas:
+          - 5
+        tp:
+          - id: bilangan-cacah-1
+            teks: Murid kelas 5 dapat membaca, menulis, menentukan nilai tempat, membandingkan, dan mengurutkan bilangan cacah sampai 1.000.000 menggunakan tabel nilai tempat, sedikitnya 8 dari 10 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: membaca, menulis, menentukan nilai tempat, membandingkan, dan mengurutkan bilangan cacah sampai 1.000.000
+              condition: menggunakan tabel nilai tempat
+              degree: sedikitnya 8 dari 10 soal benar
+      - id: operasi-hitung
+        nama: Operasi hitung dan uang
+        kelas:
+          - 5
+        tp:
+          - id: operasi-hitung-1
+            teks: Murid kelas 5 dapat melakukan operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah sampai 100.000 dengan cara bersusun tanpa kalkulator, sedikitnya 8 dari 10 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: melakukan operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah sampai 100.000
+              condition: dengan cara bersusun tanpa kalkulator
+              degree: sedikitnya 8 dari 10 soal benar
+          - id: operasi-hitung-2
+            teks: Murid kelas 5 dapat menyelesaikan masalah sehari-hari yang berkaitan dengan uang pada soal cerita jual beli, sedikitnya 4 dari 5 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menyelesaikan masalah sehari-hari yang berkaitan dengan uang
+              condition: pada soal cerita jual beli
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: kpk-fpb
+        nama: KPK dan FPB
+        kelas:
+          - 5
+        tp:
+          - id: kpk-fpb-1
+            teks: Murid kelas 5 dapat menyelesaikan masalah yang berkaitan dengan KPK dan FPB pada soal cerita sehari-hari, sedikitnya 4 dari 5 soal benar dengan langkah yang runtut.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menyelesaikan masalah yang berkaitan dengan KPK dan FPB
+              condition: pada soal cerita sehari-hari
+              degree: sedikitnya 4 dari 5 soal benar dengan langkah yang runtut
+      - id: pecahan
+        nama: Pecahan
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: pecahan-1
+            teks: Murid kelas 5 dapat membandingkan dan mengurutkan berbagai pecahan, termasuk pecahan campuran menggunakan garis bilangan atau penyamaan penyebut, sedikitnya 4 dari 5 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: membandingkan dan mengurutkan berbagai pecahan, termasuk pecahan campuran
+              condition: menggunakan garis bilangan atau penyamaan penyebut
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: pecahan-2
+            teks: Murid kelas 5 dapat menjumlahkan dan mengurangkan pecahan menggunakan gambar atau penyamaan penyebut, sedikitnya 4 dari 5 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menjumlahkan dan mengurangkan pecahan
+              condition: menggunakan gambar atau penyamaan penyebut
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: pecahan-3
+            teks: Murid kelas 6 dapat mengalikan dan membagi pecahan dengan bilangan asli dengan bantuan gambar atau model luas, sedikitnya 4 dari 5 soal benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: mengalikan dan membagi pecahan dengan bilangan asli
+              condition: dengan bantuan gambar atau model luas
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: pecahan-4
+            teks: Murid kelas 6 dapat mengubah pecahan ke bentuk lain (pecahan biasa, pecahan campuran, desimal, dan persen) tanpa kalkulator, sedikitnya 4 dari 5 soal benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: mengubah pecahan ke bentuk lain (pecahan biasa, pecahan campuran, desimal, dan persen)
+              condition: tanpa kalkulator
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: desimal
+        nama: Bilangan desimal
+        kelas:
+          - 6
+        tp:
+          - id: desimal-1
+            teks: Murid kelas 6 dapat membandingkan dan mengurutkan bilangan desimal satu angka di belakang koma menggunakan garis bilangan, sedikitnya 4 dari 5 soal benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: membandingkan dan mengurutkan bilangan desimal satu angka di belakang koma
+              condition: menggunakan garis bilangan
+              degree: sedikitnya 4 dari 5 soal benar
+  - id: aljabar
+    nama: Aljabar
+    capaian: Menemukan nilai yang belum diketahui dalam kalimat matematika yang melibatkan penjumlahan, pengurangan, perkalian, dan pembagian pada bilangan cacah sampai 1000 dengan menggunakan sifat-sifat bilangan dan operasinya. Murid dapat mengidentifikasi, meniru, dan mengembangkan pola bilangan membesar dan mengecil yang melibatkan perkalian dan pembagian; bernalar secara proporsional untuk menyelesaikan masalah sehari-hari dengan rasio satuan; menggunakan operasi perkalian dan pembagian dalam menyelesaikan masalah sehari-hari yang terkait dengan proporsi.
+    materi:
+      - id: kalimat-matematika
+        nama: Nilai yang belum diketahui
+        kelas:
+          - 5
+        tp:
+          - id: kalimat-matematika-1
+            teks: Murid kelas 5 dapat menemukan nilai yang belum diketahui dalam kalimat matematika yang melibatkan empat operasi hitung pada bilangan cacah sampai 1.000 menggunakan sifat-sifat operasi hitung, sedikitnya 4 dari 5 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menemukan nilai yang belum diketahui dalam kalimat matematika yang melibatkan empat operasi hitung pada bilangan cacah sampai 1.000
+              condition: menggunakan sifat-sifat operasi hitung
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: pola-bilangan
+        nama: Pola bilangan
+        kelas:
+          - 5
+        tp:
+          - id: pola-bilangan-1
+            teks: Murid kelas 5 dapat meniru dan mengembangkan pola bilangan membesar dan mengecil yang melibatkan perkalian dan pembagian dari barisan bilangan yang diberikan, sedikitnya 3 suku berikutnya benar disertai aturannya.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: meniru dan mengembangkan pola bilangan membesar dan mengecil yang melibatkan perkalian dan pembagian
+              condition: dari barisan bilangan yang diberikan
+              degree: sedikitnya 3 suku berikutnya benar disertai aturannya
+      - id: rasio-proporsi
+        nama: Rasio dan proporsi
+        kelas:
+          - 6
+        tp:
+          - id: rasio-proporsi-1
+            teks: Murid kelas 6 dapat menyelesaikan masalah sehari-hari dengan penalaran proporsional dan rasio satuan (misalnya harga per buah) menggunakan tabel atau gambar, sedikitnya 4 dari 5 soal benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menyelesaikan masalah sehari-hari dengan penalaran proporsional dan rasio satuan (misalnya harga per buah)
+              condition: menggunakan tabel atau gambar
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: rasio-proporsi-2
+            teks: Murid kelas 6 dapat menggunakan perkalian dan pembagian untuk menyelesaikan masalah proporsi sehari-hari pada soal cerita seperti resep atau skala, sedikitnya 4 dari 5 soal benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menggunakan perkalian dan pembagian untuk menyelesaikan masalah proporsi sehari-hari
+              condition: pada soal cerita seperti resep atau skala
+              degree: sedikitnya 4 dari 5 soal benar
+  - id: pengukuran
+    nama: Pengukuran
+    capaian: Menentukan keliling dan luas berbagai bentuk bangun datar (segitiga, segiempat, dan segi banyak) serta gabungannya; menghitung durasi waktu dan mengukur besar sudut pada bangun datar atau yang dibentuk dari dua garis berpotongan.
+    materi:
+      - id: keliling-luas
+        nama: Keliling dan luas bangun datar
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: keliling-luas-1
+            teks: Murid kelas 5 dapat menentukan keliling dan luas segitiga, segiempat, dan segi banyak dari gambar berukuran atau petak satuan, sedikitnya 4 dari 5 soal benar dengan satuan yang tepat.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menentukan keliling dan luas segitiga, segiempat, dan segi banyak
+              condition: dari gambar berukuran atau petak satuan
+              degree: sedikitnya 4 dari 5 soal benar dengan satuan yang tepat
+          - id: keliling-luas-2
+            teks: Murid kelas 6 dapat menentukan keliling dan luas gabungan bangun datar dari gambar berukuran, sedikitnya 3 dari 4 soal benar dengan langkah yang runtut.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menentukan keliling dan luas gabungan bangun datar
+              condition: dari gambar berukuran
+              degree: sedikitnya 3 dari 4 soal benar dengan langkah yang runtut
+      - id: durasi-waktu
+        nama: Durasi waktu
+        kelas:
+          - 5
+        tp:
+          - id: durasi-waktu-1
+            teks: Murid kelas 5 dapat menghitung durasi waktu suatu kegiatan dari jadwal atau gambar jam, sedikitnya 4 dari 5 soal benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menghitung durasi waktu suatu kegiatan
+              condition: dari jadwal atau gambar jam
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: sudut
+        nama: Besar sudut
+        kelas:
+          - 6
+        tp:
+          - id: sudut-1
+            teks: Murid kelas 6 dapat mengukur besar sudut pada bangun datar atau sudut yang dibentuk dua garis berpotongan menggunakan busur derajat, dengan selisih paling banyak 2 derajat.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: mengukur besar sudut pada bangun datar atau sudut yang dibentuk dua garis berpotongan
+              condition: menggunakan busur derajat
+              degree: dengan selisih paling banyak 2 derajat
+  - id: geometri
+    nama: Geometri
+    capaian: Mengkonstruksi dan mengurai bangun ruang (kubus, balok, dan gabungannya) dan mengenali visualisasi spasial (bagian depan, atas, dan samping); membandingkan karakteristik antar bangun datar dan antar bangun ruang; serta menentukan lokasi pada peta yang menggunakan sistem berpetak.
+    materi:
+      - id: bangun-ruang
+        nama: Bangun ruang
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: bangun-ruang-1
+            teks: Murid kelas 5 dapat menyusun dan mengurai kubus, balok, dan gabungannya menggunakan jaring-jaring atau kubus satuan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menyusun dan mengurai kubus, balok, dan gabungannya
+              condition: menggunakan jaring-jaring atau kubus satuan
+          - id: bangun-ruang-2
+            teks: Murid kelas 6 dapat menentukan tampak depan, atas, dan samping bangun ruang dari susunan kubus satuan, sedikitnya 3 dari 4 soal benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menentukan tampak depan, atas, dan samping bangun ruang
+              condition: dari susunan kubus satuan
+              degree: sedikitnya 3 dari 4 soal benar
+      - id: karakteristik-bangun
+        nama: Karakteristik bangun datar dan ruang
+        kelas:
+          - 5
+        tp:
+          - id: karakteristik-bangun-1
+            teks: Murid kelas 5 dapat membandingkan karakteristik antarbangun datar dan antarbangun ruang menggunakan tabel atau model bangun, sedikitnya dua persamaan dan dua perbedaan yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: membandingkan karakteristik antarbangun datar dan antarbangun ruang
+              condition: menggunakan tabel atau model bangun
+              degree: sedikitnya dua persamaan dan dua perbedaan yang benar
+      - id: peta-berpetak
+        nama: Lokasi pada peta berpetak
+        kelas:
+          - 6
+        tp:
+          - id: peta-berpetak-1
+            teks: Murid kelas 6 dapat menentukan lokasi pada peta berpetak menggunakan kode baris dan kolom, sedikitnya 4 dari 5 lokasi benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menentukan lokasi pada peta berpetak
+              condition: menggunakan kode baris dan kolom
+              degree: sedikitnya 4 dari 5 lokasi benar
+  - id: analisis-data-dan-peluang
+    nama: Analisis Data dan Peluang
+    capaian: Mengurutkan, membandingkan, menyajikan, dan menganalisis data banyak benda dan data hasil pengukuran dalam bentuk gambar, piktogram, diagram batang, dan tabel frekuensi untuk mendapatkan informasi; menentukan kejadian dengan kemungkinan yang lebih besar atau lebih kecil dalam suatu percobaan acak.
+    materi:
+      - id: penyajian-data
+        nama: Penyajian dan analisis data
+        kelas:
+          - 5
+        tp:
+          - id: penyajian-data-1
+            teks: Murid kelas 5 dapat menyajikan dan menganalisis data dalam piktogram, diagram batang, dan tabel frekuensi dari data hasil pengamatan atau survei kelas, sedikitnya dua informasi yang benar dari penyajian tersebut.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menyajikan dan menganalisis data dalam piktogram, diagram batang, dan tabel frekuensi
+              condition: dari data hasil pengamatan atau survei kelas
+              degree: sedikitnya dua informasi yang benar dari penyajian tersebut
+      - id: peluang
+        nama: Peluang
+        kelas:
+          - 6
+        tp:
+          - id: peluang-1
+            teks: Murid kelas 6 dapat menentukan kejadian yang lebih mungkin atau kurang mungkin terjadi dalam percobaan acak melalui percobaan dengan dadu, koin, atau putaran, dengan alasan berdasarkan hasil percobaan.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menentukan kejadian yang lebih mungkin atau kurang mungkin terjadi dalam percobaan acak
+              condition: melalui percobaan dengan dadu, koin, atau putaran
+              degree: dengan alasan berdasarkan hasil percobaan

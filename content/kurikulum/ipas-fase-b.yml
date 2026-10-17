@@ -1,0 +1,344 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: ipas
+mapel: IPAS
+fase: B
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, VI Capaian Pembelajaran Ilmu Pengetahuan Alam dan Sosial (IPAS), Fase B
+elemen:
+  - id: pemahaman-ipas
+    nama: Pemahaman IPAS
+    capaian: Menjelaskan bentuk dan fungsi pancaindra; menganalisis siklus hidup makhluk hidup dan upaya pelestariannya; menghasilkan solusi untuk masalah yang berkaitan dengan pelestarian sumber daya alam sebagai upaya mitigasi perubahan iklim; menyimpulkan proses perubahan wujud zat; menjelaskan sumber dan bentuk energi, serta proses perubahan bentuk energi dalam kehidupan sehari-hari; membedakan jenis gaya dan pengaruhnya terhadap arah, gerak, dan bentuk benda; menjelaskan peran, tugas, dan tanggung jawab serta interaksi sosial yang terjadi di sekitar tempat tinggal dan sekolah; mengenali letak kabupaten/kota dan provinsi tempat tinggalnya dengan menggunakan peta konvensional/digital; mengklasifikasikan ragam bentang alam dan keterkaitannya dengan profesi masyarakat, ragam budaya serta upaya untuk melestarikannya; menganalisis sejarah masyarakat di lingkungan tempat tinggal; menjelaskan nilai mata uang dan fungsinya, serta cara mengelola keuangan secara bijak.
+    materi:
+      - id: pancaindra
+        nama: Pancaindra
+        kelas:
+          - 3
+        tp:
+          - id: pancaindra-1
+            teks: Murid kelas 3 dapat menjelaskan hubungan bentuk dan fungsi setiap pancaindra melalui pengamatan dan percobaan sederhana, dengan tepat untuk kelima indra.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menjelaskan hubungan bentuk dan fungsi setiap pancaindra
+              condition: melalui pengamatan dan percobaan sederhana
+              degree: dengan tepat untuk kelima indra
+          - id: pancaindra-2
+            teks: Murid kelas 3 dapat menyebutkan cara merawat pancaindra dalam kegiatan sehari-hari dari pengalaman sendiri dan gambar, sedikitnya satu cara untuk setiap indra.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyebutkan cara merawat pancaindra dalam kegiatan sehari-hari
+              condition: dari pengalaman sendiri dan gambar
+              degree: sedikitnya satu cara untuk setiap indra
+      - id: siklus-hidup
+        nama: Siklus hidup makhluk hidup
+        kelas:
+          - 3
+        tp:
+          - id: siklus-hidup-1
+            teks: Murid kelas 3 dapat menceritakan kembali tahapan siklus hidup hewan atau tumbuhan di sekitarnya menggunakan gambar atau model sederhana, dengan urutan tahap yang benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menceritakan kembali tahapan siklus hidup hewan atau tumbuhan di sekitarnya
+              condition: menggunakan gambar atau model sederhana
+              degree: dengan urutan tahap yang benar
+          - id: siklus-hidup-2
+            teks: Murid kelas 3 dapat menganalisis perubahan pada setiap tahap siklus hidup dan upaya melestarikan makhluk hidup tersebut dari hasil pengamatan atau gambar, sedikitnya satu upaya pelestarian yang sesuai.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menganalisis perubahan pada setiap tahap siklus hidup dan upaya melestarikan makhluk hidup tersebut
+              condition: dari hasil pengamatan atau gambar
+              degree: sedikitnya satu upaya pelestarian yang sesuai
+      - id: wujud-zat
+        nama: Wujud zat dan perubahannya
+        kelas:
+          - 3
+        tp:
+          - id: wujud-zat-1
+            teks: Murid kelas 3 dapat membedakan benda padat, cair, dan gas berdasarkan ciri-cirinya melalui pengamatan benda di sekitarnya, sedikitnya 8 dari 10 benda benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membedakan benda padat, cair, dan gas berdasarkan ciri-cirinya
+              condition: melalui pengamatan benda di sekitarnya
+              degree: sedikitnya 8 dari 10 benda benar
+          - id: wujud-zat-2
+            teks: Murid kelas 3 dapat menyimpulkan proses perubahan wujud zat (mencair, membeku, menguap, mengembun) dari percobaan sederhana, dengan kesimpulan yang sesuai hasil percobaan.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyimpulkan proses perubahan wujud zat (mencair, membeku, menguap, mengembun)
+              condition: dari percobaan sederhana
+              degree: dengan kesimpulan yang sesuai hasil percobaan
+      - id: energi
+        nama: Sumber, bentuk, dan perubahan energi
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: energi-1
+            teks: Murid kelas 3 dapat menyebutkan sumber dan bentuk energi, sedikitnya tiga sumber dan tiga bentuk energi.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyebutkan sumber dan bentuk energi
+              degree: sedikitnya tiga sumber dan tiga bentuk energi
+          - id: energi-2
+            teks: Murid kelas 4 dapat menjelaskan perubahan bentuk energi pada alat sehari-hari, misalnya kipas angin atau setrika, dari pengamatan alat di rumah atau sekolah, dengan urutan perubahan energi yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan perubahan bentuk energi pada alat sehari-hari, misalnya kipas angin atau setrika
+              condition: dari pengamatan alat di rumah atau sekolah
+              degree: dengan urutan perubahan energi yang benar
+          - id: energi-3
+            teks: Murid kelas 4 dapat menjelaskan manfaat perubahan bentuk energi bagi kehidupan sehari-hari, sedikitnya dua contoh yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan manfaat perubahan bentuk energi bagi kehidupan sehari-hari
+              degree: sedikitnya dua contoh yang benar
+      - id: gaya
+        nama: Gaya dan pengaruhnya
+        kelas:
+          - 4
+        tp:
+          - id: gaya-1
+            teks: Murid kelas 4 dapat membedakan gaya otot, gaya gesek, gaya magnet, gaya pegas, dan gaya gravitasi melalui contoh kegiatan sehari-hari, sedikitnya 4 dari 5 contoh benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: membedakan gaya otot, gaya gesek, gaya magnet, gaya pegas, dan gaya gravitasi
+              condition: melalui contoh kegiatan sehari-hari
+              degree: sedikitnya 4 dari 5 contoh benar
+          - id: gaya-2
+            teks: Murid kelas 4 dapat menjelaskan pengaruh gaya terhadap arah, gerak, dan bentuk benda melalui percobaan sederhana, dengan penjelasan yang sesuai hasil percobaan.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan pengaruh gaya terhadap arah, gerak, dan bentuk benda
+              condition: melalui percobaan sederhana
+              degree: dengan penjelasan yang sesuai hasil percobaan
+      - id: pelestarian-alam
+        nama: Pelestarian sumber daya alam dan perubahan iklim
+        kelas:
+          - 4
+        tp:
+          - id: pelestarian-alam-1
+            teks: Murid kelas 4 dapat menjelaskan penyebab dan dampak perubahan iklim, sedikitnya dua penyebab dan dua dampak.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan penyebab dan dampak perubahan iklim
+              degree: sedikitnya dua penyebab dan dua dampak
+          - id: pelestarian-alam-2
+            teks: Murid kelas 4 dapat menghasilkan solusi untuk melestarikan sumber daya alam sebagai upaya mitigasi perubahan iklim, misalnya hemat air atau mengurangi sampah plastik, berdasarkan masalah nyata di sekitar sekolah atau rumah, sedikitnya satu solusi yang dapat dilakukan sendiri.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menghasilkan solusi untuk melestarikan sumber daya alam sebagai upaya mitigasi perubahan iklim, misalnya hemat air atau mengurangi sampah plastik
+              condition: berdasarkan masalah nyata di sekitar sekolah atau rumah
+              degree: sedikitnya satu solusi yang dapat dilakukan sendiri
+      - id: peran-interaksi
+        nama: Peran, tugas, dan interaksi sosial
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: peran-interaksi-1
+            teks: Murid kelas 3 dapat menjelaskan peran dan tugas dirinya di rumah dan di sekolah sesuai aturan yang berlaku, sedikitnya dua peran di setiap tempat.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menjelaskan peran dan tugas dirinya di rumah dan di sekolah
+              condition: sesuai aturan yang berlaku
+              degree: sedikitnya dua peran di setiap tempat
+          - id: peran-interaksi-2
+            teks: Murid kelas 4 dapat menjelaskan peran, tugas, dan tanggung jawab orang-orang di sekitar tempat tinggal dan sekolah serta interaksi sosial di antara mereka melalui wawancara atau pengamatan, sedikitnya tiga contoh yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan peran, tugas, dan tanggung jawab orang-orang di sekitar tempat tinggal dan sekolah serta interaksi sosial di antara mereka
+              condition: melalui wawancara atau pengamatan
+              degree: sedikitnya tiga contoh yang benar
+      - id: denah-peta
+        nama: Denah dan peta wilayah
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: denah-peta-1
+            teks: Murid kelas 3 dapat membuat denah sederhana rumah, kelas, atau lingkungan sekitar yang dilengkapi arah mata angin, dengan letak benda atau tempat yang sesuai kenyataan.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membuat denah sederhana rumah, kelas, atau lingkungan sekitar
+              condition: yang dilengkapi arah mata angin
+              degree: dengan letak benda atau tempat yang sesuai kenyataan
+          - id: denah-peta-2
+            teks: Murid kelas 4 dapat menunjukkan letak kabupaten/kota dan provinsi tempat tinggalnya pada peta konvensional atau digital.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menunjukkan letak kabupaten/kota dan provinsi tempat tinggalnya
+              condition: pada peta konvensional atau digital
+      - id: bentang-alam
+        nama: Bentang alam, profesi, dan budaya
+        kelas:
+          - 4
+        tp:
+          - id: bentang-alam-1
+            teks: Murid kelas 4 dapat mengklasifikasikan ragam bentang alam di daerahnya, seperti pegunungan, dataran rendah, dan pantai, dari gambar atau peta, sedikitnya 4 dari 5 gambar benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: mengklasifikasikan ragam bentang alam di daerahnya, seperti pegunungan, dataran rendah, dan pantai
+              condition: dari gambar atau peta
+              degree: sedikitnya 4 dari 5 gambar benar
+          - id: bentang-alam-2
+            teks: Murid kelas 4 dapat menjelaskan keterkaitan bentang alam dengan profesi masyarakat dan ragam budaya di daerahnya dari pengamatan atau sumber bacaan, sedikitnya dua keterkaitan yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan keterkaitan bentang alam dengan profesi masyarakat dan ragam budaya di daerahnya
+              condition: dari pengamatan atau sumber bacaan
+              degree: sedikitnya dua keterkaitan yang benar
+          - id: bentang-alam-3
+            teks: Murid kelas 4 dapat menjelaskan upaya melestarikan budaya dan kearifan lokal di daerahnya dari contoh budaya setempat, sedikitnya dua upaya yang dapat dilakukan murid.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menjelaskan upaya melestarikan budaya dan kearifan lokal di daerahnya
+              condition: dari contoh budaya setempat
+              degree: sedikitnya dua upaya yang dapat dilakukan murid
+      - id: sejarah-masyarakat
+        nama: Sejarah keluarga dan masyarakat sekitar
+        kelas:
+          - 3
+        tp:
+          - id: sejarah-masyarakat-1
+            teks: Murid kelas 3 dapat menceritakan sejarah keluarganya dan perubahan kehidupan masyarakat di lingkungan tempat tinggal dari dulu sampai sekarang berdasarkan wawancara kepada anggota keluarga atau tokoh setempat, dengan urutan waktu yang benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menceritakan sejarah keluarganya dan perubahan kehidupan masyarakat di lingkungan tempat tinggal dari dulu sampai sekarang
+              condition: berdasarkan wawancara kepada anggota keluarga atau tokoh setempat
+              degree: dengan urutan waktu yang benar
+          - id: sejarah-masyarakat-2
+            teks: Murid kelas 3 dapat membandingkan kehidupan masyarakat sekitar pada masa lalu dan masa kini, misalnya alat transportasi atau permainan anak, dari gambar atau cerita narasumber, sedikitnya dua perbedaan yang benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membandingkan kehidupan masyarakat sekitar pada masa lalu dan masa kini, misalnya alat transportasi atau permainan anak
+              condition: dari gambar atau cerita narasumber
+              degree: sedikitnya dua perbedaan yang benar
+      - id: uang-keuangan
+        nama: Nilai uang dan mengelola keuangan
+        kelas:
+          - 3
+        tp:
+          - id: uang-keuangan-1
+            teks: Murid kelas 3 dapat membedakan kebutuhan dan keinginan serta menentukan skala prioritas saat berbelanja dari daftar belanja sederhana, dengan alasan yang masuk akal.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membedakan kebutuhan dan keinginan serta menentukan skala prioritas saat berbelanja
+              condition: dari daftar belanja sederhana
+              degree: dengan alasan yang masuk akal
+          - id: uang-keuangan-2
+            teks: Murid kelas 3 dapat menjelaskan nilai mata uang dan fungsinya sebagai alat tukar dalam simulasi jual beli memakai uang mainan, dengan perhitungan uang yang benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menjelaskan nilai mata uang dan fungsinya sebagai alat tukar
+              condition: dalam simulasi jual beli memakai uang mainan
+              degree: dengan perhitungan uang yang benar
+          - id: uang-keuangan-3
+            teks: Murid kelas 3 dapat membuat rencana mengelola uang saku, misalnya menyisihkan sebagian untuk ditabung, dalam tabel rencana sederhana, dengan jumlah pengeluaran yang tidak melebihi uang saku.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membuat rencana mengelola uang saku, misalnya menyisihkan sebagian untuk ditabung
+              condition: dalam tabel rencana sederhana
+              degree: dengan jumlah pengeluaran yang tidak melebihi uang saku
+  - id: keterampilan-proses
+    nama: Keterampilan Proses
+    capaian: "Mampu menerapkan keterampilan proses yang meliputi: ● Mengamati Murid mengamati fenomena dan peristiwa secara sederhana dan dapat mencatat hasil pengamatannya. ● Mempertanyakan dan Memprediksi Secara mandiri, murid mengajukan pertanyaan tentang hal-hal yang ingin diketahui saat melakukan pengamatan dan membuat prediksi berdasarkan pengetahuan yang dimiliki sebelumnya. ● Merencanakan dan Melakukan Penyelidikan Dengan panduan pendidik, murid membuat rencana dan melakukan langkah-langkah operasional untuk menjawab pertanyaan yang diajukan. Murid melakukan observasi menggunakan alat bantu pengukuran sederhana. ● Memproses, Menganalisis Data dan Informasi Dengan panduan pendidik, murid mengorganisasikan data dalam bentuk turus dan diagram gambar untuk menyajikan dan mengidentifikasi pola. Murid membandingkan antara hasil pengamatan dengan prediksi dan memberikan penjelasan. ● Mengevaluasi dan Refleksi Murid melakukan refleksi terhadap penyelidikan yang sudah dilakukan. ● Mengomunikasikan Hasil Murid mengomunikasikan hasil penyelidikan secara lisan dan tertulis dalam berbagai media."
+    materi:
+      - id: mengamati
+        nama: Mengamati
+        kelas:
+          - 3
+        tp:
+          - id: mengamati-1
+            teks: Murid kelas 3 dapat mengamati suatu fenomena dan mencatat hasil pengamatannya dengan panduan lembar pengamatan, sedikitnya tiga hasil pengamatan yang sesuai.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mengamati suatu fenomena dan mencatat hasil pengamatannya
+              condition: dengan panduan lembar pengamatan
+              degree: sedikitnya tiga hasil pengamatan yang sesuai
+      - id: mempertanyakan-memprediksi
+        nama: Mempertanyakan dan memprediksi
+        kelas:
+          - 3
+        tp:
+          - id: mempertanyakan-memprediksi-1
+            teks: Murid kelas 3 dapat mengajukan pertanyaan tentang hal yang diamati dan membuat prediksi berdasarkan pengetahuan yang dimiliki sebelumnya, sedikitnya satu pertanyaan dan satu prediksi yang relevan.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mengajukan pertanyaan tentang hal yang diamati dan membuat prediksi
+              condition: berdasarkan pengetahuan yang dimiliki sebelumnya
+              degree: sedikitnya satu pertanyaan dan satu prediksi yang relevan
+      - id: menyelidiki
+        nama: Merencanakan dan melakukan penyelidikan
+        kelas:
+          - 4
+        tp:
+          - id: menyelidiki-1
+            teks: Murid kelas 4 dapat membuat rencana dan melakukan langkah-langkah penyelidikan, termasuk mengukur dengan panduan guru dan alat ukur sederhana.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: membuat rencana dan melakukan langkah-langkah penyelidikan, termasuk mengukur
+              condition: dengan panduan guru dan alat ukur sederhana
+      - id: mengolah-data
+        nama: Memproses dan menganalisis data
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: mengolah-data-1
+            teks: Murid kelas 3 dapat menyajikan data hasil pengamatan dalam turus dan diagram gambar untuk menemukan pola di bawah bimbingan guru, dengan data yang sesuai hasil pengamatan.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyajikan data hasil pengamatan dalam turus dan diagram gambar untuk menemukan pola
+              condition: di bawah bimbingan guru
+              degree: dengan data yang sesuai hasil pengamatan
+          - id: mengolah-data-2
+            teks: Murid kelas 4 dapat membandingkan hasil pengamatan dengan prediksi dan memberikan penjelasan dari data penyelidikan sendiri.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: membandingkan hasil pengamatan dengan prediksi dan memberikan penjelasan
+              condition: dari data penyelidikan sendiri
+      - id: refleksi-komunikasi
+        nama: Mengevaluasi dan mengomunikasikan hasil
+        kelas:
+          - 4
+        tp:
+          - id: refleksi-komunikasi-1
+            teks: Murid kelas 4 dapat merefleksikan penyelidikan dan mengomunikasikan hasilnya secara lisan dan tertulis, dengan sedikitnya satu hal yang perlu diperbaiki.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: merefleksikan penyelidikan dan mengomunikasikan hasilnya
+              condition: secara lisan dan tertulis
+              degree: dengan sedikitnya satu hal yang perlu diperbaiki

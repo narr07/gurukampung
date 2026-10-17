@@ -37,3 +37,11 @@ logs
 # Berkas khusus alat AI, tidak di-commit
 .claude/
 .mcp.json
+
+# Produk berbayar siap unduh (rangkuman, LKPD, dll.). Repo ini publik, jadi sumber dan PDF-nya tidak boleh masuk git
+/produk/
+
+# Petunjuk agen AI lokal, tidak di-commit
+AGENTS.md
+GEMINI.md
+.gemini/

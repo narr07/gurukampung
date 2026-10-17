@@ -49,7 +49,16 @@ export default defineContentConfig({
             tp: z.array(z.object({
               id: z.string(),
               teks: z.string(),
-              kelas: z.number().optional()
+              kelas: z.number().optional(),
+              // Unsur TP format ABCD; `teks` adalah gabungannya. Minimal resmi hanya kompetensi + lingkup materi
+              // (= behavior), jadi condition dan degree boleh tidak ada. Generator memakai behavior untuk isi dan
+              // tingkat Bloom, condition untuk bentuk soal dan media, degree untuk kunci, rubrik, dan KKTP
+              abcd: z.object({
+                audience: z.string(),
+                behavior: z.string(),
+                condition: z.string().optional(),
+                degree: z.string().optional()
+              }).optional()
             })).default([])
           }))
         }))

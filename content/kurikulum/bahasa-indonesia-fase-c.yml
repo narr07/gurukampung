@@ -1,0 +1,227 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: bahasa-indonesia
+mapel: Bahasa Indonesia
+fase: C
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, III.1 Capaian Pembelajaran Bahasa Indonesia, Fase C
+elemen:
+  - id: menyimak
+    nama: Menyimak
+    capaian: Menganalisis informasi dari teks nonsastra berbentuk teks aural (teks yang dibacakan dan/atau didengarkan; dan menganalisis isi teks sastra berbentuk teks aural.
+    materi:
+      - id: informasi-simakan
+        nama: Menganalisis informasi yang didengar
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: informasi-simakan-1
+            teks: Murid kelas 5 dapat menganalisis informasi penting (apa, siapa, kapan, di mana, mengapa, dan bagaimana) dari berita atau teks setelah mendengarkan teks yang dibacakan atau rekaman, sedikitnya 5 dari 6 unsur benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menganalisis informasi penting (apa, siapa, kapan, di mana, mengapa, dan bagaimana) dari berita atau teks
+              condition: setelah mendengarkan teks yang dibacakan atau rekaman
+              degree: sedikitnya 5 dari 6 unsur benar
+          - id: informasi-simakan-2
+            teks: Murid kelas 6 dapat membedakan fakta dan opini dalam teks nonsastra, sedikitnya 4 dari 5 kalimat benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: membedakan fakta dan opini dalam teks nonsastra
+              degree: sedikitnya 4 dari 5 kalimat benar
+      - id: sastra-simakan-c
+        nama: Menganalisis cerita yang didengar
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: sastra-simakan-c-1
+            teks: Murid kelas 5 dapat menganalisis tokoh, watak, latar, dan alur cerita, dengan bukti dari isi cerita.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menganalisis tokoh, watak, latar, dan alur cerita
+              degree: dengan bukti dari isi cerita
+          - id: sastra-simakan-c-2
+            teks: Murid kelas 6 dapat menganalisis nilai-nilai dalam cerita rakyat atau puisi setelah mendengarkan cerita atau puisi, sedikitnya dua nilai disertai alasan dari teks.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menganalisis nilai-nilai dalam cerita rakyat atau puisi
+              condition: setelah mendengarkan cerita atau puisi
+              degree: sedikitnya dua nilai disertai alasan dari teks
+  - id: membaca-memirsa
+    nama: Membaca dan Memirsa
+    capaian: Membaca kata-kata dengan berbagai pola kombinasi huruf dengan fasih dari bacaan dan/atau tayangan yang dipirsa; dan menganalisis informasi serta nilai-nilai dalam teks sastra dan nonsastra berwujud teks visual dan/atau audiovisual.
+    materi:
+      - id: membaca-fasih-c
+        nama: Membaca fasih berbagai kombinasi huruf
+        kelas:
+          - 5
+        tp:
+          - id: membaca-fasih-c-1
+            teks: Murid kelas 5 dapat membaca teks yang memuat gabungan huruf (ng, ny, kh, sy) dan kata serapan dari bacaan cetak atau digital, dengan fasih dan lafal yang tepat.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: membaca teks yang memuat gabungan huruf (ng, ny, kh, sy) dan kata serapan
+              condition: dari bacaan cetak atau digital
+              degree: dengan fasih dan lafal yang tepat
+      - id: teks-visual
+        nama: Informasi dalam teks visual dan audiovisual
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: teks-visual-1
+            teks: Murid kelas 5 dapat menganalisis informasi dalam teks nonsastra berwujud visual, seperti infografik, tabel, atau poster, dari teks visual yang disediakan, sedikitnya tiga informasi dan satu kesimpulan yang benar.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menganalisis informasi dalam teks nonsastra berwujud visual, seperti infografik, tabel, atau poster
+              condition: dari teks visual yang disediakan
+              degree: sedikitnya tiga informasi dan satu kesimpulan yang benar
+          - id: teks-visual-2
+            teks: Murid kelas 6 dapat menyimpulkan informasi dari tayangan audiovisual, seperti video berita atau iklan layanan masyarakat, dengan kesimpulan yang sesuai isi tayangan.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menyimpulkan informasi dari tayangan audiovisual, seperti video berita atau iklan layanan masyarakat
+              degree: dengan kesimpulan yang sesuai isi tayangan
+      - id: nilai-teks-sastra
+        nama: Nilai-nilai dalam teks sastra
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: nilai-teks-sastra-1
+            teks: Murid kelas 5 dapat menganalisis unsur cerita dan nilai-nilai dalam cerita fiksi, dengan bukti kutipan dari teks.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menganalisis unsur cerita dan nilai-nilai dalam cerita fiksi
+              degree: dengan bukti kutipan dari teks
+          - id: nilai-teks-sastra-2
+            teks: Murid kelas 6 dapat membandingkan nilai-nilai dalam dua cerita atau puisi dari dua teks yang dibaca, sedikitnya satu persamaan dan satu perbedaan disertai bukti.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: membandingkan nilai-nilai dalam dua cerita atau puisi
+              condition: dari dua teks yang dibaca
+              degree: sedikitnya satu persamaan dan satu perbedaan disertai bukti
+  - id: berbicara-mempresentasikan
+    nama: Berbicara dan Mempresentasikan
+    capaian: Mempresentasikan gagasan dari berbagai tipe teks dengan efektif dan santun; dan menyampaikan perasaan berdasarkan fakta, imajinasi (dari diri sendiri dan orang lain) secara indah dan menarik dalam bentuk teks sastra dengan penggunaan kosakata secara kreatif.
+    materi:
+      - id: presentasi-gagasan
+        nama: Mempresentasikan gagasan
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: presentasi-gagasan-1
+            teks: Murid kelas 5 dapat mempresentasikan hasil pengamatan atau gagasan di depan kelas, secara runtut, efektif, dan santun.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: mempresentasikan hasil pengamatan atau gagasan
+              condition: di depan kelas
+              degree: secara runtut, efektif, dan santun
+          - id: presentasi-gagasan-2
+            teks: Murid kelas 6 dapat mempresentasikan gagasan dan menjawab pertanyaan pendengar berbantuan media seperti poster atau gambar, dengan jawaban yang sesuai pertanyaan.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: mempresentasikan gagasan dan menjawab pertanyaan pendengar
+              condition: berbantuan media seperti poster atau gambar
+              degree: dengan jawaban yang sesuai pertanyaan
+      - id: ekspresi-sastra
+        nama: Menyampaikan perasaan dalam karya sastra
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: ekspresi-sastra-1
+            teks: Murid kelas 5 dapat membacakan puisi di depan kelas, dengan lafal, intonasi, dan ekspresi yang sesuai.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: membacakan puisi
+              condition: di depan kelas
+              degree: dengan lafal, intonasi, dan ekspresi yang sesuai
+          - id: ekspresi-sastra-2
+            teks: Murid kelas 6 dapat menyampaikan perasaan berdasarkan fakta atau imajinasi secara lisan dalam bentuk puisi atau cerita dari pengalaman sendiri atau gambar pemantik, dengan kosakata yang kreatif.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menyampaikan perasaan berdasarkan fakta atau imajinasi secara lisan dalam bentuk puisi atau cerita
+              condition: dari pengalaman sendiri atau gambar pemantik
+              degree: dengan kosakata yang kreatif
+  - id: menulis
+    nama: Menulis
+    capaian: Menulis berbagai tipe teks sederhana berdasarkan gagasan, hasil pengamatan, pengalaman, dan/atau imajinasi dengan rangkaian kalimat kompleks secara kreatif, menarik, dan/atau indah; dan menggunakan kaidah kebahasaan dan kosakata baru yang memiliki makna denotatif dan konotatif.
+    materi:
+      - id: menulis-kreatif
+        nama: Menulis dari gagasan, pengamatan, dan imajinasi
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: menulis-kreatif-1
+            teks: Murid kelas 5 dapat menulis laporan hasil pengamatan sederhana berdasarkan pengamatan langsung, dengan kalimat kompleks yang runtut.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menulis laporan hasil pengamatan sederhana
+              condition: berdasarkan pengamatan langsung
+              degree: dengan kalimat kompleks yang runtut
+          - id: menulis-kreatif-2
+            teks: Murid kelas 5 dapat menulis cerita fiksi berdasarkan imajinasi, dengan tokoh, latar, dan alur yang jelas.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menulis cerita fiksi
+              condition: berdasarkan imajinasi
+              degree: dengan tokoh, latar, dan alur yang jelas
+          - id: menulis-kreatif-3
+            teks: Murid kelas 6 dapat menulis teks persuasif sederhana, seperti poster atau iklan, tentang masalah di sekitar sekolah, dengan bahasa yang menarik dan ajakan yang jelas.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menulis teks persuasif sederhana, seperti poster atau iklan
+              condition: tentang masalah di sekitar sekolah
+              degree: dengan bahasa yang menarik dan ajakan yang jelas
+          - id: menulis-kreatif-4
+            teks: Murid kelas 6 dapat menulis puisi berdasarkan pengalaman atau imajinasi, sedikitnya dua bait dengan pilihan kata yang indah.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: menulis puisi
+              condition: berdasarkan pengalaman atau imajinasi
+              degree: sedikitnya dua bait dengan pilihan kata yang indah
+      - id: kaidah-makna-kata
+        nama: Kaidah kebahasaan dan makna kata
+        kelas:
+          - 5
+          - 6
+        tp:
+          - id: kaidah-makna-kata-1
+            teks: Murid kelas 5 dapat menggunakan ejaan, tanda baca, dan kalimat efektif dalam tulisan saat menulis dan menyunting tulisan sendiri, dengan paling banyak tiga kesalahan ejaan dalam satu tulisan.
+            kelas: 5
+            abcd:
+              audience: Murid kelas 5
+              behavior: menggunakan ejaan, tanda baca, dan kalimat efektif dalam tulisan
+              condition: saat menulis dan menyunting tulisan sendiri
+              degree: dengan paling banyak tiga kesalahan ejaan dalam satu tulisan
+          - id: kaidah-makna-kata-2
+            teks: Murid kelas 6 dapat membedakan makna denotatif dan konotatif serta menggunakannya dalam tulisan dari contoh kalimat, sedikitnya 4 dari 5 kalimat benar.
+            kelas: 6
+            abcd:
+              audience: Murid kelas 6
+              behavior: membedakan makna denotatif dan konotatif serta menggunakannya dalam tulisan
+              condition: dari contoh kalimat
+              degree: sedikitnya 4 dari 5 kalimat benar

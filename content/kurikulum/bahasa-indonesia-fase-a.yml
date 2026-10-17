@@ -1,0 +1,246 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: bahasa-indonesia
+mapel: Bahasa Indonesia
+fase: A
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, III.1 Capaian Pembelajaran Bahasa Indonesia, Fase A
+elemen:
+  - id: menyimak
+    nama: Menyimak
+    capaian: Memahami informasi dari teks nonsastra berbentuk teks aural (teks yang dibacakan dan/atau didengarkan) berupa percakapan yang berkaitan dengan diri, keluarga, dan/atau lingkungan sekitar; dan memahami pesan teks sastra berbentuk teks aural.
+    materi:
+      - id: menyimak-informasi
+        nama: Menyimak informasi dan percakapan
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: menyimak-informasi-1
+            teks: Murid kelas 1 dapat menjawab pertanyaan siapa, apa, dan di mana tentang percakapan mengenai diri dan keluarga setelah mendengarkan percakapan atau teks yang dibacakan, sedikitnya 3 dari 4 pertanyaan benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menjawab pertanyaan siapa, apa, dan di mana tentang percakapan mengenai diri dan keluarga
+              condition: setelah mendengarkan percakapan atau teks yang dibacakan
+              degree: sedikitnya 3 dari 4 pertanyaan benar
+          - id: menyimak-informasi-2
+            teks: Murid kelas 2 dapat menyebutkan informasi penting dari teks nonsastra tentang lingkungan sekitar setelah mendengarkan teks yang dibacakan, sedikitnya dua informasi yang benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyebutkan informasi penting dari teks nonsastra tentang lingkungan sekitar
+              condition: setelah mendengarkan teks yang dibacakan
+              degree: sedikitnya dua informasi yang benar
+      - id: menyimak-cerita
+        nama: Menyimak cerita dan puisi anak
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: menyimak-cerita-1
+            teks: Murid kelas 1 dapat menyebutkan tokoh dan kejadian dalam dongeng atau cerita bergambar setelah mendengarkan cerita yang dibacakan.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menyebutkan tokoh dan kejadian dalam dongeng atau cerita bergambar
+              condition: setelah mendengarkan cerita yang dibacakan
+          - id: menyimak-cerita-2
+            teks: Murid kelas 2 dapat menyampaikan pesan dari cerita atau puisi anak setelah mendengarkan cerita atau puisi yang dibacakan, dengan kalimat sendiri yang sesuai isi.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyampaikan pesan dari cerita atau puisi anak
+              condition: setelah mendengarkan cerita atau puisi yang dibacakan
+              degree: dengan kalimat sendiri yang sesuai isi
+  - id: membaca-memirsa
+    nama: Membaca dan Memirsa
+    capaian: Membaca kata-kata sederhana dengan fasih dari bacaan dan/atau tayangan yang dipirsa tentang diri, keluarga, kesehatan, dan/atau lingkungan sekitar; dan memahami isi bacaan dan/atau tayangan yang dipirsa tentang diri, keluarga, kesehatan, dan/atau lingkungan sekitar.
+    materi:
+      - id: membaca-permulaan
+        nama: Membaca permulaan
+        kelas:
+          - 1
+        tp:
+          - id: membaca-permulaan-1
+            teks: Murid kelas 1 dapat membaca suku kata dan merangkainya menjadi kata sederhana menggunakan kartu huruf dan kartu suku kata, sedikitnya 8 dari 10 kata benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: membaca suku kata dan merangkainya menjadi kata sederhana
+              condition: menggunakan kartu huruf dan kartu suku kata
+              degree: sedikitnya 8 dari 10 kata benar
+          - id: membaca-permulaan-2
+            teks: Murid kelas 1 dapat membaca kalimat sederhana tentang diri dan keluarga dari teks bergambar, dengan lafal yang tepat.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: membaca kalimat sederhana tentang diri dan keluarga
+              condition: dari teks bergambar
+              degree: dengan lafal yang tepat
+      - id: membaca-lancar
+        nama: Membaca lancar teks pendek
+        kelas:
+          - 2
+        tp:
+          - id: membaca-lancar-1
+            teks: Murid kelas 2 dapat membaca nyaring teks pendek tentang kesehatan dan lingkungan sekitar dari buku atau kartu bacaan, dengan lancar dan intonasi yang tepat.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: membaca nyaring teks pendek tentang kesehatan dan lingkungan sekitar
+              condition: dari buku atau kartu bacaan
+              degree: dengan lancar dan intonasi yang tepat
+      - id: memahami-bacaan
+        nama: Memahami isi bacaan dan tayangan
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: memahami-bacaan-1
+            teks: Murid kelas 1 dapat menjawab pertanyaan tentang isi teks pendek setelah membaca teks bergambar, sedikitnya 3 dari 4 pertanyaan benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menjawab pertanyaan tentang isi teks pendek
+              condition: setelah membaca teks bergambar
+              degree: sedikitnya 3 dari 4 pertanyaan benar
+          - id: memahami-bacaan-2
+            teks: Murid kelas 2 dapat menyebutkan informasi dan urutan kejadian dalam bacaan atau tayangan tentang kesehatan dan lingkungan sekitar, dengan urutan yang benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyebutkan informasi dan urutan kejadian dalam bacaan atau tayangan tentang kesehatan dan lingkungan sekitar
+              degree: dengan urutan yang benar
+  - id: berbicara-mempresentasikan
+    nama: Berbicara dan Mempresentasikan
+    capaian: Merespons dengan bertanya tentang sesuatu, menjawab, dan menanggapi komentar orang lain (teman, pendidik, dan/atau orang dewasa) dengan baik dan santun dalam suatu percakapan tentang diri, keluarga, kesehatan, dan/atau lingkungan sekitar; mengungkapkan perasaan dan gagasan secara lisan dengan atau tanpa bantuan gambar; dan menceritakan kembali isi berbagai tipe teks yang dibaca, dipirsa, atau didengar tentang diri, keluarga, kesehatan, dan/atau lingkungan sekitar.
+    materi:
+      - id: percakapan-santun
+        nama: Bercakap-cakap dengan santun
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: percakapan-santun-1
+            teks: Murid kelas 1 dapat bertanya dan menjawab pertanyaan dalam percakapan tentang diri dan keluarga dalam kegiatan bermain peran bersama teman, dengan bahasa yang santun.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: bertanya dan menjawab pertanyaan dalam percakapan tentang diri dan keluarga
+              condition: dalam kegiatan bermain peran bersama teman
+              degree: dengan bahasa yang santun
+          - id: percakapan-santun-2
+            teks: Murid kelas 2 dapat menanggapi komentar teman atau guru dalam percakapan tentang kesehatan dan lingkungan sekitar dalam diskusi kelas, dengan bahasa yang santun dan sesuai topik.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menanggapi komentar teman atau guru dalam percakapan tentang kesehatan dan lingkungan sekitar
+              condition: dalam diskusi kelas
+              degree: dengan bahasa yang santun dan sesuai topik
+      - id: mengungkapkan-gagasan
+        nama: Mengungkapkan perasaan dan gagasan
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: mengungkapkan-gagasan-1
+            teks: Murid kelas 1 dapat mengungkapkan perasaan secara lisan dengan bantuan gambar ekspresi wajah, dalam sedikitnya satu kalimat lengkap.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: mengungkapkan perasaan secara lisan
+              condition: dengan bantuan gambar ekspresi wajah
+              degree: dalam sedikitnya satu kalimat lengkap
+          - id: mengungkapkan-gagasan-2
+            teks: Murid kelas 2 dapat menyampaikan gagasan sederhana secara lisan tentang lingkungan sekitar tanpa bantuan gambar, dalam sedikitnya dua kalimat yang runtut.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyampaikan gagasan sederhana secara lisan tentang lingkungan sekitar
+              condition: tanpa bantuan gambar
+              degree: dalam sedikitnya dua kalimat yang runtut
+      - id: menceritakan-kembali
+        nama: Menceritakan kembali
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: menceritakan-kembali-1
+            teks: Murid kelas 1 dapat menceritakan kembali isi cerita bergambar sambil melihat gambar cerita, dengan kalimat sederhana sesuai urutan gambar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menceritakan kembali isi cerita bergambar
+              condition: sambil melihat gambar cerita
+              degree: dengan kalimat sederhana sesuai urutan gambar
+          - id: menceritakan-kembali-2
+            teks: Murid kelas 2 dapat menceritakan kembali isi teks yang dibaca, dipirsa, atau didengar tanpa melihat teks, dengan urutan kejadian yang tepat.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menceritakan kembali isi teks yang dibaca, dipirsa, atau didengar
+              condition: tanpa melihat teks
+              degree: dengan urutan kejadian yang tepat
+  - id: menulis
+    nama: Menulis
+    capaian: Menulis permulaan dengan benar di atas kertas dan/atau melalui media digital; mengembangkan tulisan tangan yang semakin baik; dan menulis berbagai tipe teks sederhana tentang diri, keluarga, dan/atau lingkungan sekitar dengan beberapa kalimat sederhana.
+    materi:
+      - id: menulis-permulaan
+        nama: Menulis permulaan
+        kelas:
+          - 1
+        tp:
+          - id: menulis-permulaan-1
+            teks: Murid kelas 1 dapat menulis huruf kecil dan huruf kapital sambil memegang pensil secara benar, dengan bentuk huruf yang tepat.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menulis huruf kecil dan huruf kapital
+              condition: sambil memegang pensil secara benar
+              degree: dengan bentuk huruf yang tepat
+          - id: menulis-permulaan-2
+            teks: Murid kelas 1 dapat menulis kata dan kalimat sederhana melalui kegiatan menyalin atau dikte, dengan huruf yang terbaca jelas.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menulis kata dan kalimat sederhana
+              condition: melalui kegiatan menyalin atau dikte
+              degree: dengan huruf yang terbaca jelas
+      - id: tulisan-tangan
+        nama: Tulisan tangan
+        kelas:
+          - 2
+        tp:
+          - id: tulisan-tangan-1
+            teks: Murid kelas 2 dapat menulis kalimat di buku bergaris, dengan huruf yang rapi, ukuran yang konsisten, dan spasi antarkata yang tepat.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menulis kalimat
+              condition: di buku bergaris
+              degree: dengan huruf yang rapi, ukuran yang konsisten, dan spasi antarkata yang tepat
+      - id: menulis-teks-sederhana
+        nama: Menulis teks sederhana
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: menulis-teks-sederhana-1
+            teks: Murid kelas 1 dapat menulis beberapa kalimat sederhana tentang diri sendiri berbantuan gambar atau kerangka kalimat, dengan huruf kapital di awal kalimat dan tanda titik di akhir.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menulis beberapa kalimat sederhana tentang diri sendiri
+              condition: berbantuan gambar atau kerangka kalimat
+              degree: dengan huruf kapital di awal kalimat dan tanda titik di akhir
+          - id: menulis-teks-sederhana-2
+            teks: Murid kelas 2 dapat menulis teks sederhana tentang keluarga atau lingkungan sekitar, misalnya kartu ucapan atau deskripsi benda, secara mandiri, dalam sedikitnya tiga kalimat yang runtut.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menulis teks sederhana tentang keluarga atau lingkungan sekitar, misalnya kartu ucapan atau deskripsi benda
+              condition: secara mandiri
+              degree: dalam sedikitnya tiga kalimat yang runtut

@@ -1,0 +1,262 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: matematika
+mapel: Matematika
+fase: B
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, IV.1 Capaian Pembelajaran Matematika, Fase B
+elemen:
+  - id: bilangan
+    nama: Bilangan
+    capaian: Memiliki pemahaman dan intuisi bilangan (number sense) pada bilangan cacah sampai 10.000; membaca, menulis, membandingkan, dan mengurutkan bilangan; menentukan dan menggunakan nilai tempat; melakukan komposisi dan dekomposisi bilangan cacah sampai 10.000. Murid dapat melakukan dan menyelesaikan masalah operasi bilangan penjumlahan dan pengurangan bilangan cacah sampai 1.000; melakukan dan menyelesaikan masalah operasi perkalian dan pembagian bilangan cacah sampai 100 dengan bantuan benda konkret, gambar dan simbol; mengenal kelipatan dan faktor. Murid dapat melakukan perbandingan dan pengurutan pecahan dengan pembilang satu dan antar pecahan dengan penyebut yang sama; mengenal dan dapat menerapkan pecahan senilai, memiliki intuisi pecahan dan desimal, serta dapat menentukan pecahan sebagai desimal dan persen.
+    materi:
+      - id: bilangan-cacah
+        nama: Bilangan cacah sampai 10.000
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: b-1
+            teks: Murid kelas 3 dapat membaca, menulis, membandingkan, dan mengurutkan bilangan cacah sampai 1.000 menggunakan kartu bilangan atau garis bilangan, sedikitnya 8 dari 10 soal benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membaca, menulis, membandingkan, dan mengurutkan bilangan cacah sampai 1.000
+              condition: menggunakan kartu bilangan atau garis bilangan
+              degree: sedikitnya 8 dari 10 soal benar
+          - id: b-2
+            teks: Murid kelas 3 dapat menentukan nilai tempat serta menyusun dan mengurai bilangan cacah sampai 1.000 dengan bantuan blok dienes atau kartu nilai tempat, sedikitnya 8 dari 10 soal benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menentukan nilai tempat serta menyusun dan mengurai bilangan cacah sampai 1.000
+              condition: dengan bantuan blok dienes atau kartu nilai tempat
+              degree: sedikitnya 8 dari 10 soal benar
+          - id: b-6
+            teks: Murid kelas 4 dapat membaca, menulis, membandingkan, mengurutkan, dan menentukan nilai tempat bilangan cacah sampai 10.000 menggunakan tabel nilai tempat, sedikitnya 8 dari 10 soal benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: membaca, menulis, membandingkan, mengurutkan, dan menentukan nilai tempat bilangan cacah sampai 10.000
+              condition: menggunakan tabel nilai tempat
+              degree: sedikitnya 8 dari 10 soal benar
+      - id: operasi-hitung
+        nama: Operasi hitung bilangan cacah
+        kelas:
+          - 3
+        tp:
+          - id: b-3
+            teks: Murid kelas 3 dapat menyelesaikan masalah penjumlahan dan pengurangan bilangan cacah sampai 1.000 pada soal cerita sehari-hari dengan cara bersusun, sedikitnya 4 dari 5 soal benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyelesaikan masalah penjumlahan dan pengurangan bilangan cacah sampai 1.000
+              condition: pada soal cerita sehari-hari dengan cara bersusun
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: b-4
+            teks: Murid kelas 3 dapat menyelesaikan masalah perkalian dan pembagian bilangan cacah sampai 100 dengan bantuan benda konkret, gambar, dan simbol, sedikitnya 4 dari 5 soal benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menyelesaikan masalah perkalian dan pembagian bilangan cacah sampai 100
+              condition: dengan bantuan benda konkret, gambar, dan simbol
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: kelipatan-faktor
+        nama: Kelipatan dan faktor
+        kelas:
+          - 4
+        tp:
+          - id: b-7
+            teks: Murid kelas 4 dapat menentukan kelipatan dan faktor bilangan cacah sampai 100 serta memakainya pada masalah sehari-hari menggunakan tabel perkalian atau susunan benda, sedikitnya 4 dari 5 soal benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menentukan kelipatan dan faktor bilangan cacah sampai 100 serta memakainya pada masalah sehari-hari
+              condition: menggunakan tabel perkalian atau susunan benda
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: pecahan
+        nama: Pecahan, desimal, dan persen
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: b-5
+            teks: Murid kelas 3 dapat membandingkan dan mengurutkan pecahan berpembilang satu serta pecahan berpenyebut sama menggunakan pita pecahan atau gambar, sedikitnya 4 dari 5 soal benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: membandingkan dan mengurutkan pecahan berpembilang satu serta pecahan berpenyebut sama
+              condition: menggunakan pita pecahan atau gambar
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: b-8
+            teks: Murid kelas 4 dapat menentukan pecahan senilai menggunakan pita kertas atau gambar, sedikitnya 3 dari 4 soal benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menentukan pecahan senilai
+              condition: menggunakan pita kertas atau gambar
+              degree: sedikitnya 3 dari 4 soal benar
+          - id: b-9
+            teks: Murid kelas 4 dapat menyatakan pecahan sebagai desimal dan persen menggunakan gambar petak seratus, sedikitnya 4 dari 5 soal benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menyatakan pecahan sebagai desimal dan persen
+              condition: menggunakan gambar petak seratus
+              degree: sedikitnya 4 dari 5 soal benar
+  - id: aljabar
+    nama: Aljabar
+    capaian: Menemukan nilai yang tidak diketahui dalam kalimat matematika yang melibatkan penjumlahan dan pengurangan pada bilangan cacah sampai 100, dengan menggunakan sifat-sifat bilangan dan operasinya. Murid dapat mengidentifikasi, meniru, dan mengembangkan pola gambar atau objek sederhana dan pola bilangan membesar dan mengecil yang dapat melibatkan penjumlahan dan pengurangan pada bilangan cacah sampai 100.
+    materi:
+      - id: kalimat-matematika
+        nama: Nilai yang belum diketahui
+        kelas:
+          - 3
+        tp:
+          - id: a-1
+            teks: Murid kelas 3 dapat menemukan nilai yang tidak diketahui dalam kalimat matematika penjumlahan dan pengurangan bilangan cacah sampai 100 dengan bantuan gambar timbangan atau garis bilangan, sedikitnya 4 dari 5 soal benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: menemukan nilai yang tidak diketahui dalam kalimat matematika penjumlahan dan pengurangan bilangan cacah sampai 100
+              condition: dengan bantuan gambar timbangan atau garis bilangan
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: pola
+        nama: Pola gambar dan pola bilangan
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: a-2
+            teks: Murid kelas 3 dapat meniru dan mengembangkan pola gambar atau objek sederhana menggunakan benda atau gambar, dengan aturan pola yang dijelaskan secara benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: meniru dan mengembangkan pola gambar atau objek sederhana
+              condition: menggunakan benda atau gambar
+              degree: dengan aturan pola yang dijelaskan secara benar
+          - id: a-3
+            teks: Murid kelas 4 dapat mengembangkan pola bilangan membesar dan mengecil yang melibatkan penjumlahan dan pengurangan sampai 100 dari barisan bilangan yang diberikan, sedikitnya 3 suku berikutnya benar disertai aturannya.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: mengembangkan pola bilangan membesar dan mengecil yang melibatkan penjumlahan dan pengurangan sampai 100
+              condition: dari barisan bilangan yang diberikan
+              degree: sedikitnya 3 suku berikutnya benar disertai aturannya
+  - id: pengukuran
+    nama: Pengukuran
+    capaian: Mengukur panjang dan berat benda menggunakan satuan baku; menentukan hubungan antar-satuan baku panjang (cm, m) dan antar-satuan berat (g, kg); serta mengukur dan mengestimasi luas dan volume menggunakan satuan tidak baku dan satuan baku berupa bilangan cacah.
+    materi:
+      - id: panjang-berat
+        nama: Panjang dan berat
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: p-1
+            teks: Murid kelas 3 dapat mengukur panjang benda dalam cm dan m menggunakan penggaris atau meteran, dengan selisih paling banyak 1 cm dari hasil ukur guru.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mengukur panjang benda dalam cm dan m
+              condition: menggunakan penggaris atau meteran
+              degree: dengan selisih paling banyak 1 cm dari hasil ukur guru
+          - id: p-2
+            teks: Murid kelas 3 dapat mengukur berat benda dalam g dan kg menggunakan timbangan, dengan pembacaan skala yang benar.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mengukur berat benda dalam g dan kg
+              condition: menggunakan timbangan
+              degree: dengan pembacaan skala yang benar
+          - id: p-3
+            teks: Murid kelas 4 dapat menentukan hubungan antarsatuan panjang (cm dan m) dan antarsatuan berat (g dan kg) pada soal pengubahan satuan dan soal cerita, sedikitnya 4 dari 5 soal benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menentukan hubungan antarsatuan panjang (cm dan m) dan antarsatuan berat (g dan kg)
+              condition: pada soal pengubahan satuan dan soal cerita
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: luas-volume
+        nama: Luas dan volume
+        kelas:
+          - 4
+        tp:
+          - id: p-4
+            teks: Murid kelas 4 dapat mengukur dan memperkirakan luas bangun datar menggunakan satuan tidak baku, lalu petak satuan, dengan perkiraan yang masuk akal dan hasil hitung petak yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: mengukur dan memperkirakan luas bangun datar
+              condition: menggunakan satuan tidak baku, lalu petak satuan
+              degree: dengan perkiraan yang masuk akal dan hasil hitung petak yang benar
+          - id: p-5
+            teks: Murid kelas 4 dapat mengukur dan memperkirakan volume benda menggunakan satuan tidak baku, lalu kubus satuan, dengan perkiraan yang masuk akal dan hasil hitung kubus yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: mengukur dan memperkirakan volume benda
+              condition: menggunakan satuan tidak baku, lalu kubus satuan
+              degree: dengan perkiraan yang masuk akal dan hasil hitung kubus yang benar
+  - id: geometri
+    nama: Geometri
+    capaian: Mendeskripsikan ciri berbagai bentuk bangun datar (segiempat, segitiga, segi banyak); menyusun (komposisi) dan mengurai (dekomposisi) berbagai bangun datar dengan lebih dari satu cara jika memungkinkan.
+    materi:
+      - id: bangun-datar
+        nama: Bangun datar
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: g-1
+            teks: Murid kelas 3 dapat mendeskripsikan ciri segiempat dan segitiga dari gambar atau model bangun, sedikitnya tiga ciri yang benar untuk setiap bangun.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mendeskripsikan ciri segiempat dan segitiga
+              condition: dari gambar atau model bangun
+              degree: sedikitnya tiga ciri yang benar untuk setiap bangun
+          - id: g-2
+            teks: Murid kelas 4 dapat mendeskripsikan ciri segi banyak dari gambar atau model bangun, dengan banyak sisi dan sudut yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: mendeskripsikan ciri segi banyak
+              condition: dari gambar atau model bangun
+              degree: dengan banyak sisi dan sudut yang benar
+          - id: g-3
+            teks: Murid kelas 4 dapat menyusun dan mengurai bangun datar menggunakan potongan kertas atau tangram, sedikitnya dengan dua cara berbeda.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menyusun dan mengurai bangun datar
+              condition: menggunakan potongan kertas atau tangram
+              degree: sedikitnya dengan dua cara berbeda
+  - id: analisis-data-dan-peluang
+    nama: Analisis Data dan Peluang
+    capaian: Mengurutkan, membandingkan, menyajikan, menganalisis dan menginterpretasi data dalam bentuk tabel, diagram gambar, piktogram, dan diagram batang (skala satu satuan).
+    materi:
+      - id: penyajian-data
+        nama: Tabel, piktogram, dan diagram batang
+        kelas:
+          - 3
+          - 4
+        tp:
+          - id: d-1
+            teks: Murid kelas 3 dapat mengurutkan, membandingkan, dan menyajikan data dalam tabel, diagram gambar, dan piktogram dari data hasil pengamatan di kelas, dengan penyajian yang sesuai data.
+            kelas: 3
+            abcd:
+              audience: Murid kelas 3
+              behavior: mengurutkan, membandingkan, dan menyajikan data dalam tabel, diagram gambar, dan piktogram
+              condition: dari data hasil pengamatan di kelas
+              degree: dengan penyajian yang sesuai data
+          - id: d-2
+            teks: Murid kelas 4 dapat menyajikan, menganalisis, dan menginterpretasi data dalam diagram batang berskala satu satuan dari data hasil pengamatan atau tabel yang diberikan, sedikitnya dua kesimpulan yang benar.
+            kelas: 4
+            abcd:
+              audience: Murid kelas 4
+              behavior: menyajikan, menganalisis, dan menginterpretasi data dalam diagram batang berskala satu satuan
+              condition: dari data hasil pengamatan atau tabel yang diberikan
+              degree: sedikitnya dua kesimpulan yang benar

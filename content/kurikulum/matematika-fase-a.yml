@@ -1,0 +1,217 @@
+# Teks capaian disalin apa adanya dari Kepka BSKAP 046/H/KR/2025 (sumber/kurikulum/CAPAIAN PEMBELAJARAN 046.md).
+# Materi, pembagian kelas, dan TP adalah contoh susunan Guru Kampung; sekolah boleh mengubahnya. Jangan ubah id yang sudah dipakai.
+contoh: false
+mapelId: matematika
+mapel: Matematika
+fase: A
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: Lampiran, IV.1 Capaian Pembelajaran Matematika, Fase A
+elemen:
+  - id: bilangan
+    nama: Bilangan
+    capaian: Menunjukkan pemahaman dan memiliki intuisi bilangan (number sense) pada bilangan cacah sampai 100; membaca, menulis, menentukan nilai tempat, membandingkan, mengurutkan, serta melakukan komposisi (menyusun) dan dekomposisi (mengurai) bilangan; melakukan operasi penjumlahan dan pengurangan menggunakan benda-benda konkret yang banyaknya sampai 20; dan menunjukkan pemahaman pecahan sebagai bagian dari keseluruhan melalui konteks membagi sebuah benda atau kumpulan benda sama banyak (pecahan yang diperkenalkan adalah setengah dan seperempat).
+    materi:
+      - id: bilangan-cacah-20
+        nama: Bilangan cacah sampai 20
+        kelas:
+          - 1
+        tp:
+          - id: bilangan-cacah-20-1
+            teks: Murid kelas 1 dapat membaca, menulis, membilang, dan membandingkan bilangan cacah sampai 20 menggunakan benda konkret, sedikitnya 8 dari 10 butir benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: membaca, menulis, membilang, dan membandingkan bilangan cacah sampai 20
+              condition: menggunakan benda konkret
+              degree: sedikitnya 8 dari 10 butir benar
+          - id: bilangan-cacah-20-2
+            teks: Murid kelas 1 dapat menjumlahkan dan mengurangkan bilangan cacah sampai 20 menggunakan benda konkret, sedikitnya 8 dari 10 soal benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menjumlahkan dan mengurangkan bilangan cacah sampai 20
+              condition: menggunakan benda konkret
+              degree: sedikitnya 8 dari 10 soal benar
+      - id: bilangan-cacah-100
+        nama: Bilangan cacah sampai 100
+        kelas:
+          - 2
+        tp:
+          - id: bilangan-cacah-100-1
+            teks: Murid kelas 2 dapat membaca, menulis, dan menentukan nilai tempat puluhan dan satuan pada bilangan cacah sampai 100 menggunakan kartu bilangan atau ikatan lidi, sedikitnya 8 dari 10 soal benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: membaca, menulis, dan menentukan nilai tempat puluhan dan satuan pada bilangan cacah sampai 100
+              condition: menggunakan kartu bilangan atau ikatan lidi
+              degree: sedikitnya 8 dari 10 soal benar
+          - id: bilangan-cacah-100-2
+            teks: Murid kelas 2 dapat menyusun dan mengurai bilangan cacah sampai 100 menjadi puluhan dan satuan (misalnya 47 = 40 + 7) dengan bantuan benda konkret atau gambar, sedikitnya 4 dari 5 soal benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyusun dan mengurai bilangan cacah sampai 100 menjadi puluhan dan satuan (misalnya 47 = 40 + 7)
+              condition: dengan bantuan benda konkret atau gambar
+              degree: sedikitnya 4 dari 5 soal benar
+          - id: bilangan-cacah-100-3
+            teks: Murid kelas 2 dapat membandingkan dan mengurutkan bilangan cacah sampai 100 menggunakan garis bilangan atau tabel ratusan, sedikitnya 4 dari 5 soal benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: membandingkan dan mengurutkan bilangan cacah sampai 100
+              condition: menggunakan garis bilangan atau tabel ratusan
+              degree: sedikitnya 4 dari 5 soal benar
+      - id: pecahan-sederhana
+        nama: Setengah dan seperempat
+        kelas:
+          - 2
+        tp:
+          - id: pecahan-sederhana-1
+            teks: Murid kelas 2 dapat menunjukkan setengah dan seperempat dari sebuah benda atau kumpulan benda melalui kegiatan melipat kertas atau membagi benda sama banyak.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menunjukkan setengah dan seperempat dari sebuah benda atau kumpulan benda
+              condition: melalui kegiatan melipat kertas atau membagi benda sama banyak
+  - id: aljabar
+    nama: Aljabar
+    capaian: 'Menunjukan pemahaman makna simbol matematika "=" dalam suatu kalimat matematika yang terkait dengan penjumlahan dan pengurangan bilangan cacah sampai 20 menggunakan gambar. Contoh: Murid dapat mengenali, meniru, dan melanjutkan pola bukan bilangan (misalnya, gambar, warna, bunyi/suara).'
+    materi:
+      - id: makna-sama-dengan
+        nama: Makna tanda sama dengan
+        kelas:
+          - 1
+        tp:
+          - id: makna-sama-dengan-1
+            teks: Murid kelas 1 dapat menjelaskan makna tanda "=" pada kalimat penjumlahan dan pengurangan sampai 20 berbantuan gambar atau timbangan sederhana, dengan kalimat sendiri yang benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menjelaskan makna tanda "=" pada kalimat penjumlahan dan pengurangan sampai 20
+              condition: berbantuan gambar atau timbangan sederhana
+              degree: dengan kalimat sendiri yang benar
+      - id: pola-bukan-bilangan
+        nama: Pola bukan bilangan
+        kelas:
+          - 1
+        tp:
+          - id: pola-bukan-bilangan-1
+            teks: Murid kelas 1 dapat meniru dan melanjutkan pola gambar, warna, atau bunyi menggunakan benda atau gambar, sedikitnya 2 langkah berikutnya benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: meniru dan melanjutkan pola gambar, warna, atau bunyi
+              condition: menggunakan benda atau gambar
+              degree: sedikitnya 2 langkah berikutnya benar
+  - id: pengukuran
+    nama: Pengukuran
+    capaian: Membandingkan panjang dan berat benda secara langsung, dan membandingkan durasi waktu; mengukur dan mengestimasi panjang dan berat benda menggunakan satuan tidak baku.
+    materi:
+      - id: panjang-berat
+        nama: Panjang dan berat
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: panjang-berat-1
+            teks: Murid kelas 1 dapat membandingkan panjang dan berat dua benda secara langsung, yaitu menjajarkan atau mengangkat benda, memakai kata lebih panjang, lebih pendek, lebih berat, atau lebih ringan secara tepat.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: membandingkan panjang dan berat dua benda
+              condition: secara langsung, yaitu menjajarkan atau mengangkat benda
+              degree: memakai kata lebih panjang, lebih pendek, lebih berat, atau lebih ringan secara tepat
+          - id: panjang-berat-2
+            teks: Murid kelas 2 dapat mengukur dan memperkirakan panjang dan berat benda menggunakan satuan tidak baku seperti jengkal, langkah, atau kelereng, dengan perkiraan yang masuk akal dan hasil ukur yang benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: mengukur dan memperkirakan panjang dan berat benda
+              condition: menggunakan satuan tidak baku seperti jengkal, langkah, atau kelereng
+              degree: dengan perkiraan yang masuk akal dan hasil ukur yang benar
+      - id: durasi-waktu
+        nama: Durasi waktu
+        kelas:
+          - 2
+        tp:
+          - id: durasi-waktu-1
+            teks: Murid kelas 2 dapat membandingkan lama dua kegiatan sehari-hari dari gambar atau pengalaman sendiri, dengan alasan yang benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: membandingkan lama dua kegiatan sehari-hari
+              condition: dari gambar atau pengalaman sendiri
+              degree: dengan alasan yang benar
+  - id: geometri
+    nama: Geometri
+    capaian: Mengenal berbagai bangun datar (segitiga, segiempat, segi banyak, lingkaran) dan bangun ruang (balok, kubus, kerucut, dan bola); melakukan komposisi (penyusunan) dan dekomposisi (penguraian) suatu bangun datar (segitiga, segiempat, dan segi banyak); dan menentukan posisi benda terhadap benda lain (kanan, kiri, depan belakang, bawah, atas).
+    materi:
+      - id: bangun-datar-ruang
+        nama: Bangun datar dan bangun ruang
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: bangun-datar-ruang-1
+            teks: Murid kelas 1 dapat menyebutkan dan menunjukkan segitiga, segiempat, segi banyak, dan lingkaran pada benda di sekitarnya, sedikitnya satu contoh benda untuk setiap bangun.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menyebutkan dan menunjukkan segitiga, segiempat, segi banyak, dan lingkaran
+              condition: pada benda di sekitarnya
+              degree: sedikitnya satu contoh benda untuk setiap bangun
+          - id: bangun-datar-ruang-2
+            teks: Murid kelas 1 dapat menyebutkan dan menunjukkan balok, kubus, kerucut, dan bola pada benda di sekitarnya, sedikitnya satu contoh benda untuk setiap bangun.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menyebutkan dan menunjukkan balok, kubus, kerucut, dan bola
+              condition: pada benda di sekitarnya
+              degree: sedikitnya satu contoh benda untuk setiap bangun
+          - id: bangun-datar-ruang-3
+            teks: Murid kelas 2 dapat menyusun dan mengurai bangun datar (segitiga, segiempat, dan segi banyak) menggunakan potongan kertas atau tangram, sedikitnya dengan dua cara berbeda.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyusun dan mengurai bangun datar (segitiga, segiempat, dan segi banyak)
+              condition: menggunakan potongan kertas atau tangram
+              degree: sedikitnya dengan dua cara berbeda
+      - id: posisi-benda
+        nama: Posisi benda
+        kelas:
+          - 1
+        tp:
+          - id: posisi-benda-1
+            teks: Murid kelas 1 dapat menentukan posisi benda terhadap benda lain (kanan, kiri, depan, belakang, atas, dan bawah) pada gambar atau di ruang kelas.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: menentukan posisi benda terhadap benda lain (kanan, kiri, depan, belakang, atas, dan bawah)
+              condition: pada gambar atau di ruang kelas
+  - id: analisis-data-dan-peluang
+    nama: Analisis Data dan Peluang
+    capaian: Mengurutkan, menyortir, mengelompokkan, membandingkan, dan menyajikan data dari banyak benda dengan menggunakan turus dan piktogram paling banyak 4 kategori.
+    materi:
+      - id: data-sederhana
+        nama: Mengelompokkan dan menyajikan data
+        kelas:
+          - 1
+          - 2
+        tp:
+          - id: data-sederhana-1
+            teks: Murid kelas 1 dapat mengurutkan, menyortir, dan mengelompokkan benda berdasarkan ciri tertentu menggunakan benda konkret di kelas, dengan alasan pengelompokan yang benar.
+            kelas: 1
+            abcd:
+              audience: Murid kelas 1
+              behavior: mengurutkan, menyortir, dan mengelompokkan benda berdasarkan ciri tertentu
+              condition: menggunakan benda konkret di kelas
+              degree: dengan alasan pengelompokan yang benar
+          - id: data-sederhana-2
+            teks: Murid kelas 2 dapat menyajikan dan membandingkan data banyak benda dalam turus dan piktogram yang terdiri atas paling banyak 4 kategori, dengan jumlah dan perbandingan yang benar.
+            kelas: 2
+            abcd:
+              audience: Murid kelas 2
+              behavior: menyajikan dan membandingkan data banyak benda dalam turus dan piktogram
+              condition: yang terdiri atas paling banyak 4 kategori
+              degree: dengan jumlah dan perbandingan yang benar
