@@ -6,7 +6,6 @@ import type { FontSizeScale } from '~/composables/useFontSize'
 useSeoMeta({ title: 'Pengaturan' })
 
 const toast = useToast()
-const colorMode = useColorMode()
 const { fontSize } = useFontSize()
 const { profile, status, save } = useSchoolProfile()
 
@@ -106,12 +105,6 @@ const fields: { key: keyof SchoolProfile, label: string, placeholder: string }[]
   { key: 'principalNip', label: 'NIP kepala sekolah', placeholder: 'Kosongkan kalau tidak ada' }
 ]
 
-const themeItems = [
-  { value: 'light', label: 'Terang' },
-  { value: 'dark', label: 'Gelap' },
-  { value: 'system', label: 'Ikuti perangkat' }
-]
-
 const fontSizeItems: { value: FontSizeScale, label: string }[] = [
   { value: 'normal', label: 'Standar (100%)' },
   { value: 'besar', label: 'Besar (112%)' },
@@ -178,29 +171,20 @@ const fontSizeItems: { value: FontSizeScale, label: string }[] = [
         </form>
       </UCard>
 
-      <!-- Tampilan: tema terang/gelap dan ukuran huruf (PRD F-08) -->
+      <!-- Ukuran huruf (PRD F-08) -->
       <UCard class="sm:col-span-6 lg:col-span-5">
         <template #header>
           <h2 class="font-display text-lg font-bold text-highlighted">
-            Tampilan dan ukuran huruf
+            Ukuran huruf
           </h2>
         </template>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <UFormField label="Tema warna">
-            <USelect
-              v-model="colorMode.preference"
-              :items="themeItems"
-              class="w-full"
-            />
-          </UFormField>
-          <UFormField label="Ukuran huruf">
-            <USelect
-              v-model="fontSize"
-              :items="fontSizeItems"
-              class="w-full"
-            />
-          </UFormField>
-        </div>
+        <UFormField label="Skala huruf">
+          <USelect
+            v-model="fontSize"
+            :items="fontSizeItems"
+            class="w-full"
+          />
+        </UFormField>
         <p class="mt-3 text-sm text-muted">
           Untuk tampilan di depan kelas dengan ukuran huruf dua kali lipat, gunakan tombol Mode proyektor di dalam alat.
         </p>

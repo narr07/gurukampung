@@ -11,23 +11,11 @@
   --ui-radius: 0.75rem;
   --color-pensil: var(--color-yellow-300);
   --color-tinta: var(--color-slate-900);
-}
-
-/* Shade bawaan Nuxt UI (500 terang, 400 gelap) terlalu pucat untuk biru dan merah.
-   Terang: blue-800 8,82:1 dan red-700 6,42:1 di atas putih.
-   Gelap: blue-300 9,83:1 dan red-400 6,17:1 di atas slate-900. */
-:root:not(.dark) {
+  /* Shade bawaan Nuxt UI (500) terlalu pucat untuk biru dan merah di atas putih.
+     blue-800 8,82:1 dan red-700 6,42:1 di atas putih (DESIGN.md). */
   --ui-primary: var(--ui-color-primary-800);
   --ui-secondary: var(--ui-color-secondary-700);
   --ui-error: var(--ui-color-error-700);
-  --color-tinta: var(--color-slate-900);
-}
-
-.dark {
-  --ui-primary: var(--ui-color-primary-300);
-  --ui-secondary: var(--ui-color-secondary-400);
-  --ui-error: var(--ui-color-error-400);
-  --color-tinta: var(--color-yellow-100);
 }
 
 html[data-font-size="besar"]:not(.projector-mode) {
@@ -66,21 +54,11 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   color: var(--color-tinta);
 }
 
-.dark .latar-panggung {
-  background-image: linear-gradient(135deg, var(--color-blue-950) 0%, var(--color-slate-900) 100%);
-  background-attachment: fixed;
-  color: var(--color-tinta);
-}
-
 /* Panel kertas dan lencana pensil untuk membungkus ruang kerja alat dengan garis tinta 2px seperti di beranda */
 .panel-kertas {
   border: 2px solid var(--color-tinta);
   border-radius: 1.5rem;
   background-color: #ffffff;
-}
-
-.dark .panel-kertas {
-  background-color: var(--color-slate-900);
 }
 
 .lencana-pensil {
@@ -179,6 +157,153 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   transform: rotate(-45deg);
 }
 
+/* Logo pensil-rumah (LogoTanda.vue): jatuh lalu memantul saat halaman dibuka;
+   saat disentuh, ujung raut terangkat seperti tutup dan pensil bergoyang seperti sedang menulis (DESIGN.md) */
+.logo-tanda {
+  height: 1.9rem;
+  width: auto;
+  flex-shrink: 0;
+  overflow: visible;
+  /* Animasi jatuh dipasang di svg, bukan di .logo-pensil, supaya tidak diputar ulang (dan sempat hilang) setelah hover */
+  transform-origin: 50% 100%;
+  animation: logo-jatuh 900ms cubic-bezier(0.34, 1.56, 0.64, 1) 200ms both;
+}
+
+.logo-tanda :is(.logo-pensil, .logo-atap) {
+  transform-box: fill-box;
+}
+
+.logo-pensil {
+  transform-origin: 50% 100%;
+}
+
+.logo-atap {
+  transform-origin: 50% 100%;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo-gk:is(:hover, :focus-visible) .logo-atap {
+  transform: translateY(-72px) rotate(-10deg);
+}
+
+.logo-gk:is(:hover, :focus-visible) .logo-pensil {
+  animation: logo-menulis 700ms ease-in-out both;
+}
+
+@keyframes logo-jatuh {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem) rotate(-14deg);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateY(0) rotate(4deg);
+  }
+
+  78% {
+    transform: translateY(-0.25rem) rotate(-2deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+/* Maskot (MaskotGuruKampung.vue): melayang pelan, berkedip, dan melambai; melompat kecil saat disentuh */
+.maskot {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.maskot :is(.maskot-tubuh, .maskot-mata) {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.maskot-tubuh {
+  animation: maskot-melayang 3.2s ease-in-out infinite;
+}
+
+.maskot-mata {
+  animation: maskot-kedip 4.5s infinite;
+}
+
+.maskot-tangan-kanan {
+  transform-box: view-box;
+  transform-origin: 356px 342px;
+  animation: maskot-lambai 1.8s ease-in-out infinite;
+}
+
+.sapa-maskot:hover .maskot-tubuh {
+  animation: maskot-lompat 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes maskot-melayang {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes maskot-kedip {
+  0%,
+  92%,
+  100% {
+    transform: none;
+  }
+
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes maskot-lambai {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: rotate(-16deg);
+  }
+}
+
+@keyframes maskot-lompat {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  40% {
+    transform: translateY(-36px) rotate(-4deg);
+  }
+}
+
+@keyframes logo-menulis {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: rotate(-7deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
 /* Panel menu terbuka sebagai lingkaran dari posisi tombol menu, lalu isinya naik satu per satu (DESIGN.md) */
 .menu-panel {
   --menu-x: calc(100% - 4.5rem);
@@ -217,7 +342,8 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
-  font-size: clamp(2rem, 4.6vw, 4rem);
+  /* Ikut lebar dan tinggi layar agar delapan menu muat tanpa digulir, juga di laptop berlayar pendek */
+  font-size: clamp(1.15rem, min(4vw, 5.2vh), 2.75rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
   /* Motif tinta merah: garis bawah tergambar saat disentuh, tetap ada di halaman yang aktif */
@@ -579,6 +705,30 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   }
 }
 
+/* Pemilih kurikulum: judul langkah bernomor seperti lencana pensil */
+.langkah-judul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ui-text-highlighted);
+}
+
+.langkah-nomor {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-tinta);
+  border-radius: 9999px;
+  background: var(--color-pensil);
+  color: var(--color-slate-900);
+  font-size: 0.75rem;
+}
+
 /* Halaman bacaan (tutorial dan blog): judul memakai Funnel Display seperti judul halaman (DESIGN.md) */
 .bacaan :is(h2, h3) {
   font-family: var(--font-display);
@@ -623,6 +773,22 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
 
   .menu-label {
     transition: none;
+  }
+
+  .logo-tanda,
+  .logo-gk:is(:hover, :focus-visible) .logo-pensil {
+    animation: none;
+  }
+
+  .logo-atap {
+    transition: none;
+  }
+
+  .maskot-tubuh,
+  .maskot-mata,
+  .maskot-tangan-kanan,
+  .sapa-maskot:hover .maskot-tubuh {
+    animation: none;
   }
 }
 

@@ -1,0 +1,39 @@
+# CONTOH FORMAT, belum disalin dari dokumen resmi.
+# Ganti setiap teks dalam [kurung siku] dengan teks dari dokumen sumber, lalu ubah `contoh` menjadi false.
+contoh: true
+mapelId: bahasa-indonesia
+mapel: Bahasa Indonesia
+fase: A
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: "[Lampiran dan halaman CP Bahasa Indonesia Fase A]"
+elemen:
+  - id: membaca
+    nama: "[Contoh] Membaca dan memirsa"
+    capaian: "[Salin teks capaian elemen ini dari Kepka BSKAP 046/H/KR/2025]"
+    materi:
+      - id: membaca-permulaan
+        nama: "[Contoh] Membaca permulaan"
+        kelas: [1]
+        tp:
+          - id: membaca-permulaan-1
+            teks: Murid dapat membaca suku kata terbuka (ba, bi, bu) dan menghubungkannya dengan gambar benda.
+            kelas: 1
+      - id: teks-pendek
+        nama: "[Contoh] Memahami teks pendek bergambar"
+        kelas: [2]
+        tp:
+          - id: teks-pendek-1
+            teks: Murid dapat menjawab pertanyaan siapa, apa, dan di mana tentang teks pendek bergambar yang dibacanya.
+            kelas: 2
+  - id: menulis
+    nama: "[Contoh] Menulis"
+    capaian: "[Salin teks capaian elemen ini dari Kepka BSKAP 046/H/KR/2025]"
+    materi:
+      - id: menulis-kata
+        nama: "[Contoh] Menulis kata dan kalimat sederhana"
+        kelas: [1, 2]
+        tp:
+          - id: menulis-kata-1
+            teks: Murid dapat menulis nama benda di sekitarnya dengan huruf yang terbaca dan jarak antarkata yang benar.
+            kelas: 1

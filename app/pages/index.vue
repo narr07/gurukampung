@@ -283,7 +283,7 @@ onMounted(async () => {
             stagger: 0.2,
             ease: 'back.out(1.4)'
           }, 0.05)
-          .from('.kartu-data-kelas', {
+          .from('.maskot-data-kelas', {
             y: 48,
             autoAlpha: 0,
             scale: 0.94,
@@ -304,14 +304,14 @@ onMounted(async () => {
             once: true
           }
         })
-        gsap.from('.kartu-data-kelas', {
+        gsap.from('.maskot-data-kelas', {
           y: 32,
           autoAlpha: 0,
           scale: 0.95,
           duration: 0.55,
           ease: 'back.out(1.5)',
           scrollTrigger: {
-            trigger: '.kartu-data-kelas',
+            trigger: '.maskot-data-kelas',
             start: 'top 85%',
             once: true
           }
@@ -472,7 +472,7 @@ onBeforeUnmount(() => {
       </UContainer>
     </section>
 
-    <!-- 2. SATU DAFTAR SISWA: Bagian yang disematkan saat digulir, pesawat kertas melintas, dan kartu 2×2 Data Kelas -->
+    <!-- 2. SATU DAFTAR SISWA: Bagian yang disematkan saat digulir, pesawat kertas melintas, dan maskot yang mengajak mengisi Data Kelas -->
     <section
       id="satu-daftar-siswa"
       aria-labelledby="judul-satu-daftar"
@@ -526,57 +526,40 @@ onBeforeUnmount(() => {
             </div>
           </div>
 
-          <!-- Satu-satunya kartu 2×2 di beranda: Data Kelas (DESIGN.md baris 119-123) -->
+          <!-- Maskot menyapa dan mengajak mengisi Data Kelas lewat balon ucapan (DESIGN.md, bagian Maskot) -->
           <div class="lg:col-span-6">
-            <NuxtLink
-              to="/kelas"
-              class="kartu-data-kelas stiker-kartu block bg-white dark:bg-slate-900 p-6 sm:p-8 [--miring:-1deg]"
-            >
-              <div class="flex items-start justify-between gap-4">
-                <div class="space-y-2">
-                  <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    <UIcon
-                      name="i-lucide-users"
-                      class="size-5"
-                    />
-                    Langkah awal yang disarankan
-                  </span>
-                  <h3 class="font-display text-2xl sm:text-3xl font-bold text-highlighted">
-                    Data Kelas
-                  </h3>
-                </div>
-                <div class="w-24 shrink-0">
-                  <GambarIlustrasi name="kartu-nama" />
-                </div>
-              </div>
-
-              <div class="mt-4 text-base text-toned">
-                <USkeleton
-                  v-if="classStatus === 'pending'"
-                  class="h-6 w-56"
+            <div class="maskot-data-kelas sapa-maskot relative mx-auto flex max-w-lg flex-col items-center gap-3 lg:block lg:min-h-112">
+              <NuxtLink
+                to="/kelas"
+                class="stiker-kartu relative z-10 block max-w-xs bg-white p-4 sm:p-5 lg:absolute lg:top-2 lg:left-0 [--miring:-2deg]"
+              >
+                <span class="font-display text-lg font-bold text-highlighted">Halo, Bapak dan Ibu Guru!</span>
+                <span class="mt-1 block text-sm text-toned">
+                  <USkeleton
+                    v-if="classStatus === 'pending'"
+                    class="h-5 w-48"
+                  />
+                  <template v-else-if="classStatus === 'error'">Data kelas tidak bisa dibaca dari perangkat ini.</template>
+                  <template v-else-if="classes.length === 0">Tempel daftar siswa sekali di Data Kelas, atau coba dulu dengan 24 siswa contoh.</template>
+                  <template v-else>{{ classes.length }} kelas dan {{ studentCount }} siswa sudah siap di semua alat.</template>
+                </span>
+                <span class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  Buka Data Kelas
+                  <UIcon
+                    name="i-lucide-arrow-right"
+                    class="size-4"
+                  />
+                </span>
+                <!-- Ekor balon ucapan mengarah ke maskot -->
+                <span
+                  aria-hidden="true"
+                  class="absolute -bottom-2.5 left-1/2 size-5 rotate-45 border-r-2 border-b-2 border-(--color-tinta) bg-white lg:right-12 lg:left-auto"
                 />
-                <p v-else-if="classStatus === 'error'">
-                  Data kelas tidak bisa dibaca dari perangkat ini.
-                </p>
-                <p v-else-if="classes.length === 0">
-                  Belum ada kelas di perangkat ini. Klik untuk menempel daftar siswa dari Excel atau mencoba dengan 24 siswa contoh.
-                </p>
-                <p
-                  v-else
-                  class="font-medium text-highlighted"
-                >
-                  {{ classes.length }} kelas dan {{ studentCount }} siswa siap dipakai di semua alat.
-                </p>
+              </NuxtLink>
+              <div class="w-56 sm:w-72 lg:absolute lg:right-0 lg:bottom-0 lg:w-80">
+                <MaskotGuruKampung />
               </div>
-
-              <div class="mt-6 inline-flex items-center gap-2 font-semibold text-primary">
-                <span>Buka Data Kelas</span>
-                <UIcon
-                  name="i-lucide-arrow-right"
-                  class="size-5"
-                />
-              </div>
-            </NuxtLink>
+            </div>
           </div>
         </div>
       </UContainer>

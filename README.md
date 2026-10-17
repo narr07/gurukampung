@@ -16,14 +16,16 @@ Sebelumnya bernama Peragu. Untuk saat ini semua data kelas, siswa, nilai, dan ab
 ## Menjalankan di Lokal
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 Pengujian, lint, dan pemeriksaan tipe:
 
 ```bash
-pnpm test
-pnpm lint
-pnpm typecheck
+bun run test
+bun run lint
+bun run typecheck
 ```
+
+Pakai `bun run test`, bukan `bun test`: `bun test` menjalankan test runner bawaan Bun, sedangkan proyek ini memakai Vitest.

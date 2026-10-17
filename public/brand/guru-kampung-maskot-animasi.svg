@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 56 390 420" role="img" aria-label="Maskot Guru Kampung"><title>Maskot Guru Kampung</title><style>#gk-mata{transform-box:fill-box;transform-origin:50% 50%;animation:kedip 4s infinite}#gk-tangan-kanan{transform-box:view-box;transform-origin:356px 342px;animation:lambai 1.6s ease-in-out infinite}@keyframes kedip{0%,92%,100%{transform:none}95%{transform:scaleY(.1)}}@keyframes lambai{0%,100%{transform:rotate(0)}50%{transform:rotate(-14deg)}}@media (prefers-reduced-motion:reduce){#gk-mata,#gk-tangan-kanan{animation:none}}</style><g id="gk-kaki" fill="#0f172b"><ellipse cx="204" cy="450" rx="38" ry="18"/><ellipse cx="308" cy="450" rx="38" ry="18"/></g>
+<g id="gk-tangan-kiri" fill="none" stroke="#0f172b" stroke-width="22" stroke-linecap="round"><path d="M156 352 Q118 362 104 398"/><circle cx="100" cy="404" r="20" fill="#ffffff" stroke-width="14"/></g>
+<g id="gk-tangan-kanan" fill="none" stroke="#0f172b" stroke-width="22" stroke-linecap="round"><path d="M356 342 Q402 326 418 268"/><circle cx="422" cy="256" r="20" fill="#ffffff" stroke-width="14"/></g>
+<g id="gk-pensil" stroke="#0f172b" stroke-width="24" stroke-linejoin="round" stroke-linecap="round">
+<path id="gk-badan" d="M150 250 Q185.3 286 220.7 250 Q256 286 291.3 250 Q326.7 286 362 250 V436 H150 Z" fill="#ffdf20"/>
+<path id="gk-pintu" d="M218 436 V372 A38 38 0 0 1 294 372 V436 Z" fill="#0f172b" stroke="none"/>
+<g id="gk-atap"><path d="M150 250 L256 84 L362 250 Q326.7 286 291.3 250 Q256 286 220.7 250 Q185.3 286 150 250 Z" fill="#fef9c2"/><path id="gk-grafit" d="M256 84 L217.6 144 H294.4 Z" fill="#0f172b" stroke-width="0"/></g>
+</g>
+<g id="gk-mata"><ellipse cx="222" cy="304" rx="12" ry="16" fill="#0f172b"/><ellipse cx="290" cy="304" rx="12" ry="16" fill="#0f172b"/><circle cx="226" cy="298" r="4.5" fill="#ffffff"/><circle cx="294" cy="298" r="4.5" fill="#ffffff"/></g></svg>

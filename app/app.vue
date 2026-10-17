@@ -4,12 +4,17 @@ useFontSize()
 
 useHead({
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'theme-color', content: '#193cb8' }
   ],
   link: [
     // Funnel Display dan Funnel Sans diunduh saat build oleh @nuxt/fonts (bawaan Nuxt UI) dari --font-display dan
     // --font-sans di main.css, lalu disajikan dari situs ini sendiri tanpa permintaan ke Google
-    { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' }
+    // Ikon pensil-rumah (public/brand/): SVG untuk peramban modern, .ico & PNG untuk peramban lama dan layar utama ponsel
+    { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+    { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+    { rel: 'manifest', href: '/site.webmanifest' }
   ],
   htmlAttrs: {
     lang: 'id'

@@ -12,6 +12,39 @@ export default defineContentConfig({
         tags: z.array(z.string()).default([])
       })
     }),
+    // Referensi kurikulum: dasar wajib semua generator AI (okf/referensi-kurikulum.md).
+    // Satu berkas = satu mata pelajaran di satu fase, disalin dari dokumen resmi, bukan dibuat AI
+    kurikulum: defineCollection({
+      type: 'data',
+      source: 'kurikulum/*.yml',
+      schema: z.object({
+        // true selama isinya belum disalin dari dokumen sumber; generator menampilkan peringatan
+        contoh: z.boolean().default(false),
+        mapelId: z.string(),
+        mapel: z.string(),
+        fase: z.enum(['A', 'B', 'C']),
+        sumber: z.object({
+          dokumen: z.string(),
+          bagian: z.string().optional()
+        }),
+        elemen: z.array(z.object({
+          id: z.string(),
+          nama: z.string(),
+          capaian: z.string(),
+          materi: z.array(z.object({
+            id: z.string(),
+            nama: z.string(),
+            // Kelas dalam fase yang biasanya mengajarkan materi ini (contoh pembagian, bukan ketetapan resmi)
+            kelas: z.array(z.number()).default([]),
+            tp: z.array(z.object({
+              id: z.string(),
+              teks: z.string(),
+              kelas: z.number().optional()
+            })).default([])
+          }))
+        }))
+      })
+    }),
     tutorial: defineCollection({
       type: 'page',
       source: 'tutorial/*.md',

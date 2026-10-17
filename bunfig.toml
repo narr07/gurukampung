@@ -1,0 +1,13 @@
+[install]
+# Tunda versi paket yang baru terbit kurang dari 1 hari (sama seperti bawaan pnpm sebelumnya)
+minimumReleaseAge = 86400
+# Dikecualikan sementara: nuxt-studio 1.8.0 memperbaiki error editor Studio (MDC ganda); hapus setelah 18 Oktober 2026
+minimumReleaseAgeExcludes = [
+  "nuxt-studio",
+  "nuxt",
+  "@nuxt/kit",
+  "@nuxt/schema",
+  "@nuxt/vite-server",
+  "@nuxt/vite-builder",
+  "@nuxt/nitro-server"
+]

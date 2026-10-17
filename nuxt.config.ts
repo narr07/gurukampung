@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
+    // @nuxthub/core harus dimuat sebelum @nuxtjs/better-auth agar tabel auth masuk ke skema hub:db
+    '@nuxthub/core',
+    '@nuxtjs/better-auth',
     '@nuxt/content',
     'nuxt-studio',
     '@vueuse/nuxt/module',
@@ -15,31 +18,78 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  // Nonaktifkan mode gelap sepenuhnya: Guru Kampung hanya memakai tema terang kertas-tinta-pensil
+  ui: {
+    colorMode: false
+  },
+
   css: ['~/assets/css/main.css'],
 
-  // Node 22.5+ punya SQLite bawaan, jadi tidak perlu memasang better-sqlite3
+  // NuxtHub v0.10.8 (ADR 002). Saat dev: SQLite & file lokal di .data.
+  // Binding Cloudflare (D1 + KV + Cache) hanya dipasang di $production, karena tidak tersedia di `nuxt dev`
+  hub: {
+    db: 'sqlite',
+    kv: true,
+    cache: true,
+    dir: '.data'
+  },
+
+  $production: {
+    // ID resource dari `wrangler d1 create` / `wrangler kv namespace create`; wrangler.json dibuat otomatis saat build
+    hub: {
+      db: {
+        dialect: 'sqlite',
+        driver: 'd1',
+        connection: { databaseId: '4967f8c9-e48f-4f7b-8cd7-152c6fa0d795' }
+      },
+      kv: {
+        driver: 'cloudflare-kv-binding',
+        namespaceId: 'b98e8b54df514999ae808058bfe33928'
+      },
+      cache: {
+        driver: 'cloudflare-kv-binding',
+        namespaceId: '851783a587ae4c7685f7414947d58742'
+      }
+    },
+    nitro: {
+      preset: 'cloudflare_module',
+      cloudflare: {
+        wrangler: {
+          name: 'gurukampung',
+          observability: { logs: { enabled: true } }
+        }
+      }
+    }
+  },
+
+  // Node 22.5+ / Bun punya SQLite bawaan
   content: {
     experimental: { sqliteConnector: 'native' }
   },
 
   compatibilityDate: '2026-06-30',
 
-  // Situs statis (ADR 001): semua halaman dibuat saat build, termasuk halaman setiap alat.
-  // Preset ditulis eksplisit: kalau dibiarkan, Cloudflare Pages terdeteksi dan Nuxt Content beralih ke database D1
+  // Render campuran di Cloudflare Workers (ADR 002): halaman publik & alat gratis di-prerender,
+  // sedangkan sesi, dashboard, admin, dan API berjalan di server Worker + D1
+  routeRules: {
+    '/': { prerender: true },
+    '/alat': { prerender: true },
+    '/paket': { prerender: true },
+    '/tutorial/**': { prerender: true },
+    '/blog/**': { prerender: true },
+    '/dokumen': { prerender: true }
+  },
+
   nitro: {
-    preset: 'static',
-    // Hasil build langsung ke dist/ (folder output Cloudflare Pages). Tanpa ini Nuxt membuat dist/ sebagai
-    // symlink ke .output/public, dan Cloudflare menolak folder output yang berisi tautan
-    output: { publicDir: '{{ rootDir }}/dist' },
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/alat', '/tutorial', '/blog', '/dokumen', '/kelas', '/pengaturan', ...TOOLS.map(t => `/alat/${t.slug}`)]
+      routes: ['/', '/alat', '/paket', '/tutorial', '/blog', '/dokumen', '/kelas', '/pengaturan', ...TOOLS.map(t => `/alat/${t.slug}`)],
+      // Halaman bergantung sesi tidak boleh ikut di-prerender walau ditautkan dari menu
+      ignore: ['/dashboard', '/dasbor', '/masuk', '/akun', '/admin']
     }
   },
 
   vite: {
-    // Semua dependensi yang dimuat lambat harus dibundel di awal; kalau Vite baru menemukannya saat halaman berjalan,
-    // modul yang sudah dimuat gagal diambil ("Failed to fetch dynamically imported module")
     optimizeDeps: {
       include: [
         'dexie',
@@ -96,14 +146,15 @@ export default defineNuxtConfig({
         'lucide:rotate-ccw',
         'lucide:maximize-2',
         'lucide:minimize-2',
-        'lucide:sun',
-        'lucide:moon'
+        'lucide:layout-dashboard',
+        'lucide:sparkles',
+        'lucide:shield-check',
+        'lucide:key-round'
       ]
     }
   },
 
-  // Editor konten di /_studio. Di dev langsung menulis ke content/; di produksi butuh deploy SSR (nuxt build)
-  // dan OAuth GitHub (STUDIO_GITHUB_CLIENT_ID dan STUDIO_GITHUB_CLIENT_SECRET di nuxt-studio 1.7), lalu menyimpan sebagai commit
+  // Editor konten di /_studio
   studio: {
     repository: {
       provider: 'github',

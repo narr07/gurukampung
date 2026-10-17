@@ -52,6 +52,16 @@ const illustration = computed(() => {
           <span class="text-xs font-semibold text-muted">
             {{ categoryName }}
           </span>
+          <span
+            v-if="tool.tier === 'berbayar'"
+            class="lencana-pensil inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs"
+          >
+            <UIcon
+              name="i-lucide-lock"
+              class="size-3"
+            />
+            Berbayar
+          </span>
         </div>
 
         <h3 class="font-display text-xl font-bold text-highlighted">

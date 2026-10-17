@@ -7,6 +7,8 @@ const { favorites } = useFavorites()
 
 const items = [
   { label: 'Alat', to: '/alat', description: 'Semua alat yang siap dipakai' },
+  { label: 'Dashboard', to: '/dashboard', description: 'Kuota AI bulanan, paket langganan, dan bukti bayar' },
+  { label: 'Paket & Harga', to: '/paket', description: 'Alat harian gratis dan paket 7 generator AI' },
   { label: 'Tutorial', to: '/tutorial', description: 'Perangkat ajar, asesmen, dan cara memakai Guru Kampung' },
   { label: 'Blog', to: '/blog', description: 'Kabar dan catatan dari Guru Kampung' },
   { label: 'Dokumen', to: '/dokumen', description: 'Dokumen untuk guru' },
@@ -75,16 +77,15 @@ function openSearch() {
       />
     </div>
 
-    <!-- Logo ikut tergulir; hanya tombol menu yang tetap di layar -->
-    <header class="relative z-30 pt-4">
-      <UContainer class="flex h-12 items-center">
-        <NuxtLink
-          to="/"
-          class="stiker-pulau inline-flex min-h-11 items-center bg-white px-5 py-1.5 font-display text-xl font-extrabold tracking-tight text-highlighted dark:bg-slate-900"
-        >
-          Guru Kampung
-        </NuxtLink>
-      </UContainer>
+    <!-- Logo tetap di pojok kiri atas, sejajar dengan tombol menu di kanan; header hanya memberi ruang di atas isi -->
+    <header class="relative z-30 h-16">
+      <NuxtLink
+        to="/"
+        class="logo-gk stiker-pulau fixed top-4 left-4 z-40 inline-flex min-h-12 items-center gap-2 bg-white py-1.5 pr-5 pl-3.5 font-display text-xl font-extrabold tracking-tight text-highlighted sm:left-6 lg:left-8"
+      >
+        <LogoTanda />
+        Guru Kampung
+      </NuxtLink>
     </header>
 
     <UModal
@@ -93,13 +94,13 @@ function openSearch() {
       :transition="false"
       :overlay="false"
       title="Menu Guru Kampung"
-      description="Pindah halaman, buka alat, cari alat, atau ganti tema."
-      :ui="{ content: 'menu-panel ring-0 divide-y-0 bg-(--color-pensil) text-slate-900 dark:bg-blue-950 dark:text-yellow-100' }"
+      description="Pindah halaman, buka alat, atau cari alat."
+      :ui="{ content: 'menu-panel ring-0 divide-y-0 bg-(--color-pensil) text-slate-900' }"
     >
       <!-- Tombol menu tetap di layar; DialogTrigger mengembalikan fokus ke sini saat menu ditutup -->
       <button
         type="button"
-        class="tombol-menu stiker-pulau fixed top-4 right-4 z-40 inline-flex min-h-12 items-center gap-3 bg-white py-2 pr-2 pl-5 font-semibold text-highlighted sm:right-6 lg:right-8 dark:bg-slate-900"
+        class="tombol-menu stiker-pulau fixed top-4 right-4 z-40 inline-flex min-h-12 items-center gap-3 bg-white py-2 pr-2 pl-5 font-semibold text-highlighted sm:right-6 lg:right-8"
       >
         <span>Menu</span>
         <span
@@ -116,20 +117,22 @@ function openSearch() {
           class="flex h-full flex-col overflow-y-auto"
           data-lenis-prevent
         >
-          <UContainer class="flex h-12 shrink-0 items-center justify-between pt-4 box-content">
+          <!-- Logo di posisi yang sama persis dengan logo halaman, jadi tidak melompat saat menu dibuka -->
+          <div class="h-16 shrink-0">
             <NuxtLink
               to="/"
-              class="stiker-pulau inline-flex min-h-11 items-center bg-white px-5 py-1.5 font-display text-xl font-extrabold tracking-tight text-slate-900 dark:bg-slate-900 dark:text-yellow-100"
+              class="logo-gk stiker-pulau fixed top-4 left-4 z-10 inline-flex min-h-12 items-center gap-2 bg-white py-1.5 pr-5 pl-3.5 font-display text-xl font-extrabold tracking-tight text-slate-900 sm:left-6 lg:left-8"
               @click="close"
             >
+              <LogoTanda />
               Guru Kampung
             </NuxtLink>
-          </UContainer>
+          </div>
 
           <!-- Tombol tutup berada tepat di posisi tombol menu, jadi terasa seperti tombol yang sama -->
           <button
             type="button"
-            class="stiker-pulau fixed top-4 right-4 z-10 inline-flex min-h-12 items-center gap-3 bg-slate-900 py-2 pr-2 pl-5 font-semibold text-yellow-100 sm:right-6 lg:right-8 dark:bg-yellow-100 dark:text-slate-900"
+            class="stiker-pulau fixed top-4 right-4 z-10 inline-flex min-h-12 items-center gap-3 bg-slate-900 py-2 pr-2 pl-5 font-semibold text-yellow-100 sm:right-6 lg:right-8"
             @click="close"
           >
             <span>Tutup</span>
@@ -142,12 +145,13 @@ function openSearch() {
             </span>
           </button>
 
-          <UContainer class="grid flex-1 content-center gap-12 py-10 lg:grid-cols-12 lg:gap-8">
+          <!-- Seluruh isi panel dirancang muat satu layar: dua kolom menu, deskripsi & ilustrasi hilang di layar pendek -->
+          <UContainer class="grid flex-1 content-center gap-7 py-5 sm:py-8 lg:grid-cols-12 lg:gap-10">
             <nav
               aria-label="Menu utama"
               class="lg:col-span-7"
             >
-              <ol class="space-y-2 sm:space-y-3">
+              <ol class="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-8 sm:gap-y-5">
                 <li
                   v-for="(item, i) in items"
                   :key="item.to"
@@ -155,15 +159,15 @@ function openSearch() {
                   <NuxtLink
                     :to="item.to"
                     :aria-current="isActive(item.to) ? 'page' : undefined"
-                    class="menu-tautan group flex items-start gap-3 sm:gap-5"
+                    class="menu-tautan group flex items-start gap-2 sm:gap-3"
                     @click="close"
                   >
                     <span
-                      class="menu-muncul mt-2 font-display text-sm font-bold sm:mt-4 sm:text-base"
+                      class="menu-muncul mt-0.5 font-display text-xs font-bold sm:mt-1 sm:text-sm"
                       :style="{ '--i': i }"
                     >{{ String(i + 1).padStart(2, '0') }}</span>
-                    <span class="flex flex-col">
-                      <span class="overflow-hidden pb-2">
+                    <span class="flex min-w-0 flex-col">
+                      <span class="overflow-hidden pb-1">
                         <span
                           class="menu-baris block"
                           :style="{ '--i': i }"
@@ -172,7 +176,7 @@ function openSearch() {
                         </span>
                       </span>
                       <span
-                        class="menu-muncul text-sm font-medium opacity-80 sm:text-base"
+                        class="menu-muncul hidden text-sm font-medium opacity-80 sm:line-clamp-2 [@media(max-height:700px)]:hidden"
                         :style="{ '--i': i }"
                       >{{ item.description }}</span>
                     </span>
@@ -181,35 +185,37 @@ function openSearch() {
               </ol>
             </nav>
 
-            <div class="space-y-6 lg:col-span-5">
+            <div class="space-y-4 sm:space-y-5 lg:col-span-5">
               <div
                 aria-hidden="true"
-                class="menu-pesawat hidden w-36 sm:block lg:w-44"
+                class="menu-pesawat hidden w-28 lg:block lg:w-36 [@media(max-height:820px)]:hidden"
               >
                 <GambarIlustrasi name="pesawat" />
               </div>
 
               <section
                 aria-labelledby="menu-jalan-pintas"
-                class="space-y-3"
+                class="space-y-2.5"
               >
                 <h2
                   id="menu-jalan-pintas"
-                  class="menu-muncul font-display text-lg font-bold"
+                  class="menu-muncul font-display text-base font-bold sm:text-lg"
                   :style="{ '--i': 1 }"
                 >
                   {{ quickTools.title }}
                 </h2>
-                <ul class="flex flex-wrap gap-2.5">
+                <ul class="flex flex-wrap gap-2">
+                  <!-- Di ponsel cukup empat alat agar panel tidak perlu digulir -->
                   <li
                     v-for="(tool, i) in quickTools.tools"
                     :key="tool.slug"
                     class="menu-muncul"
+                    :class="{ 'max-sm:hidden': i >= 4 }"
                     :style="{ '--i': i + 2 }"
                   >
                     <NuxtLink
                       :to="`/alat/${tool.slug}`"
-                      class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-white px-4 py-2 text-sm font-semibold text-slate-900 dark:bg-slate-900 dark:text-yellow-100"
+                      class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-white px-4 py-2 text-sm font-semibold text-slate-900"
                       @click="close"
                     >
                       <UIcon
@@ -228,7 +234,7 @@ function openSearch() {
               >
                 <button
                   type="button"
-                  class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-slate-900 px-4 py-2 text-sm font-semibold text-yellow-100 dark:bg-yellow-100 dark:text-slate-900"
+                  class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-slate-900 px-4 py-2 text-sm font-semibold text-yellow-100"
                   @click="openSearch"
                 >
                   <UIcon
@@ -238,14 +244,52 @@ function openSearch() {
                   Cari
                   <span class="hidden rounded-md border border-current/40 px-1.5 text-xs sm:inline">Ctrl K</span>
                 </button>
-                <div class="stiker-tombol inline-flex min-h-11 items-center bg-white px-1 dark:bg-slate-900">
-                  <UColorModeButton />
-                </div>
               </div>
+
+              <!-- Tombol akun dipisah dari tombol Cari agar tidak terbaca sebagai satu deret aksi -->
+              <section
+                aria-labelledby="menu-akun"
+                class="space-y-2.5"
+              >
+                <h2
+                  id="menu-akun"
+                  class="menu-muncul font-display text-base font-bold sm:text-lg"
+                  :style="{ '--i': 7 }"
+                >
+                  Akun
+                </h2>
+                <div
+                  class="menu-muncul flex flex-wrap items-center gap-2.5"
+                  :style="{ '--i': 8 }"
+                >
+                  <NuxtLink
+                    to="/masuk"
+                    class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-white px-4 py-2 text-sm font-semibold text-slate-900"
+                    @click="close"
+                  >
+                    <UIcon
+                      name="i-lucide-key-round"
+                      class="size-4"
+                    />
+                    Masuk
+                  </NuxtLink>
+                  <NuxtLink
+                    to="/admin"
+                    class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-white px-4 py-2 text-sm font-semibold text-slate-900"
+                    @click="close"
+                  >
+                    <UIcon
+                      name="i-lucide-shield-check"
+                      class="size-4"
+                    />
+                    Admin
+                  </NuxtLink>
+                </div>
+              </section>
             </div>
           </UContainer>
 
-          <UContainer class="shrink-0 pb-6 text-sm font-medium opacity-80">
+          <UContainer class="shrink-0 pb-4 text-sm font-medium opacity-80">
             Data kelas tersimpan di perangkat ini saja.
           </UContainer>
         </div>

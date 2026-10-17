@@ -4,6 +4,8 @@
 export type ToolCategory = 'kelas' | 'penilaian' | 'bahan-ajar' | 'peraga' | 'dokumen'
 export type ToolPriority = 1 | 2 | 3
 export type ToolNeed = 'kelas' | 'cetak' | 'proyektor' | 'mik' | 'audio'
+// Alat berbayar memakai AI dan dibuka dengan langganan (okf/alat-berbayar.md)
+export type ToolTier = 'gratis' | 'berbayar'
 
 export interface ToolInfo {
   slug: string
@@ -14,6 +16,7 @@ export interface ToolInfo {
   priority: ToolPriority
   phase: number
   needs: ToolNeed[]
+  tier?: ToolTier
 }
 
 export const CATEGORIES: { id: ToolCategory, name: string }[] = [
@@ -43,6 +46,7 @@ export const TOOLS: ToolInfo[] = [
   { slug: 'analisis-butir', name: 'Analisis Butir Soal', summary: 'Tingkat kesukaran, daya beda, dan efektivitas pengecoh soal pilihan ganda.', icon: 'i-lucide-chart-column', category: 'penilaian', priority: 3, phase: 4, needs: ['kelas', 'cetak'] },
 
   // Pembuat Bahan Ajar
+  { slug: 'lkpd-bergambar', name: 'Generator LKPD Bergambar', summary: 'LKPD bergambar siap cetak dari CP, materi, dan TP yang dipilih, dibuat dengan AI.', icon: 'i-lucide-file-image', category: 'bahan-ajar', priority: 2, phase: 5, needs: ['cetak'], tier: 'berbayar' },
   { slug: 'lk-matematika', name: 'Lembar Kerja Matematika', summary: 'Soal hitung acak dengan kunci jawaban di halaman terpisah, siap cetak.', icon: 'i-lucide-sigma', category: 'bahan-ajar', priority: 1, phase: 1, needs: ['cetak'] },
   { slug: 'latihan-menulis', name: 'Latihan Menulis Huruf', summary: 'Garis tiga atau empat dengan huruf putus-putus untuk ditebalkan.', icon: 'i-lucide-pencil-line', category: 'bahan-ajar', priority: 2, phase: 2, needs: ['cetak'] },
   { slug: 'cari-kata', name: 'Pembuat Cari Kata', summary: 'Susun kotak cari kata dari daftar kosakata, lengkap dengan kunci.', icon: 'i-lucide-search', category: 'bahan-ajar', priority: 2, phase: 2, needs: ['cetak'] },

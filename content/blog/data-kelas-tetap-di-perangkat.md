@@ -1,7 +1,8 @@
 ---
 title: Kenapa data kelas Anda tidak pernah dikirim ke server
+date: '2026-10-16'
 description: Nama murid, nilai, dan absensi di Guru Kampung tersimpan di peramban perangkat Anda sendiri. Ini alasannya, dan cara menjaga data itu supaya tidak hilang.
-date: 2026-10-16
+penulis: Tim Guru Kampung
 tags:
   - privasi
   - data kelas

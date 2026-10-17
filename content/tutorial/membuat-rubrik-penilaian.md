@@ -1,13 +1,13 @@
 ---
 title: Membuat rubrik penilaian yang adil
-description: Rubrik membuat penilaian tugas, presentasi, dan karya lebih konsisten. Cara memilih kriteria, menulis deskripsi tiap level, dan mengubahnya menjadi nilai.
-date: 2026-10-16
-kategori: asesmen
-urutan: 2
-durasi: 12 menit baca
 alat:
   - predikat
   - nilai-rapor
+date: '2026-10-16'
+description: Rubrik membuat penilaian tugas, presentasi, dan karya lebih konsisten. Cara memilih kriteria, menulis deskripsi tiap level, dan mengubahnya menjadi nilai.
+durasi: 12 menit baca
+kategori: asesmen
+urutan: 2
 ---
 
 Saat menilai karangan, presentasi, atau prakarya, dua guru bisa memberi nilai berbeda untuk karya yang sama. Bahkan guru yang sama bisa menilai berbeda di jam pertama dan jam terakhir. Rubrik mengurangi masalah itu karena kriterianya ditulis sebelum menilai.
@@ -23,7 +23,6 @@ Rubrik analitik berbentuk tabel:
 ## Langkah membuat rubrik
 
 ::steps{level="3"}
-
 ### Mulai dari tujuan pembelajaran
 
 Kriteria rubrik harus berasal dari tujuan, bukan dari kebiasaan. Kalau tujuannya "menceritakan kembali isi cerita dengan urutan yang benar", maka kerapian tulisan bukan kriteria utama.
@@ -43,16 +42,15 @@ Bayangkan karya terbaik dan karya yang paling perlu bantuan di kelas Anda. Setel
 ### Uji dengan dua atau tiga karya nyata
 
 Nilai beberapa karya murid tahun lalu, atau minta rekan guru menilai karya yang sama. Kalau hasilnya jauh berbeda, deskripsinya masih terlalu kabur.
-
 ::
 
 ## Contoh: menceritakan kembali isi cerita (Bahasa Indonesia kelas 3)
 
-| Kriteria | Perlu bimbingan (1) | Cukup (2) | Baik (3) | Sangat baik (4) |
-| --- | --- | --- | --- | --- |
-| Urutan peristiwa | Peristiwa tidak berurutan | Sebagian peristiwa berurutan | Semua peristiwa utama berurutan | Berurutan dan memakai kata penghubung waktu (lalu, kemudian, akhirnya) |
-| Kelengkapan isi | Menyebut 1 peristiwa | Menyebut 2 peristiwa | Menyebut semua peristiwa utama | Semua peristiwa utama beserta tokoh dan tempatnya |
-| Bahasa sendiri | Menyalin kalimat dari teks | Sebagian besar menyalin | Sebagian besar memakai kata sendiri | Seluruhnya memakai kata sendiri dan mudah dipahami |
+| Kriteria         | Perlu bimbingan (1)        | Cukup (2)                    | Baik (3)                            | Sangat baik (4)                                                        |
+| ---------------- | -------------------------- | ---------------------------- | ----------------------------------- | ---------------------------------------------------------------------- |
+| Urutan peristiwa | Peristiwa tidak berurutan  | Sebagian peristiwa berurutan | Semua peristiwa utama berurutan     | Berurutan dan memakai kata penghubung waktu (lalu, kemudian, akhirnya) |
+| Kelengkapan isi  | Menyebut 1 peristiwa       | Menyebut 2 peristiwa         | Menyebut semua peristiwa utama      | Semua peristiwa utama beserta tokoh dan tempatnya                      |
+| Bahasa sendiri   | Menyalin kalimat dari teks | Sebagian besar menyalin      | Sebagian besar memakai kata sendiri | Seluruhnya memakai kata sendiri dan mudah dipahami                     |
 
 Perhatikan deskripsinya: **bisa diamati** dan **bertingkat jelas**. Hindari kata seperti "kurang baik" atau "sangat bagus" tanpa penjelasan, karena kata-kata itu yang membuat penilaian tidak konsisten.
 

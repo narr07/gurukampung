@@ -1,0 +1,54 @@
+# CONTOH FORMAT, belum disalin dari dokumen resmi.
+# Ganti setiap teks dalam [kurung siku] dengan teks dari dokumen sumber, lalu ubah `contoh` menjadi false.
+# Satu berkas = satu mata pelajaran di satu fase. Nama berkas bebas, misalnya matematika-fase-b.yml.
+contoh: true
+mapelId: matematika
+mapel: Matematika
+fase: B
+sumber:
+  dokumen: Keputusan Kepala BSKAP Nomor 046/H/KR/2025
+  bagian: "[Lampiran dan halaman CP Matematika Fase B]"
+elemen:
+  - id: bilangan
+    nama: Bilangan
+    capaian: "[Salin teks capaian elemen Bilangan Fase B dari Kepka BSKAP 046/H/KR/2025]"
+    materi:
+      - id: pecahan
+        nama: "[Contoh] Pecahan"
+        kelas: [3, 4]
+        tp:
+          - id: pecahan-1
+            teks: Murid dapat menunjukkan pecahan sederhana (½, ⅓, ¼) pada gambar benda dan model batang.
+            kelas: 3
+          - id: pecahan-2
+            teks: Murid dapat menemukan dua pecahan senilai dengan melipat kertas dan menuliskan pasangan pecahannya.
+            kelas: 4
+          - id: pecahan-3
+            teks: Murid dapat membandingkan dua pecahan berpenyebut berbeda dengan model batang dan tanda >, <, atau =.
+            kelas: 4
+      - id: nilai-tempat
+        nama: "[Contoh] Nilai tempat bilangan cacah"
+        kelas: [3]
+        tp:
+          - id: nilai-tempat-1
+            teks: Murid dapat menentukan nilai tempat angka pada bilangan cacah sampai 10.000 dengan bantuan tabel nilai tempat.
+            kelas: 3
+  - id: pengukuran
+    nama: Pengukuran
+    capaian: "[Salin teks capaian elemen Pengukuran Fase B dari Kepka BSKAP 046/H/KR/2025]"
+    materi:
+      - id: panjang-berat
+        nama: "[Contoh] Panjang dan berat dengan satuan baku"
+        kelas: [3, 4]
+        tp:
+          - id: panjang-berat-1
+            teks: Murid dapat mengukur panjang benda di kelas dengan penggaris dan menuliskan hasilnya dalam cm.
+            kelas: 3
+  - id: geometri
+    nama: Geometri
+    capaian: "[Salin teks capaian elemen Geometri Fase B dari Kepka BSKAP 046/H/KR/2025]"
+    materi:
+      - id: bangun-datar
+        nama: "[Contoh] Bangun datar"
+        kelas: [3]
+        tp: []

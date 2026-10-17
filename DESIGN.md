@@ -23,27 +23,26 @@ Guru Kampung adalah alat kerja guru SD. Bahannya diambil dari meja guru: pensil 
 
 Palet memakai warna bawaan Tailwind (11 shade lengkap), tanpa nilai heksadesimal karangan.
 
-| Peran | Token | Mode terang | Mode gelap | Kontras |
-|---|---|---|---|---|
-| Utama | `primary: 'blue'` | blue-800 `#193cb8` | blue-300 `#8ec5ff` | 8,82:1 di atas putih · 9,83:1 di atas slate-900 |
-| Aksen | `secondary: 'red'` | red-700 `#c10007` | red-400 `#ff6467` | 6,42:1 di atas putih · 5,12:1 di atas blue-950 |
-| Ceria | `--color-pensil` = yellow-300 | yellow-300 `#ffdf20` | yellow-300 | slate-900 di atasnya 13,44:1 · blue-800 di atasnya 6,65:1 |
-| Tinta | `--color-tinta` = slate-900 | slate-900 `#0f172b` | yellow-100 `#fef9c2` | 17,83:1 di atas putih · 16,59:1 di atas slate-900 |
-| Netral | `neutral: 'slate'` | | | |
-| Galat | `error: 'red'` | red-700 | red-400 | sama dengan aksen; galat selalu disertai ikon dan teks |
+> **Perubahan 17 Oktober 2026 (disetujui pemilik):** Mode gelap (`dark mode`) dihapus sepenuhnya (`ui.colorMode: false`). Guru Kampung dikunci pada **mode terang** di semua halaman supaya kontras kertas, kuning pensil, dan garis tinta selalu terjaga baik di layar laptop maupun saat ditembakkan ke proyektor kelas.
 
-Shade bawaan Nuxt UI (500 di mode terang, 400 di mode gelap) tidak dipakai untuk biru dan merah, karena blue-500 di atas putih kurang dari 4,5:1.
+| Peran | Token | Nilai (Mode Terang Permanen) | Kontras |
+|---|---|---|---|
+| Utama | `primary: 'blue'` | blue-800 `#193cb8` | 8,82:1 di atas putih |
+| Aksen | `secondary: 'red'` | red-700 `#c10007` | 6,42:1 di atas putih |
+| Ceria | `--color-pensil` = yellow-300 | yellow-300 `#ffdf20` | slate-900 di atasnya 13,44:1 · blue-800 di atasnya 6,65:1 |
+| Tinta | `--color-tinta` = slate-900 | slate-900 `#0f172b` | 17,83:1 di atas putih |
+| Netral | `neutral: 'slate'` | slate | |
+| Galat | `error: 'red'` | red-700 | sama dengan aksen; galat selalu disertai ikon dan teks |
 
-### Gradien panggung (hanya beranda)
+Shade bawaan Nuxt UI (500) tidak dipakai untuk biru dan merah, karena blue-500 di atas putih kurang dari 4,5:1.
 
-Latar beranda adalah gradien diagonal **langit → kertas → pensil**:
+### Gradien panggung
 
-- Mode terang: sky-300 `#74d4ff` → yellow-100 `#fef9c2` → yellow-300 `#ffdf20`.
-- Mode gelap: blue-950 `#162456` → slate-900 `#0f172b`, dengan kuning pensil sebagai warna sorotan.
+Latar panggung adalah gradien diagonal **langit -> kertas -> pensil**:
+
+- sky-300 `#74d4ff` -> yellow-100 `#fef9c2` -> yellow-300 `#ffdf20`.
 
 Teks di atas gradien selalu memakai warna tinta. Titik terlemahnya slate-900 di atas sky-300, yaitu 10,70:1. Teks abu (slate-700) di atas gradien masih 6,22:1.
-
-Gradien punya fungsi: menandai bahwa guru sedang di panggung, bukan di meja kerja. Halaman alat tidak memakainya (R-01).
 
 ### Aturan aksen merah
 
@@ -81,16 +80,41 @@ Semua yang bisa ditekan terlihat seperti stiker yang ditempel: garis tinta tebal
 
 Alasan bayangan padat (R-12): bayangan ini menandai **bisa ditekan**. Teks, judul, dan kotak informasi yang tidak bisa diklik tetap rata tanpa bayangan.
 
+### Logo
+
+Tanda Guru Kampung adalah **pensil kuning yang sekaligus rumah** (17 Oktober 2026): ujung raut menjadi atap, badan pensil menjadi dinding, dan pintu melengkung di tengahnya. Pensil mewakili guru, rumah mewakili kampung. Semua file ada di `public/brand/`.
+
+| File | Dipakai untuk |
+|---|---|
+| `guru-kampung-logo-horizontal.svg` | Latar terang: kop surat, header dokumen, slide |
+| `guru-kampung-logo-horizontal-putih.svg` | Latar biru atau gelap; tanda diberi bingkai stiker putih |
+| `guru-kampung-logo-vertikal(-putih).svg` | Ruang tegak atau persegi: spanduk, kaos, poster |
+| `guru-kampung-mark.svg` | Tanda saja, latar transparan |
+| `guru-kampung-mark-stiker.svg` | Tanda saja di latar gelap atau foto |
+| `guru-kampung-mark-mono.svg` | Satu warna (`currentColor`): stempel, sablon, bordir, watermark |
+| `guru-kampung-app-icon(-persegi).svg`, PNG 1024 | Ikon aplikasi dan avatar media sosial |
+| `public/icon.svg`, `favicon.ico` | Tab peramban. Versi sederhana tanpa lekuk raut, karena dibaca di 16–32px |
+
+- Warna hanya dari palet: biru blue-800, kuning pensil yellow-300, kayu yellow-100, tinta slate-900. Merah tidak dipakai di logo.
+- Tulisan "Guru Kampung" adalah Funnel Display 800 yang sudah diubah menjadi path, jadi tampil sama di mana pun tanpa font terpasang.
+- Jangan memutar, meregangkan, mengganti warna di luar palet, atau menaruh logo berwarna di latar gelap tanpa versi stiker.
+- Bagian tanda punya id terpisah untuk animasi: `gk-bayangan`, `gk-badan`, `gk-pintu`, `gk-atap`, `gk-grafit` (dan `gk-tulisan` di logo). Contoh: atap terangkat seperti tutup pensil, pintu terbuka, atau pensil memantul.
+- Di header, tanda ditampilkan lewat `LogoTanda.vue`: jatuh lalu memantul saat halaman dibuka; saat disentuh, ujung raut terangkat dan pensil bergoyang seperti menulis. Semua gerak mati kalau pengguna memilih kurangi gerak.
+
+### Maskot (draf)
+
+Maskot adalah tanda yang sama dengan wajah: dua mata di dinding kuning, pintu sebagai mulut, tangan bersarung putih, dan kaki tinta. File: `public/brand/guru-kampung-maskot.svg` (diam) dan `guru-kampung-maskot-animasi.svg` (berkedip dan melambai, berhenti kalau pengguna memilih kurangi gerak). Bagian yang bisa dianimasikan: `gk-mata`, `gk-tangan-kanan`, `gk-tangan-kiri`, `gk-kaki`, `gk-atap`, `gk-pintu`. Nama maskot belum diputuskan.
+
 ### Tombol menu
 
 Tidak ada navbar. Navigasi berupa satu tombol **Menu** yang tetap di pojok kanan atas (`fixed`), dipakai di semua halaman (disetujui pemilik, 16 Oktober 2026).
 
-- Logo "Guru Kampung" (Funnel Display tebal, pil stiker) ada di kiri atas dan ikut tergulir. Ikon atau logo grafis baru dibuat setelah ada keputusan dari pemilik.
-- Tombol menu dan logo berlatar putih (gelap: slate-900) dengan garis tinta dan bayangan padat, tanpa blur.
-- Saat ditekan, panel kuning pensil (gelap: blue-950) terbuka sebagai lingkaran dari posisi tombol. Isinya:
-  - tautan besar Alat, Data Kelas, dan Pengaturan, bernomor 01 sampai 03; halaman yang sedang dibuka bergaris bawah tinta merah;
-  - jalan pintas ke alat favorit, atau ke alat harian (P1) kalau belum ada favorit;
-  - tombol Cari alat (Ctrl K) dan pengganti tema.
+- Tulisan "Guru Kampung" (Funnel Display tebal, pil stiker) ada di kiri atas dan ikut tergulir.
+- Tombol menu dan logo berlatar putih dengan garis tinta dan bayangan padat, tanpa blur.
+- Saat ditekan, panel kuning pensil terbuka sebagai lingkaran dari posisi tombol. Seluruh isinya muat satu layar tanpa digulir:
+  - delapan tautan besar dalam dua kolom, bernomor 01 sampai 08; halaman yang sedang dibuka bergaris bawah tinta merah. Ukuran huruf mengikuti lebar dan tinggi layar, deskripsi hilang di ponsel dan layar pendek;
+  - jalan pintas ke alat favorit, atau ke alat harian (P1) kalau belum ada favorit (empat saja di ponsel);
+  - tombol Cari (Ctrl K), lalu bagian Akun terpisah berisi Masuk dan Admin.
 - Tombol Tutup muncul tepat di posisi tombol Menu. Escape juga menutup panel, dan fokus kembali ke tombol Menu.
 - Di beranda, garis tipis warna tinta di tepi atas layar menunjukkan seberapa jauh halaman sudah digulir.
 
