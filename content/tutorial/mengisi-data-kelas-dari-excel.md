@@ -9,6 +9,7 @@ alat:
   - pemilih-acak
   - pembagi-kelompok
   - rekap-absensi
+ilustrasi: kartu-nama
 ---
 
 Banyak alat Guru Kampung memakai nama siswa. Supaya Anda tidak mengetik ulang di setiap alat, daftar siswa disimpan sekali di **Data Kelas**. Setelah itu, setiap alat yang membutuhkan nama siswa tinggal memilih kelasnya.

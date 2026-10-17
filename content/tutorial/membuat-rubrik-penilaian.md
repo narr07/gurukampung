@@ -8,6 +8,7 @@ description: Rubrik membuat penilaian tugas, presentasi, dan karya lebih konsist
 durasi: 12 menit baca
 kategori: asesmen
 urutan: 2
+ilustrasi: rapor
 ---
 
 Saat menilai karangan, presentasi, atau prakarya, dua guru bisa memberi nilai berbeda untuk karya yang sama. Bahkan guru yang sama bisa menilai berbeda di jam pertama dan jam terakhir. Rubrik mengurangi masalah itu karena kriterianya ditulis sebelum menilai.

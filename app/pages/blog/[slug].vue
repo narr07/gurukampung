@@ -19,6 +19,18 @@ useSeoMeta({
   ogType: 'article',
   articlePublishedTime: () => page.value?.date
 })
+
+// Gambar pratinjau saat tautan dibagikan ke WhatsApp atau media sosial (dibuat saat build)
+defineOgImage('GuruKampung', { title: page.value.title, description: page.value.description })
+
+// Artikel dengan bagian khusus pelanggan ditandai sesuai panduan Google untuk konten berbayar,
+// supaya bagian terkunci tidak dianggap menyembunyikan isi dari mesin pencari
+if (page.value.terkunci) {
+  useSchemaOrg([defineArticle({
+    isAccessibleForFree: false,
+    hasPart: { '@type': 'WebPageElement', 'isAccessibleForFree': false, 'cssSelector': '.konten-terkunci' }
+  })])
+}
 </script>
 
 <template>

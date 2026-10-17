@@ -51,6 +51,24 @@ const kuotaGambar = computed(() => {
   return { terpakai: profil.value.kuotaGambarTerpakai, maks: profil.value.kuotaGambarMaks, sisa, persen }
 })
 
+// Bar kuota terisi halus lewat GSAP (scaleX, bukan width) saat tampil dan setiap kali angkanya berubah.
+// Bar bisa muncul belakangan (v-if mode pratinjau), jadi elemennya ikut diawasi
+const barTeks = useTemplateRef<HTMLElement>('barTeks')
+const barGambar = useTemplateRef<HTMLElement>('barGambar')
+const reducedMotion = usePreferredReducedMotion()
+
+watch(
+  [barTeks, barGambar, () => kuotaTeks.value.persen, () => kuotaGambar.value.persen],
+  ([elTeks, elGambar, persenTeks, persenGambar]) => {
+    const { gsap } = useGSAP()
+    const duration = reducedMotion.value === 'reduce' ? 0 : 0.9
+    for (const [el, persen] of [[elTeks, persenTeks], [elGambar, persenGambar]] as const) {
+      if (el) gsap.to(el, { scaleX: persen / 100, duration, ease: 'power3.out', overwrite: true })
+    }
+  },
+  { flush: 'post' }
+)
+
 // Tujuh alat berbayar sesuai okf/alat-berbayar.md
 const alatAi = [
   {
@@ -246,6 +264,7 @@ function konfirmasiHapusAkun() {
           size="xs"
           :color="modePratinjau === 'aktif' ? 'secondary' : 'neutral'"
           :variant="modePratinjau === 'aktif' ? 'solid' : 'outline'"
+          :aria-pressed="modePratinjau === 'aktif'"
           class="stiker-tombol"
           @click="modePratinjau = 'aktif'"
         >
@@ -255,6 +274,7 @@ function konfirmasiHapusAkun() {
           size="xs"
           :color="modePratinjau === 'hampir-habis' ? 'secondary' : 'neutral'"
           :variant="modePratinjau === 'hampir-habis' ? 'solid' : 'outline'"
+          :aria-pressed="modePratinjau === 'hampir-habis'"
           class="stiker-tombol"
           @click="modePratinjau = 'hampir-habis'"
         >
@@ -264,6 +284,7 @@ function konfirmasiHapusAkun() {
           size="xs"
           :color="modePratinjau === 'gratis' ? 'secondary' : 'neutral'"
           :variant="modePratinjau === 'gratis' ? 'solid' : 'outline'"
+          :aria-pressed="modePratinjau === 'gratis'"
           class="stiker-tombol"
           @click="modePratinjau = 'gratis'"
         >
@@ -355,8 +376,9 @@ function konfirmasiHapusAkun() {
                 aria-label="Pemakaian kuota teks AI"
               >
                 <div
-                  class="h-full bg-(--color-pensil)"
-                  :style="{ width: `${kuotaTeks.persen}%` }"
+                  ref="barTeks"
+                  class="h-full w-full origin-left bg-(--color-pensil)"
+                  style="transform: scaleX(0)"
                 />
               </div>
               <p class="mt-2 text-xs text-muted">
@@ -387,8 +409,9 @@ function konfirmasiHapusAkun() {
                 aria-label="Pemakaian kuota gambar AI"
               >
                 <div
-                  class="h-full bg-(--color-pensil)"
-                  :style="{ width: `${kuotaGambar.persen}%` }"
+                  ref="barGambar"
+                  class="h-full w-full origin-left bg-(--color-pensil)"
+                  style="transform: scaleX(0)"
                 />
               </div>
               <p class="mt-2 text-xs text-muted">
@@ -835,4 +858,3 @@ function konfirmasiHapusAkun() {
     </UModal>
   </div>
 </template>
-

@@ -24,6 +24,13 @@ logs
 .env.*
 !.env.example
 
+# Sumber rujukan lokal (hasil konversi PDF kurikulum), tidak di-commit
+/sumber/
+
+# Isi berbayar blog/tutorial (dibaca /api/premium/[id]). Repo ini publik, jadi isinya tidak boleh masuk git;
+# berkasnya ikut ke Worker saat `bun run deploy` dijalankan dari komputer yang menyimpannya
+/server/assets/premium/
+
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
 

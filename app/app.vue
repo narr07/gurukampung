@@ -21,6 +21,12 @@ useHead({
   }
 })
 
+// Gambar pratinjau umum untuk halaman yang tidak memasang defineOgImage sendiri (blog dan tutorial memasangnya)
+defineOgImage('GuruKampung', {
+  title: 'Alat kerja guru SD',
+  description: 'Pemilih siswa acak, pembagi kelompok, timer, lembar kerja, LKPD, RPP, dan rangkuman materi.'
+})
+
 useSeoMeta({
   titleTemplate: title => (title ? `${title} · Guru Kampung` : 'Guru Kampung: alat kerja guru SD'),
   description: 'Alat kerja guru SD di peramban: pemilih siswa acak, pembagi kelompok, timer, lembar kerja, dan lainnya. Data kelas tersimpan di perangkat guru, tidak dikirim ke server.'

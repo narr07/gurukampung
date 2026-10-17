@@ -7,6 +7,7 @@ urutan: 1
 durasi: 10 menit baca
 alat:
   - modul-ajar
+ilustrasi: target
 ---
 
 Tujuan pembelajaran adalah kalimat pertama yang Anda tulis di RPP atau modul ajar, dan kalimat yang paling sering dibaca ulang. Kalau tujuannya kabur, kegiatan dan asesmennya ikut kabur. Kalau tujuannya jelas, dua bagian lain hampir menulis dirinya sendiri.

@@ -12,6 +12,16 @@ let analyser: AnalyserNode | null = null
 let mediaStream: MediaStream | null = null
 let rafId: number | null = null
 
+// Bar level digerakkan GSAP quickTo lewat scaleX: satu tween dipakai ulang tiap frame, tanpa menghitung ulang layout
+const levelBar = useTemplateRef<HTMLElement>('levelBar')
+let levelTo: ((value: number) => void) | undefined
+
+function setupLevelBar() {
+  if (!levelBar.value) return
+  const { gsap } = useGSAP()
+  levelTo = gsap.quickTo(levelBar.value, 'scaleX', { duration: 0.15, ease: 'power2.out' })
+}
+
 const zone = computed<'tenang' | 'sedang' | 'ramai'>(() => {
   if (level.value >= loudMin.value) return 'ramai'
   if (level.value >= calmMax.value) return 'sedang'
@@ -59,6 +69,7 @@ async function startListening() {
 
     const buffer = new Uint8Array(analyser.frequencyBinCount)
     listening.value = true
+    if (!levelTo) setupLevelBar()
 
     const tick = () => {
       if (!analyser || !listening.value) return
@@ -71,6 +82,7 @@ async function startListening() {
       const rms = Math.sqrt(sumSquares / buffer.length)
       const scaled = Math.min(100, Math.round(rms * 260))
       level.value = scaled
+      levelTo?.(scaled / 100)
       if (scaled > peak.value) peak.value = scaled
       rafId = requestAnimationFrame(tick)
     }
@@ -94,6 +106,7 @@ function stopListening() {
     audioCtx = null
   }
   level.value = 0
+  levelTo?.(0)
 }
 
 onBeforeUnmount(() => {
@@ -173,9 +186,10 @@ onBeforeUnmount(() => {
         <div class="w-full max-w-xl space-y-2">
           <div class="relative h-9 w-full overflow-hidden rounded-full border-2 border-(--color-tinta) bg-slate-100 dark:bg-slate-800">
             <div
-              class="h-full transition-all duration-150"
+              ref="levelBar"
+              class="h-full w-full origin-left transition-colors will-change-transform"
               :class="zone === 'ramai' ? 'bg-rose-500' : zone === 'sedang' ? 'bg-(--color-pensil)' : 'bg-emerald-500'"
-              :style="{ width: `${listening ? level : 0}%` }"
+              style="transform: scaleX(0)"
             />
             <div
               class="absolute top-0 bottom-0 border-l-2 border-dashed border-slate-900"
@@ -229,4 +243,3 @@ onBeforeUnmount(() => {
     </ProjectorShell>
   </div>
 </template>
-

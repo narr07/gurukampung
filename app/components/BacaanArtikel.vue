@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { ContentNavigationItem, TocLink } from '@nuxt/content'
+import type { NamaIlustrasi } from '~/utils/ilustrasi'
 
-// Kerangka halaman bacaan (tutorial dan blog). Termasuk meja kerja: tenang, tanpa gerak dekoratif (DESIGN.md)
+// Kerangka halaman bacaan (tutorial dan blog). Termasuk meja kerja: tenang, tanpa gerak dekoratif (DESIGN.md).
+// Ilustrasi stiker dari frontmatter `ilustrasi` tampil di samping judul
 defineProps<{
-  page: { title: string, description?: string, body?: { toc?: { links?: TocLink[] } } }
+  page: { title: string, description?: string, ilustrasi?: string, body?: { toc?: { links?: TocLink[] } } }
   surround?: ContentNavigationItem[] | null
   backTo: string
   backLabel: string
@@ -25,19 +27,27 @@ defineProps<{
 
     <div class="grid gap-8 lg:grid-cols-12">
       <article class="panel-kertas min-w-0 p-5 sm:p-8 lg:col-span-9 lg:p-10">
-        <header class="mb-8 space-y-3 border-b-2 border-dashed border-default pb-6">
-          <p class="text-sm font-semibold text-muted">
-            <slot name="eyebrow" />
-          </p>
-          <h1 class="font-display text-3xl font-extrabold text-balance text-highlighted sm:text-4xl">
-            {{ page.title }}
-          </h1>
-          <p
-            v-if="page.description"
-            class="text-lg text-toned"
+        <header class="mb-8 flex items-start justify-between gap-6 border-b-2 border-dashed border-default pb-6">
+          <div class="min-w-0 space-y-3">
+            <p class="text-sm font-semibold text-muted">
+              <slot name="eyebrow" />
+            </p>
+            <h1 class="font-display text-3xl font-extrabold text-balance text-highlighted sm:text-4xl">
+              {{ page.title }}
+            </h1>
+            <p
+              v-if="page.description"
+              class="text-lg text-toned"
+            >
+              {{ page.description }}
+            </p>
+          </div>
+          <div
+            v-if="page.ilustrasi"
+            class="ilustrasi-judul hidden w-24 shrink-0 sm:block lg:w-28"
           >
-            {{ page.description }}
-          </p>
+            <GambarIlustrasi :name="page.ilustrasi as NamaIlustrasi" />
+          </div>
         </header>
 
         <ContentRenderer

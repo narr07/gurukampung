@@ -10,6 +10,7 @@ alat:
   - pecahan
   - pembagi-kelompok
   - timer
+ilustrasi: buku
 ---
 
 RPP yang baik tidak harus tebal. Yang penting, rencana itu bisa Anda pakai besok pagi di kelas. Apa pun format yang diminta sekolah, rencana satu pertemuan cukup menjawab tiga pertanyaan:

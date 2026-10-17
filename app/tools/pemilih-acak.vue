@@ -144,7 +144,8 @@ const modeItems = [
           >
             <span
               v-if="current && mode === 'roda'"
-              class="lencana-pensil px-5 py-2 font-display text-3xl sm:text-4xl font-extrabold"
+              :key="current"
+              class="hasil-muncul lencana-pensil px-5 py-2 font-display text-3xl sm:text-4xl font-extrabold"
             >
               {{ current }}
             </span>
@@ -188,4 +189,3 @@ const modeItems = [
     </ProjectorShell>
   </div>
 </template>
-

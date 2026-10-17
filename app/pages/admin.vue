@@ -381,6 +381,7 @@ const riwayatWebhook = [
               size="xs"
               :color="filterStatus === st ? 'secondary' : 'neutral'"
               :variant="filterStatus === st ? 'solid' : 'outline'"
+              :aria-pressed="filterStatus === st"
               class="stiker-tombol"
               @click="filterStatus = st"
             >
@@ -528,6 +529,7 @@ const riwayatWebhook = [
                   <button
                     type="button"
                     class="stiker-tombol inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold"
+                    :aria-pressed="tierAlat(t.slug, t.tier) === 'berbayar'"
                     :class="tierAlat(t.slug, t.tier) === 'berbayar'
                       ? 'bg-(--color-pensil) text-slate-900'
                       : 'bg-white text-highlighted dark:bg-slate-900'"
@@ -659,4 +661,3 @@ const riwayatWebhook = [
     </UModal>
   </div>
 </template>
-

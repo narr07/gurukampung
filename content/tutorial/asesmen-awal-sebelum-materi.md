@@ -9,6 +9,7 @@ alat:
   - kuis-pg
   - pembagi-kelompok
   - nilai-rapor
+ilustrasi: papan-klip
 ---
 
 Asesmen awal (sering juga disebut asesmen diagnostik) dilakukan **sebelum** materi baru dimulai. Tujuannya bukan memberi nilai rapor. Tujuannya menjawab satu pertanyaan: dari mana saya harus mulai mengajar kelas ini?

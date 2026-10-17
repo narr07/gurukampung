@@ -23,15 +23,7 @@ function onStar() {
 const categoryName = computed(() => CATEGORIES.find(c => c.id === props.tool.category)?.name ?? '')
 
 // Hubungan ilustrasi dengan alat nyata (R-22, DESIGN.md)
-const illustration = computed(() => {
-  const slug = props.tool.slug
-  if (slug === 'dadu-spinner' || slug === 'pemilih-acak') return 'dadu'
-  if (slug === 'timer' || slug === 'jam-analog') return 'jam'
-  if (slug === 'lk-matematika' || slug === 'latihan-menulis') return 'pensil'
-  if (slug === 'nilai-rapor' || slug === 'tabel-perkalian') return 'penggaris'
-  if (slug === 'sertifikat' || slug === 'papan-poin') return 'bintang'
-  return undefined
-})
+const illustration = computed(() => ILUSTRASI_ALAT[props.tool.slug])
 </script>
 
 <template>
@@ -90,8 +82,9 @@ const illustration = computed(() => {
         </div>
 
         <div
-          v-if="tool.priority === 1 && illustration"
-          class="w-14 shrink-0"
+          v-if="illustration"
+          class="ilustrasi-kartu shrink-0"
+          :class="tool.priority === 1 ? 'w-16' : 'w-12'"
         >
           <GambarIlustrasi :name="illustration" />
         </div>

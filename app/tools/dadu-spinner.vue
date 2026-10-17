@@ -25,20 +25,45 @@ const total = computed(() => faces.value.reduce((a, b) => a + b, 0))
 
 watch(diceCount, n => (faces.value = Array(n).fill(1)), { immediate: true })
 
-async function roll() {
-  if (rolling.value) return
-  const result = rollDice(rng, diceCount.value)
-  if (animate.value) {
-    rolling.value = true
-    for (let i = 0; i < 6; i++) {
-      faces.value = rollDice(rng, diceCount.value)
-      await new Promise(r => setTimeout(r, 60))
-    }
-    rolling.value = false
-  }
+// Satu timeline GSAP: dadu terlempar, berguling, dan memantul sementara wajahnya diacak; hasil akhir dipasang saat mendarat
+const diceRow = useTemplateRef<HTMLElement>('diceRow')
+let rollTimeline: { kill: () => void } | undefined
+
+function commitRoll(result: number[]) {
   faces.value = result
+  rolling.value = false
   history.value = [{ faces: result, total: result.reduce((a, b) => a + b, 0) }, ...history.value].slice(0, 10)
 }
+
+function roll() {
+  if (rolling.value) return
+  const result = rollDice(rng, diceCount.value)
+  const dice = diceRow.value ? Array.from(diceRow.value.children) : []
+  if (!animate.value || dice.length === 0) {
+    commitRoll(result)
+    return
+  }
+  rolling.value = true
+  const { gsap } = useGSAP()
+  const tl = gsap.timeline({ onComplete: () => commitRoll(result) })
+  // Rotasi dimulai dari 0 setiap lemparan, supaya lemparan berikutnya tetap berputar penuh
+  tl.set(dice, { rotation: 0, y: 0 })
+  tl.to(dice, {
+    keyframes: { y: [0, -56, 0, -12, 0], ease: 'none' },
+    rotation: (i: number) => (i % 2 ? -360 : 360),
+    duration: 0.7,
+    ease: 'power2.out',
+    stagger: 0.05
+  })
+  for (let i = 0; i < 6; i++) {
+    tl.call(() => {
+      faces.value = rollDice(rng, diceCount.value)
+    }, undefined, i * 0.1)
+  }
+  rollTimeline = tl
+}
+
+onBeforeUnmount(() => rollTimeline?.kill())
 
 // ---------- Spinner
 const optionsText = useLocalStorage('gurukampung:spinner:isi', 'Merah\nKuning\nHijau\nBiru', { initOnMounted: true })
@@ -86,6 +111,7 @@ const faceLabels = useLocalStorage('gurukampung:dadu:cetak-tulisan', ['', '', ''
         </div>
 
         <div
+          ref="diceRow"
           class="mt-6 flex flex-wrap items-center justify-center gap-4"
           aria-live="polite"
         >
@@ -101,7 +127,7 @@ const faceLabels = useLocalStorage('gurukampung:dadu:cetak-tulisan', ['', '', ''
           v-if="faces.length > 1 && !rolling"
           class="mt-4 flex justify-center"
         >
-          <span class="lencana-pensil px-4 py-1 font-display text-2xl font-extrabold">
+          <span class="hasil-muncul lencana-pensil px-4 py-1 font-display text-2xl font-extrabold">
             Jumlah: {{ total }}
           </span>
         </div>
@@ -160,7 +186,8 @@ const faceLabels = useLocalStorage('gurukampung:dadu:cetak-tulisan', ['', '', ''
             >
               <span
                 v-if="picked !== null"
-                class="lencana-pensil px-5 py-1.5 font-display text-3xl font-extrabold"
+                :key="picked"
+                class="hasil-muncul lencana-pensil px-5 py-1.5 font-display text-3xl font-extrabold"
               >
                 {{ options[picked] }}
               </span>
@@ -247,4 +274,3 @@ const faceLabels = useLocalStorage('gurukampung:dadu:cetak-tulisan', ['', '', ''
     </template>
   </UTabs>
 </template>
-

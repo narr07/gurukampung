@@ -224,6 +224,7 @@ const planItems = computed(() => book.value.plans.map(p => ({ value: p.id, label
                     :key="side"
                     type="button"
                     draggable="true"
+                    :aria-pressed="selectedSeatIdx === (deskIdx - 1) * 2 + side"
                     class="min-h-14 rounded-xl border-2 border-(--color-tinta) px-2 py-1.5 text-center text-xs font-bold transition-transform cursor-grab active:cursor-grabbing"
                     :class="[
                       selectedSeatIdx === (deskIdx - 1) * 2 + side
@@ -286,4 +287,3 @@ const planItems = computed(() => book.value.plans.map(p => ({ value: p.id, label
     </div>
   </div>
 </template>
-

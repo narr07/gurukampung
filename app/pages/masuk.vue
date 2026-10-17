@@ -180,6 +180,7 @@ async function kirimFormSandi() {
               size="sm"
               :color="modeAktif === 'tautan' ? 'secondary' : 'neutral'"
               :variant="modeAktif === 'tautan' ? 'solid' : 'outline'"
+              :aria-pressed="modeAktif === 'tautan'"
               icon="i-lucide-wand-sparkles"
               class="stiker-tombol"
               @click="modeAktif = 'tautan'; tautanTerkirim = false"
@@ -190,6 +191,7 @@ async function kirimFormSandi() {
               size="sm"
               :color="modeAktif === 'sandi' ? 'secondary' : 'neutral'"
               :variant="modeAktif === 'sandi' ? 'solid' : 'outline'"
+              :aria-pressed="modeAktif === 'sandi'"
               icon="i-lucide-lock"
               class="stiker-tombol"
               @click="modeAktif = 'sandi'"
@@ -200,6 +202,7 @@ async function kirimFormSandi() {
               size="sm"
               :color="modeAktif === 'daftar' ? 'secondary' : 'neutral'"
               :variant="modeAktif === 'daftar' ? 'solid' : 'outline'"
+              :aria-pressed="modeAktif === 'daftar'"
               icon="i-lucide-user-plus"
               class="stiker-tombol"
               @click="modeAktif = 'daftar'"
@@ -398,4 +401,3 @@ async function kirimFormSandi() {
     </UPageGrid>
   </div>
 </template>
-

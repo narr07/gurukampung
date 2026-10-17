@@ -4,6 +4,7 @@ description: Guru Kampung mengumpulkan 31 alat yang sering dibutuhkan guru SD da
 date: 2026-10-16
 tags:
   - guru kampung
+ilustrasi: lampu
 ---
 
 Pagi hari, sebelum bel masuk, banyak guru SD sudah membuka lima aplikasi berbeda: satu untuk mengacak nama, satu untuk timer, satu spreadsheet untuk nilai, dan satu lagi untuk membuat lembar kerja. Sebagian aplikasinya meminta akun, sebagian penuh iklan, dan sebagian menyimpan nama murid di server yang tidak jelas di mana.

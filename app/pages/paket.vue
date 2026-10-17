@@ -123,6 +123,7 @@ function konfirmasiSimulasiBayar() {
           size="sm"
           :color="periode === 'bulanan' ? 'secondary' : 'neutral'"
           :variant="periode === 'bulanan' ? 'solid' : 'outline'"
+          :aria-pressed="periode === 'bulanan'"
           class="stiker-tombol"
           @click="periode = 'bulanan'"
         >
@@ -132,6 +133,7 @@ function konfirmasiSimulasiBayar() {
           size="sm"
           :color="periode === 'tahunan' ? 'secondary' : 'neutral'"
           :variant="periode === 'tahunan' ? 'solid' : 'outline'"
+          :aria-pressed="periode === 'tahunan'"
           class="stiker-tombol"
           @click="periode = 'tahunan'"
         >
@@ -496,4 +498,3 @@ function konfirmasiSimulasiBayar() {
     </UModal>
   </div>
 </template>
-

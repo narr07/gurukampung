@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import type { NamaIlustrasi } from '~/utils/ilustrasi'
+
 defineProps<{
   title: string
   description?: string
   badge?: string
   icon?: string
-  illustration?: 'pensil' | 'penggaris' | 'dadu' | 'jam' | 'pesawat' | 'kartu-nama' | 'bintang' | 'gembok-tas'
+  illustration?: NamaIlustrasi
 }>()
 </script>
 

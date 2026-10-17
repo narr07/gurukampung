@@ -1,8 +1,11 @@
 <script setup lang="ts">
 // Ilustrasi SVG buatan sendiri dengan garis tinta 3px, sudut membulat, dan warna dari palet (DESIGN.md, R-22).
-// Selalu dekoratif bagi pembaca layar (aria-hidden="true")
+// Selalu dekoratif bagi pembaca layar (aria-hidden="true").
+// Ilustrasi tambahan (roda, kalkulator, buku, dan lainnya) ada di utils/ilustrasi.ts
+import { ILUSTRASI_BARU, isIlustrasiBaru, type NamaIlustrasi } from '~/utils/ilustrasi'
+
 defineProps<{
-  name: 'pensil' | 'penggaris' | 'dadu' | 'jam' | 'pesawat' | 'kartu-nama' | 'bintang' | 'gembok-tas'
+  name: NamaIlustrasi
   locked?: boolean
 }>()
 </script>
@@ -112,15 +115,60 @@ defineProps<{
       stroke-width="3"
       stroke-linecap="round"
     >
-      <line x1="32" y1="12" x2="32" y2="28" />
-      <line x1="52" y1="12" x2="52" y2="22" />
-      <line x1="72" y1="12" x2="72" y2="28" />
-      <line x1="92" y1="12" x2="92" y2="22" />
-      <line x1="112" y1="12" x2="112" y2="28" />
-      <line x1="132" y1="12" x2="132" y2="22" />
-      <line x1="152" y1="12" x2="152" y2="28" />
-      <line x1="172" y1="12" x2="172" y2="22" />
-      <line x1="192" y1="12" x2="192" y2="28" />
+      <line
+        x1="32"
+        y1="12"
+        x2="32"
+        y2="28"
+      />
+      <line
+        x1="52"
+        y1="12"
+        x2="52"
+        y2="22"
+      />
+      <line
+        x1="72"
+        y1="12"
+        x2="72"
+        y2="28"
+      />
+      <line
+        x1="92"
+        y1="12"
+        x2="92"
+        y2="22"
+      />
+      <line
+        x1="112"
+        y1="12"
+        x2="112"
+        y2="28"
+      />
+      <line
+        x1="132"
+        y1="12"
+        x2="132"
+        y2="22"
+      />
+      <line
+        x1="152"
+        y1="12"
+        x2="152"
+        y2="28"
+      />
+      <line
+        x1="172"
+        y1="12"
+        x2="172"
+        y2="22"
+      />
+      <line
+        x1="192"
+        y1="12"
+        x2="192"
+        y2="28"
+      />
     </g>
     <circle
       cx="24"
@@ -162,11 +210,36 @@ defineProps<{
       stroke-width="3"
     />
     <!-- Mata dadu 5 dengan titik tengah merah aksen -->
-    <circle cx="32" cy="30" r="5" fill="#0f172b" />
-    <circle cx="64" cy="30" r="5" fill="#0f172b" />
-    <circle cx="48" cy="46" r="6" fill="#c10007" />
-    <circle cx="32" cy="62" r="5" fill="#0f172b" />
-    <circle cx="64" cy="62" r="5" fill="#0f172b" />
+    <circle
+      cx="32"
+      cy="30"
+      r="5"
+      fill="#0f172b"
+    />
+    <circle
+      cx="64"
+      cy="30"
+      r="5"
+      fill="#0f172b"
+    />
+    <circle
+      cx="48"
+      cy="46"
+      r="6"
+      fill="#c10007"
+    />
+    <circle
+      cx="32"
+      cy="62"
+      r="5"
+      fill="#0f172b"
+    />
+    <circle
+      cx="64"
+      cy="62"
+      r="5"
+      fill="#0f172b"
+    />
   </svg>
 
   <svg
@@ -203,16 +276,56 @@ defineProps<{
       stroke-width="3"
     />
     <!-- Tanda jam 12, 3, 6, 9 -->
-    <g stroke="#0f172b" stroke-width="3" stroke-linecap="round">
-      <line x1="48" y1="22" x2="48" y2="26" />
-      <line x1="72" y1="46" x2="68" y2="46" />
-      <line x1="48" y1="70" x2="48" y2="66" />
-      <line x1="24" y1="46" x2="28" y2="46" />
+    <g
+      stroke="#0f172b"
+      stroke-width="3"
+      stroke-linecap="round"
+    >
+      <line
+        x1="48"
+        y1="22"
+        x2="48"
+        y2="26"
+      />
+      <line
+        x1="72"
+        y1="46"
+        x2="68"
+        y2="46"
+      />
+      <line
+        x1="48"
+        y1="70"
+        x2="48"
+        y2="66"
+      />
+      <line
+        x1="24"
+        y1="46"
+        x2="28"
+        y2="46"
+      />
       <!-- Jarum jam & menit -->
-      <line x1="48" y1="46" x2="48" y2="30" />
-      <line x1="48" y1="46" x2="62" y2="46" stroke="#c10007" />
+      <line
+        x1="48"
+        y1="46"
+        x2="48"
+        y2="30"
+      />
+      <line
+        x1="48"
+        y1="46"
+        x2="62"
+        y2="46"
+        stroke="#c10007"
+      />
     </g>
-    <circle cx="48" cy="46" r="4" fill="#c10007" />
+    <circle
+      cx="48"
+      cy="46"
+      r="4"
+      fill="#c10007"
+    />
   </svg>
 
   <svg
@@ -282,9 +395,32 @@ defineProps<{
       stroke="var(--color-tinta)"
       stroke-width="3"
     />
-    <circle cx="30" cy="41" r="9" fill="#93c5fd" stroke="#0f172b" stroke-width="2.5" />
-    <line x1="48" y1="36" x2="94" y2="36" stroke="#0f172b" stroke-width="3" stroke-linecap="round" />
-    <line x1="48" y1="46" x2="78" y2="46" stroke="#64748b" stroke-width="3" stroke-linecap="round" />
+    <circle
+      cx="30"
+      cy="41"
+      r="9"
+      fill="#93c5fd"
+      stroke="#0f172b"
+      stroke-width="2.5"
+    />
+    <line
+      x1="48"
+      y1="36"
+      x2="94"
+      y2="36"
+      stroke="#0f172b"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <line
+      x1="48"
+      y1="46"
+      x2="78"
+      y2="46"
+      stroke="#64748b"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
   </svg>
 
   <svg
@@ -366,8 +502,25 @@ defineProps<{
       stroke-width="3"
     />
     <!-- Lubang kunci -->
-    <circle cx="64" cy="80" r="4" fill="#0f172b" />
-    <path d="M64 84V92" stroke="#0f172b" stroke-width="3" stroke-linecap="round" />
+    <circle
+      cx="64"
+      cy="80"
+      r="4"
+      fill="#0f172b"
+    />
+    <path
+      d="M64 84V92"
+      stroke="#0f172b"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
   </svg>
+  <svg
+    v-else-if="isIlustrasiBaru(name)"
+    viewBox="0 0 96 96"
+    fill="none"
+    aria-hidden="true"
+    class="select-none"
+    v-html="ILUSTRASI_BARU[name]"
+  />
 </template>
-

@@ -223,6 +223,7 @@ const groupsForSelectedTp = computed(() => {
               size="sm"
               :color="selectedTpId === tp.id ? 'secondary' : 'neutral'"
               :variant="selectedTpId === tp.id ? 'solid' : 'outline'"
+              :aria-pressed="selectedTpId === tp.id"
               @click="selectedTpId = tp.id"
             >
               {{ tp.code }}
@@ -331,4 +332,3 @@ const groupsForSelectedTp = computed(() => {
     </template>
   </div>
 </template>
-

@@ -112,6 +112,7 @@ function swReset() {
               :key="m"
               color="neutral"
               :variant="minutes === m && seconds === 0 ? 'solid' : 'outline'"
+              :aria-pressed="minutes === m && seconds === 0"
               :disabled="running"
               @click="preset(m)"
             >
@@ -250,4 +251,3 @@ function swReset() {
     </template>
   </UTabs>
 </template>
-

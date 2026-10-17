@@ -148,6 +148,7 @@ const bgItems = [
             size="sm"
             :color="toolMode === 'pena' ? 'primary' : 'neutral'"
             :variant="toolMode === 'pena' ? 'solid' : 'outline'"
+            :aria-pressed="toolMode === 'pena'"
             icon="i-lucide-pen-tool"
             @click="toolMode = 'pena'"
           >
@@ -157,6 +158,7 @@ const bgItems = [
             size="sm"
             :color="toolMode === 'penghapus' ? 'secondary' : 'neutral'"
             :variant="toolMode === 'penghapus' ? 'solid' : 'outline'"
+            :aria-pressed="toolMode === 'penghapus'"
             icon="i-lucide-eraser"
             @click="toolMode = 'penghapus'"
           >
@@ -169,6 +171,7 @@ const bgItems = [
               :key="c.hex"
               type="button"
               :aria-label="c.label"
+              :aria-pressed="strokeColor === c.hex && toolMode === 'pena'"
               class="size-7 rounded-full border-2 border-(--color-tinta) transition-transform"
               :class="strokeColor === c.hex && toolMode === 'pena' ? 'scale-125 ring-2 ring-(--color-pensil)' : ''"
               :style="{ backgroundColor: c.hex }"
@@ -248,4 +251,3 @@ const bgItems = [
     </div>
   </ProjectorShell>
 </template>
-

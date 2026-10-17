@@ -4,6 +4,8 @@ import { isToolAvailable } from '~/tools/registry'
 
 const route = useRoute()
 const { favorites } = useFavorites()
+// Bagian Akun di panel menu: "Akun saya" kalau sudah masuk, "Masuk" kalau belum
+const { user, loggedIn } = useUserSession()
 
 const items = [
   { label: 'Alat', to: '/alat', description: 'Semua alat yang siap dipakai' },
@@ -18,19 +20,34 @@ const items = [
 
 const isActive = (to: string) => route.path === to || route.path.startsWith(`${to}/`)
 
-// Garis tipis warna tinta di tepi atas layar menunjukkan seberapa jauh beranda sudah digulir (DESIGN.md)
+// Garis tipis warna tinta di tepi atas layar menunjukkan seberapa jauh beranda sudah digulir (DESIGN.md).
+// ScrollTrigger menulis scaleX langsung ke elemen (quickSetter), tanpa state Vue yang dirender ulang tiap gulir.
+// GSAP dimuat dinamis supaya halaman selain beranda tidak ikut memuatnya
 const isHome = computed(() => route.path === '/')
-const scrollProgress = ref(0)
+const progressBar = useTemplateRef<HTMLElement>('progressBar')
+let progressTrigger: { kill: () => void } | undefined
 
-function updateScrollProgress() {
-  const doc = document.documentElement
-  const max = doc.scrollHeight - doc.clientHeight
-  scrollProgress.value = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
+async function setupScrollProgress() {
+  progressTrigger?.kill()
+  progressTrigger = undefined
+  await nextTick()
+  if (!isHome.value || !progressBar.value) return
+  const { useGSAP } = await import('~/composables/useGSAP')
+  const { gsap, ScrollTrigger } = useGSAP()
+  if (!isHome.value || !progressBar.value) return
+  const setScale = gsap.quickSetter(progressBar.value, 'scaleX')
+  const trigger = ScrollTrigger.create({
+    start: 0,
+    end: 'max',
+    onUpdate: self => setScale(self.progress)
+  })
+  setScale(trigger.progress)
+  progressTrigger = trigger
 }
 
-useEventListener('scroll', updateScrollProgress, { passive: true })
-useEventListener('resize', updateScrollProgress, { passive: true })
-onMounted(updateScrollProgress)
+onMounted(setupScrollProgress)
+watch(isHome, setupScrollProgress)
+onBeforeUnmount(() => progressTrigger?.kill())
 
 // Menu tombol: satu tombol tetap di pojok kanan atas, panelnya terbuka dari posisi tombol (DESIGN.md)
 const menuOpen = ref(false)
@@ -72,8 +89,9 @@ function openSearch() {
       class="pointer-events-none fixed inset-x-0 top-0 z-50 h-1"
     >
       <div
-        class="h-full origin-left bg-(--color-tinta)"
-        :style="{ transform: `scaleX(${scrollProgress})` }"
+        ref="progressBar"
+        class="h-full origin-left bg-(--color-tinta) will-change-transform"
+        style="transform: scaleX(0)"
       />
     </div>
 
@@ -263,6 +281,26 @@ function openSearch() {
                   :style="{ '--i': 8 }"
                 >
                   <NuxtLink
+                    v-if="loggedIn"
+                    to="/akun"
+                    class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-white py-2 pr-4 pl-2 text-sm font-semibold text-slate-900"
+                    @click="close"
+                  >
+                    <img
+                      v-if="user?.image"
+                      :src="user.image"
+                      alt=""
+                      class="size-7 rounded-full border-2 border-(--color-tinta) object-cover"
+                    >
+                    <UIcon
+                      v-else
+                      name="i-lucide-circle-user-round"
+                      class="size-5"
+                    />
+                    Akun saya
+                  </NuxtLink>
+                  <NuxtLink
+                    v-else
                     to="/masuk"
                     class="stiker-tombol inline-flex min-h-11 items-center gap-2 bg-white px-4 py-2 text-sm font-semibold text-slate-900"
                     @click="close"

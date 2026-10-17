@@ -103,7 +103,7 @@ Tanda Guru Kampung adalah **pensil kuning yang sekaligus rumah** (17 Oktober 202
 
 ### Maskot (draf)
 
-Maskot adalah tanda yang sama dengan wajah: dua mata di dinding kuning, pintu sebagai mulut, tangan bersarung putih, dan kaki tinta. File: `public/brand/guru-kampung-maskot.svg` (diam) dan `guru-kampung-maskot-animasi.svg` (berkedip dan melambai, berhenti kalau pengguna memilih kurangi gerak). Bagian yang bisa dianimasikan: `gk-mata`, `gk-tangan-kanan`, `gk-tangan-kiri`, `gk-kaki`, `gk-atap`, `gk-pintu`. Nama maskot belum diputuskan.
+Maskot adalah tanda yang sama dengan wajah: dua mata di dinding kuning, pintu sebagai mulut, tangan bersarung putih, dan kaki tinta. File: `public/brand/guru-kampung-maskot.svg` (diam) dan `guru-kampung-maskot-animasi.svg` (berkedip dan melambai, berhenti kalau pengguna memilih kurangi gerak). Bagian yang bisa dianimasikan: `gk-mata`, `gk-tangan-kanan`, `gk-tangan-kiri`, `gk-kaki`, `gk-atap`, `gk-pintu`. Di website (`MaskotGuruKampung.vue`) maskot hanya melayang pelan dan berkedip; tangannya diam dan baru bergerak saat reaksi "aww". Nama maskot belum diputuskan.
 
 ### Tombol menu
 
@@ -177,6 +177,10 @@ Ilustrasi digambar sendiri sebagai SVG di dalam kode, bukan gambar stok atau pus
   | Stiker bintang | Hadiah dari guru, Papan Poin |
   | Gembok di tas sekolah | Data tersimpan di perangkat ini saja |
 
+- **Set tambahan (17 Oktober 2026)** di `app/utils/ilustrasi.ts`, 23 ilustrasi berukuran 96×96 sehingga setiap alat punya gambar sendiri (peta `ILUSTRASI_ALAT`): roda putar, kelompok, meja, toa, kalender, medali, kalkulator, papan klip, rapor, grafik, buku, lembar soal, kaca pembesar, kotak TTS, kartu tumpuk, pecahan, uang, papan tulis, amplop, label, piagam, target, dan lampu.
+- Blog dan tutorial memilih ilustrasi lewat frontmatter `ilustrasi:` (nama dari daftar di atas). Ilustrasi tampil di kartu daftar dan di samping judul artikel.
+- Di kartu, ilustrasi miring 8° dan membesar 10% saat kartu disorot (`.ilustrasi-kartu`).
+- Ilustrasi baru cukup ditambahkan ke `ILUSTRASI_BARU`; jangan menambah cabang `v-if` baru di `GambarIlustrasi.vue`.
 - Ilustrasi selalu dekoratif bagi pembaca layar (`aria-hidden="true"`). Informasinya ada di teks.
 - Di mode gelap, garis tinta berganti warna sesuai token tinta.
 
@@ -204,7 +208,7 @@ Pustaka: **GSAP** dengan ScrollTrigger, dan **Lenis** untuk gulir halus. Keduany
 Batasan:
 
 - Hanya `transform` dan `opacity` yang dianimasikan.
-- Tidak ada animasi yang berulang terus-menerus. Semua gerak dipicu oleh gulir atau terjadi sekali.
+- Tidak ada animasi yang berulang terus-menerus. Semua gerak dipicu oleh gulir atau terjadi sekali. Pengecualian: maskot di bagian Satu daftar siswa melayang pelan dan berkedip (CSS, berhenti kalau gerak dikurangi). Tangannya tidak bergerak berulang.
 - Hover kartu: naik 2px, bayangan bertambah (150 ms), dan kartu yang miring berbalik arah (250 ms).
 - Di layar di bawah 640px, bagian tidak disematkan. Gerak masuknya saja yang tetap berjalan.
 
@@ -224,7 +228,31 @@ Kalau `prefers-reduced-motion: reduce` aktif:
 
 > **Perubahan 16 Oktober 2026 (disetujui pemilik):** halaman selain beranda tidak lagi datar. Dial naik dari MOTION 1 ke MOTION 2.
 
-Semua gerak meja kerja ditulis dalam CSS (`main.css`), tanpa GSAP. Karena itu tidak berkedip di halaman statis dan tidak perlu dilepas saat pindah halaman.
+Gerak deklaratif meja kerja (masuk halaman, hover, logo, maskot, menu) ditulis dalam CSS (`main.css`) dan hanya menganimasikan `transform` dan `opacity`. Karena itu tidak berkedip di halaman statis dan tidak perlu dilepas saat pindah halaman.
+
+Gerak yang digerakkan JavaScript memakai **GSAP** (17 Oktober 2026), bukan `setTimeout`, transisi CSS yang ditebak durasinya, atau `width` yang diubah tiap frame:
+
+| Tempat | GSAP |
+|---|---|
+| Garis progres gulir beranda (`AppHeader.vue`) | `ScrollTrigger` + `quickSetter` pada `scaleX`; dimuat dinamis hanya di beranda |
+| Roda putar (`SpinWheel.vue`) | Tween `rotation` (`svgOrigin` di poros), hasil diumumkan lewat `onComplete` |
+| Lempar dadu (`dadu-spinner.vue`) | Satu timeline: dadu terlempar, berguling 360°, memantul, sambil wajahnya diacak |
+| Pengukur suara (`pengukur-suara.vue`) | `quickTo` pada `scaleX` tiap frame mikrofon |
+| Bar kuota dashboard (`dashboard.vue`) | Tween `scaleX` saat bar tampil dan saat angkanya berubah |
+
+| Saring daftar alat (`alat/index.vue`) | `useFlipDaftar`: kartu meluncur ke posisi baru, kartu baru muncul memantul. Flip menggerakkan pembungkus kartu, bukan kartunya, karena kartu memakai gerak muncul CSS |
+| Reaksi maskot (`MaskotGuruKampung.vue`) | Timeline "aww" sekitar 1 detik: kedua tangan terangkat ke samping wajah dan bergoyang, mata `^ ^`, pipi merona, badan mengempis, hati melayang. Diputar ulang dari awal di setiap sorotan mouse atau ketukan |
+
+**Setiap pilihan beranimasi (17 Oktober 2026).** Aturan global di `main.css` mengikuti atribut aksesibilitas, jadi berlaku di semua halaman tanpa kode per halaman:
+
+- Tombol saring, tab, kotak centang, radio, sakelar, dan opsi yang baru dipilih memantul kecil (`pilih-pop`).
+- Panel tab yang baru dibuka naik pelan; baris tabel yang dipilih berkedip kuning.
+- Hasil acak (nama terpilih, hasil spinner, jumlah dadu) memakai kelas `hasil-muncul` dengan `:key` pada nilainya.
+- Animasi baru aktif setelah interaksi pertama (`plugins/interaksi.client.ts`), supaya yang sudah terpilih saat halaman dimuat tidak ikut memantul.
+- Konsekuensinya, tombol pilihan **wajib** memakai `aria-pressed` (atau `aria-selected`/`aria-checked`). Tombol yang hanya berganti warna lewat kelas tidak akan beranimasi dan juga tidak terbaca pembaca layar.
+- Animasi masuk halaman memakai `animation-fill-mode: backwards`, bukan `both`, supaya CSS melepas `transform` setelah selesai dan GSAP bisa menggerakkan elemen itu.
+
+Aturannya: animasikan `transform`/`opacity` saja, hentikan tween atau timeline saat komponen dilepas, dan patuhi `prefers-reduced-motion`. Nilai awal `scaleX` ditulis lewat `style`, bukan kelas `scale-x-*` Tailwind v4, karena kelas itu memakai properti `scale` terpisah yang akan dikalikan dengan transform GSAP.
 
 | Gerak | Aturan |
 |---|---|

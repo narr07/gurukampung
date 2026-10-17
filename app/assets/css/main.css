@@ -210,7 +210,7 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   }
 }
 
-/* Maskot (MaskotGuruKampung.vue): melayang pelan, berkedip, dan melambai; melompat kecil saat disentuh */
+/* Maskot (MaskotGuruKampung.vue): melayang pelan dan berkedip; tangan hanya bergerak saat reaksi "aww" (GSAP) */
 .maskot {
   width: 100%;
   height: auto;
@@ -230,14 +230,83 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   animation: maskot-kedip 4.5s infinite;
 }
 
-.maskot-tangan-kanan {
-  transform-box: view-box;
-  transform-origin: 356px 342px;
-  animation: maskot-lambai 1.8s ease-in-out infinite;
+/* Animasi pilihan di semua halaman (DESIGN.md): tombol saring, tab, kotak centang, radio, sakelar, dan opsi
+   yang baru dipilih memantul kecil; panel tab yang baru dibuka naik pelan; baris tabel yang dipilih berkedip kuning.
+   Mengikuti atribut aksesibilitas, jadi tombol pilihan wajib memakai aria-pressed/aria-selected/aria-checked.
+   Hanya aktif setelah interaksi pertama (plugins/interaksi.client.ts) */
+.ada-interaksi :is([aria-pressed='true'], [role='tab'][aria-selected='true'], [role='radio'][aria-checked='true'], [role='checkbox'][aria-checked='true'], [role='switch'][aria-checked='true'], [role='option'][aria-selected='true'], [data-state='on']) {
+  animation: pilih-pop 360ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.sapa-maskot:hover .maskot-tubuh {
-  animation: maskot-lompat 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+.ada-interaksi [role='tabpanel'][data-state='active'] {
+  animation: panel-masuk 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ada-interaksi :is(tr[data-state='selected'], tr[aria-selected='true']) > * {
+  animation: baris-pilih 700ms ease-out;
+}
+
+/* Hasil acak (nama terpilih, hasil spinner, jumlah dadu) memantul masuk setiap kali muncul; pasang :key pada nilainya */
+.hasil-muncul {
+  animation: hasil-muncul 520ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes hasil-muncul {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-6deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pilih-pop {
+  0% {
+    transform: scale(0.92);
+  }
+
+  55% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes panel-masuk {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes baris-pilih {
+  from {
+    background-color: var(--color-yellow-200);
+  }
+}
+
+/* Ilustrasi stiker di kartu alat, blog, dan tutorial miring dan membesar sedikit saat kartunya disorot */
+.ilustrasi-kartu {
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stiker-kartu:is(:hover, :focus-visible) .ilustrasi-kartu {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* Reaksi "Awww!" saat disentuh ada di MaskotGuruKampung.vue (timeline GSAP) */
+.maskot {
+  cursor: pointer;
 }
 
 @keyframes maskot-melayang {
@@ -260,28 +329,6 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
 
   95% {
     transform: scaleY(0.1);
-  }
-}
-
-@keyframes maskot-lambai {
-  0%,
-  100% {
-    transform: none;
-  }
-
-  50% {
-    transform: rotate(-16deg);
-  }
-}
-
-@keyframes maskot-lompat {
-  0%,
-  100% {
-    transform: none;
-  }
-
-  40% {
-    transform: translateY(-36px) rotate(-4deg);
   }
 }
 
@@ -564,7 +611,8 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
 
 .halaman-masuk > div > :not(.grid),
 .halaman-masuk > div > .grid > * {
-  animation: gerak-masuk 650ms cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  /* backwards, bukan both: setelah selesai CSS melepas transform supaya GSAP Flip bisa menggerakkan kartu */
+  animation: gerak-masuk 650ms cubic-bezier(0.34, 1.4, 0.64, 1) backwards;
   animation-delay: calc(var(--urut, 0) * 90ms);
 }
 
@@ -596,7 +644,7 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
 @supports (animation-timeline: view()) {
   /* Spesifisitas sama dengan aturan grid di atas, dan ditulis sesudahnya supaya menang */
   .halaman-masuk > div .gerak-muncul {
-    animation: gerak-muncul linear both;
+    animation: gerak-muncul linear backwards;
     animation-delay: 0ms;
     animation-timeline: view();
     animation-range: entry 0% entry 80%;
@@ -785,10 +833,19 @@ html[data-font-size="sangat-besar"]:not(.projector-mode) {
   }
 
   .maskot-tubuh,
-  .maskot-mata,
-  .maskot-tangan-kanan,
-  .sapa-maskot:hover .maskot-tubuh {
+  .maskot-mata {
     animation: none;
+  }
+
+  .ada-interaksi :is([aria-pressed='true'], [role='tab'][aria-selected='true'], [role='radio'][aria-checked='true'], [role='checkbox'][aria-checked='true'], [role='switch'][aria-checked='true'], [role='option'][aria-selected='true'], [data-state='on']),
+  .ada-interaksi [role='tabpanel'][data-state='active'],
+  .ada-interaksi :is(tr[data-state='selected'], tr[aria-selected='true']) > *,
+  .hasil-muncul {
+    animation: none;
+  }
+
+  .ilustrasi-kartu {
+    transition: none;
   }
 }
 

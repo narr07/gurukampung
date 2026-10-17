@@ -110,6 +110,7 @@ const sizeItems = [
                   <button
                     type="button"
                     :aria-label="`${r} dikali ${c}`"
+                    :aria-pressed="selectedRow === r && selectedCol === c"
                     class="size-11 w-full font-semibold transition-colors"
                     :class="[
                       selectedRow === r && selectedCol === c
@@ -178,4 +179,3 @@ const sizeItems = [
     </div>
   </div>
 </template>
-

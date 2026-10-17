@@ -6,6 +6,7 @@ penulis: Tim Guru Kampung
 tags:
   - privasi
   - data kelas
+ilustrasi: gembok-tas
 ---
 
 Daftar nama murid, nilai rapor, dan catatan kehadiran adalah data anak-anak. Data seperti ini tidak seharusnya tersebar ke tempat yang tidak bisa dikendalikan guru. Karena itu, sejak awal Guru Kampung dirancang supaya **tidak ada server yang menerima data kelas**.

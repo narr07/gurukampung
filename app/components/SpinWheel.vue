@@ -11,33 +11,48 @@ const emit = defineEmits<{
 }>()
 
 const reducedMotion = usePreferredReducedMotion()
-const rotation = ref(0)
+const wheel = useTemplateRef<SVGGElement>('wheel')
+let rotation = 0
 const spinning = ref(false)
 const picked = ref<number | null>(null)
-const DURATION = 3200
 
 const segment = computed(() => 360 / Math.max(props.options.length, 1))
 watch(() => props.options, () => (picked.value = null))
 
+// Putaran memakai tween GSAP: onComplete selalu tepat saat roda berhenti (setTimeout bisa meleset kalau tab di latar),
+// dan tween dihentikan saat komponen dilepas
+let spinTween: { kill: () => void } | undefined
+
+function finish(index: number) {
+  spinning.value = false
+  picked.value = index
+  emit('done', index)
+}
+
 function spinTo(index: number) {
-  if (spinning.value || index < 0 || index >= props.options.length) return
+  if (spinning.value || index < 0 || index >= props.options.length || !wheel.value) return
+  const { gsap } = useGSAP()
   const animate = reducedMotion.value !== 'reduce'
   const target = 360 - (index + 0.5) * segment.value
-  const current = rotation.value % 360
-  rotation.value += (animate ? 5 * 360 : 0) + ((target - current + 360) % 360)
+  const current = rotation % 360
+  rotation += (animate ? 5 * 360 : 0) + ((target - current + 360) % 360)
   picked.value = null
   if (!animate) {
-    picked.value = index
-    emit('done', index)
+    gsap.set(wheel.value, { rotation, svgOrigin: '0 0' })
+    finish(index)
     return
   }
   spinning.value = true
-  setTimeout(() => {
-    spinning.value = false
-    picked.value = index
-    emit('done', index)
-  }, DURATION)
+  spinTween = gsap.to(wheel.value, {
+    rotation,
+    svgOrigin: '0 0',
+    duration: 3.2,
+    ease: 'power4.out',
+    onComplete: () => finish(index)
+  })
 }
+
+onBeforeUnmount(() => spinTween?.kill())
 
 defineExpose({ spinTo, spinning })
 
@@ -78,7 +93,7 @@ const short = (s: string) => (s.length > 14 ? `${s.slice(0, 13)}…` : s)
       r="100"
       fill="var(--color-tinta)"
     />
-    <g :style="{ transform: `rotate(${rotation}deg)`, transition: spinning ? `transform ${DURATION}ms cubic-bezier(0.17, 0.67, 0.21, 1)` : 'none' }">
+    <g ref="wheel">
       <g
         v-for="(opt, i) in options"
         :key="i"

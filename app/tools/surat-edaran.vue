@@ -96,6 +96,7 @@ async function copyForWhatsApp() {
             size="xs"
             :color="preset === 'rapat' ? 'primary' : 'neutral'"
             :variant="preset === 'rapat' ? 'solid' : 'outline'"
+            :aria-pressed="preset === 'rapat'"
             @click="applyTemplate('rapat')"
           >
             Rapat Orang Tua
@@ -104,6 +105,7 @@ async function copyForWhatsApp() {
             size="xs"
             :color="preset === 'kegiatan' ? 'primary' : 'neutral'"
             :variant="preset === 'kegiatan' ? 'solid' : 'outline'"
+            :aria-pressed="preset === 'kegiatan'"
             @click="applyTemplate('kegiatan')"
           >
             Kegiatan Luar Kelas
@@ -112,6 +114,7 @@ async function copyForWhatsApp() {
             size="xs"
             :color="preset === 'ujian' ? 'primary' : 'neutral'"
             :variant="preset === 'ujian' ? 'solid' : 'outline'"
+            :aria-pressed="preset === 'ujian'"
             @click="applyTemplate('ujian')"
           >
             Jadwal Ujian
@@ -296,4 +299,3 @@ async function copyForWhatsApp() {
     </PrintLayout>
   </div>
 </template>
-

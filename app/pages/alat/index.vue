@@ -37,6 +37,10 @@ function reset() {
   activeCategory.value = 'semua'
   searchQuery.value = ''
 }
+
+// Kartu meluncur ke posisi barunya dan kartu baru muncul saat kategori atau pencarian berubah (GSAP Flip)
+const grid = useTemplateRef('grid')
+useFlipDaftar(grid, () => filtered.value.map(t => t.slug).join())
 </script>
 
 <template>
@@ -100,13 +104,21 @@ function reset() {
       </UButton>
     </div>
 
-    <UPageGrid v-else>
-      <KartuAlat
+    <UPageGrid
+      v-else
+      ref="grid"
+    >
+      <!-- Pembungkus digerakkan GSAP Flip, kartu di dalamnya memakai gerak muncul CSS; dipisah supaya transform tidak saling timpa -->
+      <div
         v-for="tool in filtered"
         :key="tool.slug"
-        :tool="tool"
-        :class="['gerak-muncul', span(tool.priority)]"
-      />
+        :class="span(tool.priority)"
+      >
+        <KartuAlat
+          :tool="tool"
+          class="gerak-muncul"
+        />
+      </div>
     </UPageGrid>
   </div>
 </template>

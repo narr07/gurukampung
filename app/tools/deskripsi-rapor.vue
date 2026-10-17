@@ -200,6 +200,7 @@ async function copyAll() {
                     size="xs"
                     :color="(book.studentChoices[s.id]?.masteredIds ?? [book.tps[0]?.id]).includes(tp.id) ? 'primary' : 'neutral'"
                     :variant="(book.studentChoices[s.id]?.masteredIds ?? [book.tps[0]?.id]).includes(tp.id) ? 'solid' : 'outline'"
+                    :aria-pressed="(book.studentChoices[s.id]?.masteredIds ?? [book.tps[0]?.id]).includes(tp.id)"
                     @click="toggleChoice(s.id, tp.id, 'mastered')"
                   >
                     {{ tp.code }}
@@ -218,6 +219,7 @@ async function copyAll() {
                     size="xs"
                     :color="(book.studentChoices[s.id]?.guidanceIds ?? [book.tps[1]?.id]).includes(tp.id) ? 'secondary' : 'neutral'"
                     :variant="(book.studentChoices[s.id]?.guidanceIds ?? [book.tps[1]?.id]).includes(tp.id) ? 'solid' : 'outline'"
+                    :aria-pressed="(book.studentChoices[s.id]?.guidanceIds ?? [book.tps[1]?.id]).includes(tp.id)"
                     @click="toggleChoice(s.id, tp.id, 'guidance')"
                   >
                     {{ tp.code }}
@@ -248,4 +250,3 @@ async function copyAll() {
     </template>
   </div>
 </template>
-
